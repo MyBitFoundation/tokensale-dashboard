@@ -93,11 +93,12 @@ b{
 }
 .tr{
 	@include clearfix;
+	@include transition();
+	background: transparent;
 }
 .td{
 	position: relative;
 	float: left;
-	min-width: 125px;
 	padding: 11px 1%;
 	&In{
 		@include ellipsis;
