@@ -1060,6 +1060,7 @@ b {
   vertical-align: middle;
   padding-right: 10px; }
   .cur__icon img {
+    display: inline-block;
     vertical-align: middle; }
 
 .cur__name {
