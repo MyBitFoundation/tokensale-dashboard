@@ -1,0 +1,35 @@
+.bar{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	&:before,
+	&:after {
+		position:absolute;
+		content:'';
+		height: 5px;
+		width:0;
+		bottom: 0;
+		background: $brand-color;
+		@include transition();
+	}
+	&:before {left:50%;}
+	&:after {right:50%;}
+
+
+	&Parent{
+		position: relative;
+		&.active{
+			.bar:before,
+			.bar:after{
+				width: 50%!important;
+			}
+		}
+	}
+	input:focus ~ &{
+		&:before,
+		&:after{
+			width: 50%!important;
+		}
+	}
+}

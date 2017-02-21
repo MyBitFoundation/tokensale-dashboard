@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Dashboard</title>
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	
+	<!--styles-->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<!--libs-->
+	<script type="text/javascript" src="js/libs/jquery-11.js"></script>
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script type="text/javascript" src="js/libs/device.min.js"></script>
+	<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+	
+	<!--components-->
+	
+	<!--general-->
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/components/home.js"></script>
+</head>
+
+<body>
+	<div class="wrapper wrapper-with-footer">
+		<header class="header">
+			<a href="" class="logo">
+				<img src="images/logo@2x.png" alt=""/>
+			</a>
+			<div class="header__profile">
+				<div>
+					<a href="" class="header__profileName ">valik_prusskiy@gmail.com</a>
+					<a href="" class="header__login none" data-toggle="modal" data-target="#modalLogin">
+						<span class="">LOGIN</span>
+						<span class="header__loginIcon icon-door"></span>
+					</a>
+				</div>
+		
+				<div>
+					<a href="" class="header__sign">Sign Up</a>
+				</div>
+			</div>
+			<div class="header__menu">
+				<ul class="header__menuList">
+					<li class="header__menuLi barParent active">
+						<div class="bar"></div>
+						<a href="" class="header__menuItem">Dashboard</a>
+					</li>
+					<li class="header__menuLi barParent">
+						<div class="bar"></div>
+						<a href="" class="header__menuItem">2FA</a>
+					</li>
+					<li class="header__menuLi barParent">
+						<div class="bar"></div>
+						<a href="" class="header__menuItem">Account Settings</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<section class="content content-home">
+			<div class="box">
+				<h1 class="h1">Dashboard</h1>
+				<div class="sidebar">
+					<div class="title">Exchange Rates</div>
+				</div>
+				<div class="main">
+					<div class="card__list">
+						<div class="card">
+							<div class="cardIn">
+								<div class="card__pic bg1">
+									<img src="images/arrows@2x.png" alt="" height="26"/>
+								</div>
+								<div class="card__info">
+									<div class="card__infoData">
+										<b class="mark1">1</b>
+										<span>ETH</span>
+										<span class="equal">=</span>
+										<b class="mark1">100</b>
+										<span>Token</span>
+									</div>
+									<div class="card__infoLabel">Crowdsale Price</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="cardIn">
+								<div class="card__pic bg2">
+									<img src="images/clock@2x.png" alt="" height="32"/>
+								</div>
+								<div class="card__info">
+									<div class="card__infoData">
+										<b class="mark2">23</b>
+										<span class="pr-10">Days</span>
+										<b class="mark3">7</b>
+										<span>Hours</span>
+									</div>
+									<div class="card__infoLabel">Time Left</div>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="cardIn">
+								<div class="card__pic">
+									<img src="images/logo@2x.png" alt="" height="62"/>
+								</div>
+								<div class="card__info">
+									<div class="card__infoData">
+										<b class="mark4">0.0000081</b>
+									</div>
+									<div class="card__infoLabel">BITS Balance</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cur__box">
+						<div class="cur__boxTitle">Pay with:</div>
+						<div class="cur__listWrap">
+							<div class="cur__list">
+								<a href="" class="cur__item">
+									<span class="cur__icon">
+										<img src="images/cur/btc.png" alt=""/>
+									</span>
+									<span class="cur__name">btc</span>
+								</a>
+								<a href="" class="cur__item">
+									<span class="cur__icon">
+										<img src="images/cur/etc.png" alt=""/>
+									</span>
+									<span class="cur__name">etc</span>
+								</a>
+								<a href="" class="cur__item">
+									<span class="cur__icon">
+										<img src="images/cur/eth.png" alt=""/>
+									</span>
+									<span class="cur__name">eth</span>
+								</a>
+								<a href="" class="cur__item">
+									<span class="cur__icon">
+										<img src="images/cur/xmr.png" alt=""/>
+									</span>
+									<span class="cur__name">xmr</span>
+								</a>
+								<a href="" class="cur__item">
+									<span class="cur__icon">
+										<img src="images/cur/dash.png" alt=""/>
+									</span>
+									<span class="cur__name">dash</span>
+								</a>
+								<a href="" class="cur__item">
+									<span class="cur__icon">
+										<img src="images/cur/rep.png" alt=""/>
+									</span>
+									<span class="cur__name">rep</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="history">
+						<div class="title">Transactions History</div>
+						<div class="history__table">
+							<div class="history__tableHead">
+								<div class="tr">
+									<div class="td td-date">
+										<a href="" class="sort">
+											Date <span class="sortIcon icon-arrow_dropdown"></span>
+										</a>
+									</div>
+									<div class="td td-amount">
+										<a href="" class="sort">
+											Amount <span class="sortIcon icon-arrow_dropdown"></span>
+										</a>
+									</div>
+									<div class="td td-rate">
+										<a href="" class="sort">
+											Exchange Rate <span class="sortIcon icon-arrow_dropdown"></span>
+										</a>
+									</div>
+									<div class="td td-address">
+										<a href="" class="sort">
+											Address <span class="sortIcon icon-arrow_dropdown"></span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="history__tableBody">
+								<div class="tr">
+									<div class="td td-date">
+										<div class="tdIn">Feb 16, 16:39:02</div>
+									</div>
+									<div class="td td-amount">
+										<div class="tdIn">
+											<b>10</b> USD
+										</div>
+									</div>
+									<div class="td td-rate">
+										<div class="tdIn">1 USD = 1 BITS</div>
+									</div>
+									<div class="td td-address">
+										<div class="tdIn">1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs</div>
+									</div>
+								</div>
+								<div class="tr">
+									<div class="td td-date">
+										<div class="tdIn">Feb 16, 15:32:02</div>
+									</div>
+									<div class="td td-amount">
+										<div class="tdIn"><b>0.5</b> BITS</div>
+									</div>
+									<div class="td td-rate">
+										<div class="tdIn">1 BTC = 500 Tokens</div>
+									</div>
+									<div class="td td-address">
+										<div class="tdIn">agjsgo1jakskfhLsdgljasjgklasdagjsgo1jakskfhLsdgljasjgklasd</div>
+									</div>
+								</div>
+								<div class="tr">
+									<div class="td td-date">
+										<div class="tdIn">Jan 31, 12:58:01</div>
+									</div>
+									<div class="td td-amount">
+										<div class="tdIn"><b>35</b> ETH</div>
+									</div>
+									<div class="td td-rate">
+										<div class="tdIn">1 ETH = 12 Tokens</div>
+									</div>
+									<div class="td td-address">
+										<div class="tdIn">1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs</div>
+									</div>
+								</div>
+								<div class="tr">
+									<div class="td td-date">
+										<div class="tdIn">Jan 31, 12:58:01</div>
+									</div>
+									<div class="td td-amount">
+										<div class="tdIn"><b>0.5</b> BTC</div>
+									</div>
+									<div class="td td-rate">
+										<div class="tdIn">1 USD = 1 BITS</div>
+									</div>
+									<div class="td td-address">
+										<div class="tdIn">1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer class="footer">
+		<div class="box">
+			<div class="copyright">
+				© 2017 My Bit.   All rights reserved.
+			</div>
+			<div class="">
+				<a href="" class="footer__contact">Contact Us</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Index</title>
+	//= template/head.html
+	<style>
+		.index_list {
+			padding: 10px;
+		}
+		.index_list li a:hover {
+			opacity: .6;
+		}
+		.index_list li a:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '—';
+			color: inherit;
+			font-size: 0.8125rem;
+		}
+		.index_list li a {
+			position: relative;
+			display: inline-block;
+			padding: 0 0 3px 20px;
+			color: #000;
+			text-decoration: underline;
+			font-size: 13px;
+			line-height: 17px;
+			font-weight: 600;
+		}
+	</style>
+</head>
+
+<body>
+<div class="index_sort">
+	<ul class="index_list">
+		<li class=""><a href="dashboard.html">Main</a></li>
+		<li class=""><a href="login.html">Login</a></li>
+	</ul>
+</div>
+
+	<script>
+		$(function() {
+			function sort() {
+				var items = $('.index_list > li > a'),
+						$target = $('.index_sort .index_list');
+
+
+				items.sort(function (a, b) {
+					var an = $(a).text(),
+							bn = $(b).text();
+					if (an && bn) {
+						return an.toUpperCase().localeCompare(bn.toUpperCase());
+					}
+					return 0;
+				});
+				items.parent().detach();
+				items.parent().appendTo($target);
+			}
+			sort();
+
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+.buildpath
+.project
+.settings/
+.idea
+.DS_Store
+/nbproject/private/
+/nbproject
+nginx.access.log
+nginx.error.log
+node_modules
+

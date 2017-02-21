@@ -1,0 +1,32 @@
+.row{
+	position: relative;
+}
+
+.field{
+	&__wrap{
+		display: block;
+	}
+	&__errorText{
+		position: absolute;
+		top: 100%;
+		right: 0;
+		text-align: right;
+		font-size: 12px;
+		margin-top: 5px;
+		letter-spacing: .05px;
+	}
+	&__errorIcon{
+		position: absolute;
+		right: 0;
+		bottom: 10px;
+		font-size: 17px;
+	}
+	&__hint{
+		position: absolute;
+		top: 100%;
+		right: 0;
+		text-align: right;
+		font-size: 12px;
+		margin-top: 5px;
+	}
+}

@@ -1,0 +1,97 @@
+.cur{
+	&__box{
+		margin-bottom: 30px;
+		&Title{
+			float: left;
+			margin-right: 20px;
+			font-size: 1.125rem;
+			line-height: 48px;
+			font-weight: 600;
+			color: #281f39;
+		}
+	}
+	&__list{
+		display: flex;
+		justify-content: space-between;
+		&Wrap{
+			overflow: hidden;
+		}
+	}
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 5px;
+		height: 48px;
+		line-height: 46px;
+		background: #f5f5f6;
+		@include border-radius(7px);
+		border: 1px solid #d3d3d4;
+		max-width: 140px;
+		min-width: 100px;
+		width: 15%;
+		text-align: center;
+		padding: 0 2px;
+		@include transition();
+		&:hover{
+			background: #fff;
+		}
+	}
+	&__icon{
+		display: inline-block;
+		vertical-align: middle;
+		padding-right: 10px;
+		img{
+			vertical-align: middle;
+		}
+	}
+	&__name{
+		display: inline-block;
+		vertical-align: middle;
+		color: #281f39;
+		font-size: 1.25rem;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}
+.history{
+	background: #fff;
+	@include border-radius(5px);
+	@include box-shadow($shadow);
+	&__table{
+
+		.td-date{
+			padding-left: 35px;
+			width: 20%;
+			font-size: 0.9375rem;
+			color: #96949c;
+		}
+		.td-amount{
+			width: 15%;
+			font-size: 1.125rem;
+			color: #281f39;
+			b{
+				font-weight: 700;
+			}
+		}
+		.td-rate{
+			width: 30%;
+			font-size: 1.125rem;
+			color: #281f39;
+		}
+		.td-address{
+			width: 35%;
+			text-align: right;
+			font-size: 1.125rem;
+			color: #96949c;
+			padding-right: 35px;
+		}
+
+		&Head{
+			padding: 25px 0 25px;
+			.td{}
+		}
+		&Body{
+			.td{}
+		}
+	}
+}
