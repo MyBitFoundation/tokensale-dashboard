@@ -4,35 +4,29 @@
 		visibility: visible;
 		opacity: 1;
 	}
-	&.open{
-		.ddTrigger:after{
-			border-top: 0;
-			border-bottom: 7px solid #000;
-		}
-	}
 	&Trigger{
 		position: relative;
-		border-bottom: 1px solid #e4e0e9;
-		&:after{
-			position: absolute;
-			content: '';
-			right: 10px;
-			top: 50%;
-			height: 0;
-			width: 0;
-			border-top: 7px solid #000;
-			border-left: 7px solid transparent;
-			border-right: 7px solid transparent;
+		display: block;
+		@include transition();
+		&:hover{opacity: .8;}
+		&.ddArrow{
+			padding-right: 15px;
+			&:after{
+				position: absolute;
+				content: '';
+				right:0;
+				top: 50%;
+				height: 0;
+				width: 0;
+				border-top: 3px solid #000;
+				border-left: 3px solid transparent;
+				border-right: 3px solid transparent;
+			}
 		}
-		&__label{
-			font-size: 12px;
-			color: #9a999b;
-			margin-bottom: 5px;
-		}
-		&__labeled{
-			font-size: 16px;
-			color: #000;
-			padding-bottom: 10px;
+		&__text{
+			font-size: 1.125rem;
+			color: #281f39;
+			font-weight: 600;
 		}
 	}
 	&Menu{
@@ -41,35 +35,27 @@
 		position: absolute;
 		z-index: 1;
 		top: 100%;
-		left: -17px;
-		right: -17px;
-		margin-top: -1px;
-		border-top: 1px solid #e4e0e9;
+		left: 0;
 		background: #fff;
-		padding: 3px 0;
-		&:after{
-			position: absolute;
-			content: '';
-			z-index: 1;
-			background: rgba(0,0,0,.5);
-			top: 100%;
-			left: 0;
-			right: 0;
-		}
+		padding: 10px 0;
+		@include border-radius(5px);
+		@include box-shadow(0px 1px 3px 1px rgba(38, 38, 39, 0.1));
 		&__list{
 			overflow-x: hidden;
 			overflow-y: auto;
-			max-height: 400px;
 		}
-		&__item{}
-		&__link{
+		&__li{}
+		&__item{
 			display: block;
-			padding: 9px 17px;
-			font-size: 16px;
-			color: #000;
-			&:active{
-				background: #ece9f0;
+			padding: 9px 10px;
+			font-size: 1rem;
+			color: #281f39;
+			@include transition();
+			&.active{
+				background: #fcca59;
+				opacity: 1!important;
 			}
+			&:hover{opacity: .8;}
 		}
 	}
 }

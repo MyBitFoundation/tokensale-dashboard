@@ -37,20 +37,22 @@
 	line-height: 1.25;
 }
 .btn{
-	text-transform: uppercase;
+	display: inline-block;
 	height: 40px;
-	width: 100%;
 	margin: auto;
 	text-align: center;
 	background: transparent;
-	letter-spacing: .7px;
-	font-size: 14px;
 	vertical-align: top;
-	@include border-radius(2px);
+	font-weight: 700;
+	text-transform: uppercase;
+	@include border-radius(25px);
 	@include transition();
 
-	&:active{
-		opacity: .8;
+	&Text{
+		vertical-align: middle;
+	}
+	&Icon{
+		vertical-align: middle;
 	}
 
 	&-transp{
@@ -59,6 +61,25 @@
 		&[disabled]{
 			color: rgba(255,255,255,.5);
 			border-color: rgba(255,255,255,.5);
+		}
+	}
+	&-gray{
+		background: #ececec;
+		color: #a1a1a1;
+	}
+	&-more{
+		@extend .btn-gray;
+		font-size: 0.875rem;
+		padding: 0 30px;
+		margin: 25px 0;
+		&:hover{opacity: .8;}
+		@include MQ(S){
+			margin: 15px 0;
+		};
+		.btnIcon{
+			padding-left: 5px;
+			font-size: 8px;
+			color: inherit;
 		}
 	}
 }

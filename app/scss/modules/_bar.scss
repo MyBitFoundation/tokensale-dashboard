@@ -32,4 +32,32 @@
 			width: 50%!important;
 		}
 	}
+
+}
+.barVer{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	&:before,
+	&:after {
+		position:absolute;
+		content:'';
+		width: 5px;
+		height:0;
+		left: 0;
+		background: $brand-color;
+		@include transition();
+	}
+	&:before {top: 50%;}
+	&:after {bottom: 50%;}
+	&Parent{
+		position: relative;
+		&.active{
+			.barVer:before,
+			.barVer:after{
+				height: 50%!important;
+			}
+		}
+	}
 }

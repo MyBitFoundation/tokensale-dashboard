@@ -29,13 +29,16 @@ b{
 	z-index: 1;
 	min-height: 100%;
 	height: auto !important;
-	padding-bottom: 80px;
+	padding-bottom: 150px;
 	@include clearfix();
 }
 .box{
 	padding: 0 $defXPad;
 	max-width: $maxWidth;
 	margin: 0 auto;
+	@include MQ(S){
+		padding: 0 5px;
+	};
 }
 .content{
 	margin: 0 auto;
@@ -45,13 +48,21 @@ b{
 	font-size: 24px;
 	font-weight: 600;
 	padding: 40px 0 15px;
+	@include MQ(S){
+		padding: 20px 0 10px;
+	};
 }
 
 .main{
 	.sidebar ~ &{
 		margin-left: 370px;
-		//@include table_clearfix;
 		overflow: hidden;
+		@include MQ(L){
+			margin-left: 315px;
+		};
+		@include MQ(M){
+			margin-left: 0;
+		};
 	}
 }
 
@@ -63,12 +74,12 @@ b{
 	font-size: 16px;
 	font-weight: 600;
 	color: #281f39;
-	padding: 23px 0 23px $defXPad2;
+	padding: 25px 0 22px $defXPad2;
 	border-bottom: 1px solid #f2f2f2;
 }
 .sort{
 	color: #aaaeb3;
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 600;
 	&:hover{
 		color: #686471;
@@ -86,7 +97,7 @@ b{
 		display: inline-block;
 		opacity: 0;
 		visibility: hidden;
-		font-size: 4px;
+		font-size: 5px;
 		vertical-align: middle;
 		@include transition();
 	}

@@ -20,9 +20,32 @@ only screen and (                min-resolution: 3dppx) {
 
 
 }
+/*-------------... 1500 ---------------*/
+@media (max-width:1500px) {
+	.card__infoData b{font-size: 1.5rem; line-height: 27px;}
+	.cardIn{padding-left: 20px;}
+	.card__info{margin-left: 75px;}
+}
+/*------------... 1380 ---------------*/
+@media (max-width:1380px) {
+	.card{
+		&:nth-child(3){
+			img{
+				height: 30px;
+			}
+		}
+	}
+	.card__pic {
+		height: 40px;line-height: 40px;width: 40px;
+		img{
+			height: 25px;
+		}
+	}
+	.card__info{margin-left: 55px;}
+}
 /*--------------------------------------------------------------------------------------------1280 ... ---------------*/
-@media (min-width:1280px) {
-	/*body                                        {background: orange;}*/
+@media (max-width:1280px) {
+	.cardIn{padding-left: 10px;}
 }
 
 /*--------------------------------------------------------------------------------------------1024 to 1280 -----------*/

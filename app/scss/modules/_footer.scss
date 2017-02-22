@@ -10,7 +10,7 @@
 	padding: 20px 0;
 	&__contact{
 		float: right;
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: $brand-color;
 		@include transition();
 		&:hover{opacity: .6;}
@@ -19,6 +19,6 @@
 }
 .copyright{
 	float: left;
-	font-size: 14px;
+	font-size: 0.875rem;
 	color: #fff;
 }
