@@ -13,3 +13,6 @@ require('assets/images/cur/eth.png');
 require('assets/images/cur/xmr.png');
 require('assets/images/cur/dash.png');
 require('assets/images/cur/rep.png');
+require('assets/images/cur_lg/btc_lg.png');
+require('assets/images/cur_lg/xmr_lg.png');
+require('assets/images/img_cont/qrcode.png');
