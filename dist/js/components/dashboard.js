@@ -10,7 +10,8 @@ var Dashboard = {
         $('.js-btnMore').on('click', function(e) {
             e.preventDefault();
             Dashboard.showMoreHistory.apply(this);
-        })
+        });
+
     },
 
     showMoreHistory: function() {

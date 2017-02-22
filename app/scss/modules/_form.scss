@@ -1,5 +1,9 @@
 .row{
 	position: relative;
+	margin-bottom: 30px;
+	&-next{
+		margin-top: -20px;
+	}
 }
 
 .field{
@@ -29,4 +33,11 @@
 		font-size: 12px;
 		margin-top: 5px;
 	}
+}
+
+.label{
+	display: block;
+	color: #aaaeb3;
+	font-size: 0.815rem;
+	padding: 3px 5px;
 }

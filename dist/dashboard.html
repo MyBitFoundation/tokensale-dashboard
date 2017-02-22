@@ -29,6 +29,100 @@
 </head>
 
 <body>
+<div class="modal fade" id="modalPayBTCStep1">
+	<div class="modal-dialog">
+		<div class="modal-dialogAlignOut">
+			<div class="modal-dialogAlignIn">
+				<div class="modal-dialogContent">
+					<span class="modal__close icon-cross" data-dismiss="modal"></span>
+
+					<div class="modal__body text_c">
+						<div class="modal__curPic">
+							<img src="images/cur_lg/btc.png" alt=""/>
+						</div>
+						<h2 class="modal__title">Pay with BTC</h2>
+						<div class="modal__note">Please Generate Wallet Address</div>
+						<div class="modal__btns">
+							<button class="btn btn-sbm js-btnGenerate" data-dismiss="modal" data-toggle="modal" data-target="#modalPayBTCStep2">Generate</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="modalPayBTCStep2">
+	<div class="modal-dialog">
+		<div class="modal-dialogAlignOut">
+			<div class="modal-dialogAlignIn">
+				<div class="modal-dialogContent">
+					<span class="modal__close icon-cross" data-dismiss="modal"></span>
+
+					<div class="modal__body text_c">
+						<div class="modal__curPic">
+							<img src="images/cur_lg/btc.png" alt=""/>
+						</div>
+						<h2 class="modal__title">Pay with BTC</h2>
+						<div class="modal__note">
+							Scan QR-code on your phone <br/>
+							in order to make a payment.
+						</div>
+						<div class="qr">
+							<img src="images/img_cont/qrcode.png" alt=""/>
+						</div>
+						<div class="row ">
+							<label for="key01" class="label text_l">16-Digit_Key</label>
+							<input class="field text_c" id="key01" type="text" value="LQtDHshgskllgdklsgjgklldgjkldlsfjkjjud3HsF6" disabled/>
+						</div>
+						<div class="modal__btns">
+							<button class="btn btn-sbm">Copy Address</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modalPayMoneroStep2">
+	<div class="modal-dialog">
+		<div class="modal-dialogAlignOut">
+			<div class="modal-dialogAlignIn">
+				<div class="modal-dialogContent">
+					<span class="modal__close icon-cross" data-dismiss="modal"></span>
+
+					<div class="modal__body text_c">
+						<div class="modal__curPic">
+							<img src="images/cur_lg/xmr.png" alt=""/>
+						</div>
+						<h2 class="modal__title">Pay with Monero</h2>
+						<div class="modal__note">
+							Scan QR-code on your phone <br/>
+							in order to make a payment.
+						</div>
+						<div class="qr">
+							<img src="images/img_cont/qrcode.png" alt=""/>
+						</div>
+						<div class="row ">
+							<label for="key02" class="label text_l">16-Digit_Key</label>
+							<input class="field text_c" id="key02" type="text" value="LQtDHshgskllgdklsgjgklldgjkldlsfjkjjud3HsF6" disabled/>
+						</div>
+						<div class="row row-next">
+							<label for="key03" class="label text_l">Monero Payment ID</label>
+							<input class="field text_c" id="key03" type="text" value="45fs67zdtDHshgskllgvdwvb5ldgjkldlsfjkjjud3s7b" disabled/>
+						</div>
+						<div class="modal__btns">
+							<button class="btn btn-sbm">Copy Address</button>
+							<button class="btn btn-sbm w250">Copy Payment Id</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 	<div class="wrapper wrapper-with-footer">
 		<header class="header">
 			<button class="menuBtn js-menuTrigger">
@@ -257,7 +351,7 @@
 						<div class="cur__boxTitle">Pay with:</div>
 						<div class="cur__listWrap">
 							<div class="cur__list">
-								<a href="" class="cur__item">
+								<a href="" class="cur__item" data-toggle="modal" data-target="#modalPayBTCStep1">
 									<span class="cur__icon">
 										<img src="images/cur/btc.png" alt=""/>
 									</span>
@@ -275,7 +369,7 @@
 									</span>
 									<span class="cur__name">eth</span>
 								</a>
-								<a href="" class="cur__item">
+								<a href="" class="cur__item" data-toggle="modal" data-target="#modalPayMoneroStep2">
 									<span class="cur__icon">
 										<img src="images/cur/xmr.png" alt=""/>
 									</span>

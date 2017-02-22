@@ -57,6 +57,7 @@
 			padding: 10px 0;
 		}
 		&Content{
+			position: relative;
 			text-align: left;
 			margin: auto;
 			width: 600px;
@@ -73,9 +74,10 @@
 .modal__close{
 	position: absolute;
 	right: 20px;
-	top: 25px;
-	font-size: 20px;
-	color: #bfbfbf;
+	top: 20px;
+	font-size: 15px;
+	padding: 10px;
+	color: #b8b5be;
 	cursor: pointer;
 	@include transition();
 	&:hover{opacity: .6;}
@@ -93,16 +95,29 @@
 	}
 }
 .modal__body{
-	padding: 0 20px 20px;
-	&In{
-		width: 600px;
-		max-width: 100%;
-		margin: auto;
-		&.w-l{
-			width: 700px;
-		}
-		&.w-xl{
-			width: 100%;
-		}
-	}
+	padding: 50px;
+	@include MQ(S){
+		padding: 20px 10px 20px;
+	};
+}
+.modal__curPic{
+	margin-bottom: 10px;
+}
+.modal__title{
+	font-size: 2.25rem;
+	font-weight: 600;
+	color: #281f39;
+	font-family: $ff-add;
+	margin-bottom: 28px;
+	@include MQ(S){
+		margin-bottom: 15px;
+	};
+}
+.modal__note{
+	font-size: 1.125rem;
+	color: #281f39;
+	margin-bottom: 30px;
+	@include MQ(S){
+		margin-bottom: 15px;
+	};
 }

@@ -617,7 +617,10 @@ b {
   color: #fff; }
 
 .row {
-  position: relative; }
+  position: relative;
+  margin-bottom: 30px; }
+  .row-next {
+    margin-top: -20px; }
 
 .field__wrap {
   display: block; }
@@ -645,18 +648,24 @@ b {
   font-size: 12px;
   margin-top: 5px; }
 
+.label {
+  display: block;
+  color: #aaaeb3;
+  font-size: 0.815rem;
+  padding: 3px 5px; }
+
 .field {
-  font-size: 16px;
-  color: #000;
-  border: none;
-  border-bottom: 1px solid #E4E0E9;
-  height: 35px;
+  font-size: 18px;
+  color: #281f39;
+  border: 1px solid #dcdcdc;
+  height: 60px;
   background: transparent;
   width: 100%;
-  padding-right: 30px;
+  padding: 0 23px;
   vertical-align: top;
-  text-decoration: none;
-  outline: none;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   -webkit-transition: all 0.15s ease;
   -moz-transition: all 0.15s ease;
   -o-transition: all 0.15s ease;
@@ -670,8 +679,7 @@ b {
   .field:-ms-input-placeholder {
     color: rgba(0, 0, 0, 0.37) !important; }
   .field[disabled] {
-    border-bottom: 1px dotted rgba(0, 0, 0, 0.37);
-    color: rgba(0, 0, 0, 0.5); }
+    background: #f9f9fa; }
   .field[readonly]:focus {
     border-bottom: 1px solid #E4E0E9; }
   .field:focus {
@@ -695,9 +703,9 @@ b {
   vertical-align: top;
   font-weight: 700;
   text-transform: uppercase;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -715,6 +723,11 @@ b {
   .btn-gray, .btn-more {
     background: #ececec;
     color: #a1a1a1; }
+  .btn-orange, .btn-sbm {
+    background: #fccc59;
+    color: #fff; }
+    .btn-orange:hover, .btn-sbm:hover {
+      background: #fc8c19; }
   .btn-more {
     font-size: 0.875rem;
     padding: 0 30px;
@@ -728,6 +741,24 @@ b {
       padding-left: 5px;
       font-size: 8px;
       color: inherit; }
+  .btn-sbm {
+    height: 60px;
+    width: 230px;
+    font-size: 1.275rem;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 767px) {
+      .btn-sbm {
+        height: 50px; } }
+    .btn-sbm.w250 {
+      width: 250px; }
+      @media only screen and (max-width: 767px) {
+        .btn-sbm.w250 {
+          width: 230px; } }
+    .btn-sbm + .btn-sbm {
+      margin-left: 15px; }
+      @media only screen and (max-width: 767px) {
+        .btn-sbm + .btn-sbm {
+          margin: 15px 0 0; } }
 
 .customCheck__label {
   cursor: pointer;
@@ -917,6 +948,7 @@ b {
       line-height: 1.25;
       padding: 10px 0; }
     .modal-dialogContent {
+      position: relative;
       text-align: left;
       margin: auto;
       width: 600px;
@@ -933,9 +965,10 @@ b {
 .modal__close {
   position: absolute;
   right: 20px;
-  top: 25px;
-  font-size: 20px;
-  color: #bfbfbf;
+  top: 20px;
+  font-size: 15px;
+  padding: 10px;
+  color: #b8b5be;
   cursor: pointer;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -956,15 +989,31 @@ b {
     color: #281f39; }
 
 .modal__body {
-  padding: 0 20px 20px; }
-  .modal__bodyIn {
-    width: 600px;
-    max-width: 100%;
-    margin: auto; }
-    .modal__bodyIn.w-l {
-      width: 700px; }
-    .modal__bodyIn.w-xl {
-      width: 100%; }
+  padding: 50px; }
+  @media only screen and (max-width: 767px) {
+    .modal__body {
+      padding: 20px 10px 20px; } }
+
+.modal__curPic {
+  margin-bottom: 10px; }
+
+.modal__title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #281f39;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 28px; }
+  @media only screen and (max-width: 767px) {
+    .modal__title {
+      margin-bottom: 15px; } }
+
+.modal__note {
+  font-size: 1.125rem;
+  color: #281f39;
+  margin-bottom: 30px; }
+  @media only screen and (max-width: 767px) {
+    .modal__note {
+      margin-bottom: 15px; } }
 
 .bar {
   position: absolute;
@@ -1436,6 +1485,13 @@ b {
     transition: all 0.2s ease; }
     .history__tableBtns.inactive {
       height: 0; }
+
+.qr {
+  margin-top: 50px;
+  margin-bottom: 15px; }
+  @media only screen and (max-width: 767px) {
+    .qr {
+      margin: 15px 0; } }
 
 /*pixel-ratio: 2*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
