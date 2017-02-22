@@ -130,7 +130,7 @@ class App extends React.Component {
         						<div className="sidebar__row">
         							<div className="sidebar__cur">
         								<span className="cur__icon">
-        									<img src="images/btc.png" alt=""/>
+        									<img src="images/btc_sm.png" alt=""/>
         								</span>
         								<span className="cur__name">btc</span>
         							</div>
@@ -139,7 +139,7 @@ class App extends React.Component {
         						<div className="sidebar__row">
         							<div className="sidebar__cur">
         								<span className="cur__icon">
-        									<img src="images/etc.png" alt="" />
+        									<img src="images/etc_sm.png" alt="" />
         								</span>
         								<span className="cur__name">etc</span>
         							</div>
@@ -148,7 +148,7 @@ class App extends React.Component {
         						<div className="sidebar__row">
         							<div className="sidebar__cur">
         								<span className="cur__icon">
-        									<img src="images/eth.png" alt=""/>
+        									<img src="images/eth_sm.png" alt=""/>
         								</span>
         								<span className="cur__name">eth</span>
         							</div>
@@ -157,7 +157,7 @@ class App extends React.Component {
         						<div className="sidebar__row">
         							<div className="sidebar__cur">
         								<span className="cur__icon">
-        									<img src="images/xmr.png" alt="" />
+        									<img src="images/xmr_sm.png" alt="" />
         								</span>
         								<span className="cur__name">xmr</span>
         							</div>
@@ -166,7 +166,7 @@ class App extends React.Component {
         						<div className="sidebar__row">
         							<div className="sidebar__cur">
         								<span className="cur__icon">
-        									<img src="images/dash.png" alt="" />
+        									<img src="images/dash_sm.png" alt="" />
         								</span>
         								<span className="cur__name">dash</span>
         							</div>
@@ -175,7 +175,7 @@ class App extends React.Component {
         						<div className="sidebar__row">
         							<div className="sidebar__cur">
         								<span className="cur__icon">
-        									<img src="images/rep.png" alt="" />
+        									<img src="images/rep_sm.png" alt="" />
         								</span>
         								<span className="cur__name">rep</span>
         							</div>
