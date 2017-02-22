@@ -1,0 +1,59 @@
+.customCheck__label{
+	cursor: pointer;
+	display: block;
+	margin: 0;
+	@include user-sel-n;
+	&Relative{
+		display: inline-block;
+		position: relative;
+		font-size: 0;
+		line-height: 0;
+		vertical-align: middle;
+		float: left;
+		margin-top: 2px;
+	}
+	&Pseudo{
+		display: block;
+		margin-left: 55px;
+		font-size: 15px;
+	}
+}
+.customCheck__check{
+	opacity: 0;
+	visibility: hidden;
+	height: 18px;
+	width: 18px;
+	&:checked + .customCheck__checkPseudo{
+		background: #624a84;
+		border-color: #624a84;
+	}
+	&:checked + .customCheck__checkPseudo:before{
+		font-family: icomoon, sans-serif;
+		content: "\e909";
+		line-height: 1;
+	}
+	&Pseudo{
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		width: 18px;
+		height: 18px;
+		background: #fcfcfc;
+		border: 2px solid #c8bed6;
+		@include border-radius(2px);
+		-webkit-transition: background .2s ease, border-color .2s ease;
+		transition: background .2s ease, border-color .2s ease;
+		&:before{
+			position: absolute;
+			content: none;
+			font-size: 10px;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			margin: -5px 0 0 0;
+			color: #fff;
+		}
+	}
+}

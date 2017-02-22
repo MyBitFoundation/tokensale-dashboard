@@ -3,12 +3,16 @@ const path = require('path');
 const config = require("./config.js");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+//let scssLoaders = "style-loader!css-loader!postcss-loader!sass-loader?outputStyle=expanded";
+
 const PATHS = {
     src     : path.resolve(__dirname, 'src'),
     dist    : path.resolve(__dirname,'dist')
 };
 
 const production = (process.env.NODE_ENV == 'production');
+
+
 
 let createConfig = (options) => {
     let webpackConfig = {};
@@ -51,9 +55,10 @@ let createConfig = (options) => {
     webpackConfig.module = {
         rules: [
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader' })
+                test: /\.(scss|css)$/,
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader', 'sass-loader'] })
             },
+
             {
                 test: /\.(png|gif|jpg|ico)$/,
                 use : {
@@ -79,7 +84,8 @@ let createConfig = (options) => {
                 test: /\.(js|jsx)$/,
                 include: [PATHS.src],
                 use: 'babel-loader'
-            }
+            },
+            { test: /\.(woff|eot|ttf|svg)$/, loader: "file-loader?name=[name].[ext]" },
         ]
     };
 

@@ -1,0 +1,15 @@
+require('assets/images/logo@2x.png');
+require('assets/images/cur_sm/btc.png');
+require('assets/images/cur_sm/etc.png');
+require('assets/images/cur_sm/eth.png');
+require('assets/images/cur_sm/xmr.png');
+require('assets/images/cur_sm/dash.png');
+require('assets/images/cur_sm/rep.png');
+require('assets/images/arrows@2x.png');
+require('assets/images/clock@2x.png');
+require('assets/images/cur/btc.png');
+require('assets/images/cur/etc.png');
+require('assets/images/cur/eth.png');
+require('assets/images/cur/xmr.png');
+require('assets/images/cur/dash.png');
+require('assets/images/cur/rep.png');

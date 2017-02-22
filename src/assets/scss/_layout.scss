@@ -1,0 +1,153 @@
+@import "variables";
+@import "mixins";
+
+html{height: 100%; font-size: 100%;}
+body{
+	height: 100%;
+	min-width: 320px;
+	color: #281f39;
+	font: 400 0.875rem $ff-main;
+	background: $body-bg;
+}
+a{
+	font: 400 0.875rem $ff-main;
+	text-decoration: none;
+	@include transition();
+}
+b{
+	font-weight: 700;
+}
+.img-responsive{
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	max-width: 100%;
+	max-height: 100%;
+}
+.wrapper{
+	position:relative;
+	z-index: 1;
+	min-height: 100%;
+	height: auto !important;
+	padding-bottom: 150px;
+	@include clearfix();
+}
+.box{
+	padding: 0 $defXPad;
+	max-width: $maxWidth;
+	margin: 0 auto;
+	@include MQ(S){
+		padding: 0 5px;
+	};
+}
+.content{
+	margin: 0 auto;
+	&-2fa{
+		.h1{
+			text-align: center;
+			padding-bottom: 5px;
+		}
+		.descr{
+			text-align: center;
+		}
+		.main{
+			@include clearfix;
+		}
+		.title{
+			font-size: 1.75rem;
+			font-weight: 600;
+			margin-bottom: 10px;
+			padding: 0;
+			border: none;
+		}
+		p{
+			font-size: 1rem;
+			margin-bottom: 10px;
+		}
+	}
+}
+.h1{
+	color: #281f39;
+	font-size: 1.5rem;
+	font-weight: 600;
+	padding: 40px 0 15px;
+	@include MQ(S){
+		padding: 20px 0 10px;
+	};
+}
+
+
+.main{
+	.sidebar ~ &{
+		margin-left: 370px;
+		overflow: hidden;
+		@include MQ(L){
+			margin-left: 315px;
+		};
+		@include MQ(M){
+			margin-left: 0;
+		};
+	}
+	&__col{
+		float: left;
+		width: 50%;
+		&.left{
+			padding-right: 55px;
+		}
+	}
+}
+
+.mark1{color: #8f9296;}
+.mark2{color: #fc8b19;}
+.mark3{color: #ffb66b;}
+.mark4{color: #34b3d1;}
+.title{
+	font-size: 16px;
+	font-weight: 600;
+	color: #281f39;
+	padding: 25px 0 22px $defXPad2;
+	border-bottom: 1px solid #f2f2f2;
+}
+.sort{
+	color: #aaaeb3;
+	font-size: 1rem;
+	font-weight: 600;
+	&:hover{
+		color: #686471;
+		.sortIcon{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&.active{
+		.sortIcon{
+			@include transform(rotate(180deg));
+		}
+	}
+	&Icon{
+		display: inline-block;
+		opacity: 0;
+		visibility: hidden;
+		font-size: 5px;
+		vertical-align: middle;
+		@include transition();
+	}
+}
+.tr{
+	@include clearfix;
+	@include transition();
+	background: transparent;
+}
+.td{
+	position: relative;
+	float: left;
+	padding: 11px 1%;
+	&In{
+		@include ellipsis;
+		max-width: 100%;
+	}
+}
+
+.descr{
+	margin-bottom: 10px;
+}

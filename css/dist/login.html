@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Login</title>
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	
+	<!--styles-->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<!--libs-->
+	<script type="text/javascript" src="js/libs/jquery-11.js"></script>
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script type="text/javascript" src="js/libs/device.min.js"></script>
+	<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+	
+	<!--components-->
+	<!--modules-->
+	<script type="text/javascript" src="js/modules/menuS.js"></script>
+	
+	<!--general-->
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+</head>
+
+<body>
+
+<div class="modal fade" id="modalLogin">
+	<div class="modal-dialog">
+		<div class="modal-dialogAlignOut">
+			<div class="modal-dialogAlignIn">
+				<div class="modal-dialogContent w-l">
+					<div class="modal__header">
+						<span class="modal__close icon-cross" data-dismiss="modal"></span>
+						<h2 class="modal__headerTitle">
+							Login
+						</h2>
+					</div>
+					<div class="modal__body">
+						<div class="modal__bodyIn w-xl">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="wrapper">
+	<header class="header">
+		<button class="menuBtn js-menuTrigger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<a href="" class="logo">
+			<img src="images/logo@2x.png" alt=""/>
+		</a>
+		<div class="header__profile">
+			<div>
+				<a href="" class="header__profileName ">valik_prusskiy@gmail.com</a>
+				<a href="" class="header__login none" data-toggle="modal" data-target="#modalLogin">
+					<span class="">LOGIN</span>
+					<span class="header__loginIcon icon-door"></span>
+				</a>
+			</div>
+	
+			<div>
+				<a href="" class="header__sign">Sign Up</a>
+			</div>
+		</div>
+		<div class="header__menu">
+			<ul class="header__menuList">
+				<li class="header__menuLi barParent active">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Dashboard</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">2FA</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Account Settings</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<section class="content content-login">
+		<div class="box">
+			content
+		</div>
+	</section>
+</div>
+<footer class="footer">
+	<div class="box">
+		<div class="copyright">
+			© 2017 My Bit.   All rights reserved.
+		</div>
+		<div class="">
+			<a href="" class="footer__contact">Contact Us</a>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

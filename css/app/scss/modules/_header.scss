@@ -1,0 +1,114 @@
+.header{
+	height: 100px;
+	background: #262627;
+	@include clearfix;
+	padding: 0 60px;
+	@include MQ(M){
+		padding: 0 20px;
+	};
+}
+.logo{
+	float: left;
+	display: block;
+	padding: 19px 0;
+	@include transition();
+	&:hover{opacity: .6;}
+	@include MQ(M){
+		display: none;
+	};
+	img{
+		display: inline-block;
+		height: 62px;
+		vertical-align: middle;
+	}
+}
+.header__profile{
+	float: right;
+	text-align: right;
+	padding: 31px 0;
+	&Name{
+		display: block;
+		font-weight: 600;
+		font-family: $ff-add;
+		color: $brand-color;
+		max-width: 250px;
+		@include ellipsis;
+		&:hover{
+			text-decoration: underline;
+		}
+		@include MQ(S){
+			max-width: 200px;
+		};
+	}
+}
+.header__login{
+	text-transform: uppercase;
+	font-weight: 600;
+	font-family: $ff-add;
+	color: $brand-color;
+	&:hover{
+		text-decoration: underline;
+	}
+	& > span{
+		vertical-align: middle;
+	}
+	&Icon{
+		font-size: 18px;
+		color: $brand-color;
+	}
+}
+.header__sign{
+	color: #fff;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+.header__menu{
+	text-align: center;
+	margin: 0 250px;
+	@include MQ(M){
+		display: none;
+	};
+	&List{
+		display: inline-block;
+	}
+	&Li{
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 65px;
+		@include MQ(L){
+			margin-right: 10px;
+		};
+		&:last-child{
+			margin-right: 0;
+		}
+		&:hover{
+			.bar{
+				opacity: .7;
+				&:before,
+				&:after{
+					width: 50%!important;
+				}
+			}
+		}
+		&.active{
+			a{
+				cursor: default;
+			}
+			.bar{
+				opacity: 1;
+			}
+		}
+	}
+	&Item{
+		display: block;
+		height: 100px;
+		line-height: 100px;
+		font-family: $ff-add;
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 600;
+		padding: 0 15px;
+	}
+}

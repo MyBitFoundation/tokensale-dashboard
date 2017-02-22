@@ -1,0 +1,85 @@
+
+.card{
+	&__list{
+		@include clearfix;
+	}
+	width: 34%;
+	float: left;
+	padding-right: $defXPad2;
+	padding-bottom: 30px;
+	@include MQ(L){
+		padding-right: 15px;
+		padding-bottom: 0;
+	};
+	@include MQ(S){
+		width: 100%!important;
+		margin-bottom: 10px;
+		padding: 0;
+	};
+	&:last-child{
+		padding-right: 0;
+		width: 32%;
+	}
+	&In{
+		height: 140px;
+		padding: 40px 5px 20px $defXPad2;
+		overflow: hidden;
+		background: #fff;
+		@include border-radius(5px);
+		@include box-shadow($shadow);
+		@include MQ(S){
+			padding: 20px 5px 10px 10px;
+			height: 100px;
+		};
+	}
+	&__pic{
+		float: left;
+		height: 62px;
+		line-height: 62px;
+		width: 62px;
+		font-size: 0;
+		text-align: center;
+		@include border-radius(50%);
+		&.bg1{
+			background: #e66690;
+		}
+		&.bg2{
+			background: #fcca59;
+		}
+		img{
+			vertical-align: middle;
+		}
+	}
+	&__info{
+		margin-left: 85px;
+		overflow: hidden;
+		&Data{
+			font-size: 1rem;
+			color: #aaaeb3;
+			margin-bottom: 7px;
+			.equal{
+				font-size: 2rem;
+				line-height: 32px;
+				padding: 0 2%;
+			}
+			b{
+				font-size: 2rem;
+				line-height: 35px;
+			}
+			& > *{
+				vertical-align: bottom;
+				padding-right: 2px;
+			}
+		}
+		&Label{
+			font-size: 1rem;
+			color: #281f39;
+			font-weight: 600;
+		}
+		.colspan{
+			display: inline-block;
+			vertical-align: top;
+			white-space: nowrap;
+		}
+	}
+}

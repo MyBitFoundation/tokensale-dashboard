@@ -1,0 +1,107 @@
+.menu-open{
+	.menuS__backdrops{
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+	}
+}
+.menuBtn{
+	display: none;
+	background: transparent;
+	height: 100px;
+	@include transition();
+	&:hover{opacity: .6;}
+	@include MQ(M){
+		display: inline-block;
+	};
+	& > span{
+		display: block;
+		width: 24px;
+		height: 4px;
+		@include border-radius();
+		margin-bottom: 4px;
+		background: $brand-color;
+	}
+}
+.menuS{
+	position: fixed;
+	z-index: 21;
+	top: 0;
+	bottom: 0;
+	left: -420px;
+	width: 420px;
+	max-width: 100%;
+	background: #1d1d1d;
+	@include transition();
+	@include MQ(S){
+		left: -90%;
+		width: 90%;
+	}
+
+	&.menu-open{
+		left: 0;
+		@include MQ(S){
+			left: 0;
+			width: 90%;
+		}
+	}
+	&__backdrops{
+		opacity: 0;
+		visibility: hidden;
+		pointer-events:  none;
+		position: fixed;
+		background: rgba(0, 0, 0, .38);
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		z-index: 20;
+		@include transition();
+	}
+
+	&__wrap{}
+	&__list{}
+	&__li{
+
+	}
+	&__item{
+		display: block;
+		font-size: 20px;
+		font-weight: 600;
+		color: #fff;
+		font-family: $ff-add;
+		text-transform: uppercase;
+		padding-left: 65px;
+		height: 70px;
+		line-height: 70px;
+		@include MQ(S){
+			height: 50px;
+			line-height: 50px;
+		};
+	}
+
+}
+
+
+.menuS__logo{
+	display: inline-block;
+	padding: 30px 35px;
+	@include transition();
+	&:hover{opacity: .6;}
+	img{
+		display: inline-block;
+		height: 62px;
+		vertical-align: middle;
+	}
+}
+.menuS__close{
+	position: absolute;
+	font-size: 20px;
+	color: $brand-color;
+	top: 30px;
+	right: 20px;
+	padding: 10px;
+	@include transition();
+	&:hover{opacity: .6;}
+}
