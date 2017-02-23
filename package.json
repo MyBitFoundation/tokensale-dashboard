@@ -12,10 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
+    "copy-to-clipboard": "^3.0.5",
     "counterpart": "^0.17.6",
     "immutable": "^3.8.1",
     "load-script": "^1.0.0",
     "moment": "^2.17.1",
+    "node-sass": "^4.5.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-interpolate-component": "^0.10.0",
@@ -24,7 +26,8 @@
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-modules": "^1.0.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
