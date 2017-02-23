@@ -13,11 +13,12 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { configureStore } from 'stores/RootReducer';
 import { component } from 'app/routes';
 
-
+import {initialize} from 'actions/GlobalActions';
 
 const store = configureStore(browserHistory, window.__initialState__);
 const history = syncHistoryWithStore(browserHistory, store);
 
+store.dispatch(initialize());
 
 ReactDOM.render(
     <Provider store={store}>

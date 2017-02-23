@@ -5,11 +5,13 @@ import thunk from 'redux-thunk';
 
 
 import modalsReducer from './ModalsReducer';
+import accountReducer from './AccountReducer';
 
 export function configureStore(history, initialState) {
     const reducers = combineReducers({
         routing: routerReducer,
-        modals: modalsReducer
+        modals: modalsReducer,
+        account: accountReducer
     });
 
     const store = createStore(

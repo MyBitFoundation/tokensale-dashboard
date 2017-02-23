@@ -16,3 +16,4 @@ require('assets/images/cur/rep.png');
 require('assets/images/cur_lg/btc_lg.png');
 require('assets/images/cur_lg/xmr_lg.png');
 require('assets/images/img_cont/qrcode.png');
+require('assets/images/img_cont/qrcode_lg.png');

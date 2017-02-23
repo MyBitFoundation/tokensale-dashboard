@@ -43,9 +43,8 @@ let createConfig = (options) => {
             process.stdout.write(`${(percentage * 100).toFixed(2)}% ${msg}`);
         }),
         new webpack.DefinePlugin({
-            __PRODUCTION__  : JSON.stringify(production),
-            __SOCKET_URL__  : JSON.stringify(config.socketURL),
-            __API_URL__     : JSON.stringify(config.apiURL)
+            __API_URL__    : JSON.stringify(config.apiURL),
+            __REDIRECT_URL__ : JSON.stringify(config.redirectURL)
         }),
         new ExtractTextPlugin("style.css")
     ];

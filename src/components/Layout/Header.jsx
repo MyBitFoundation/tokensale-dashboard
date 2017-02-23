@@ -2,14 +2,19 @@ import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
+import { signOut } from 'actions/GlobalActions';
+
 function mapStateToProps(state, ownProps){
     return {
-        location: state.routing.locationBeforeTransitions.pathname
+        location: state.routing.locationBeforeTransitions.pathname,
+        email: state.account.email
     };
 }
 
 function mapDispatchToProps(dispatch){
-    return {};
+    return {
+        signOut: () => dispatch(signOut())
+    };
 }
 
 class Header extends React.Component {
@@ -32,6 +37,10 @@ class Header extends React.Component {
         this.setState({open: false});
     }
 
+    onSignOut() {
+        this.props.signOut();
+    }
+
     render() {
         let {location} = this.props;
         let {open} =this.state;
@@ -49,7 +58,7 @@ class Header extends React.Component {
                     </Link>
                     <div className="header__profile">
                         <div>
-                            <a href="" className="header__profileName ">valik_prusskiy@gmail.com</a>
+                            <a href="" className="header__profileName ">{this.props.email}</a>
                             <a href="" className="header__login none" data-toggle="modal" data-target="#modalLogin">
                                 <span className="">LOGIN</span>
                                 <span className="header__loginIcon icon-door"></span>
@@ -57,7 +66,7 @@ class Header extends React.Component {
                         </div>
 
                         <div>
-                            <a href="" className="header__sign">Sign Up</a>
+                            <a href="javascript:;" className="header__sign" onClick={this.onSignOut.bind(this)}>Sign Out</a>
                         </div>
                     </div>
                     <div className="header__menu">
