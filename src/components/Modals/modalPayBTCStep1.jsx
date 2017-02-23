@@ -3,7 +3,7 @@ import React from 'react';
 export default class Modal extends React.Component {
     render() {
         return (
-            <div className="modal fade" id="modalPayBTCStep1">
+            <div className="modal fade in" id="modalPayBTCStep1">
                 <div className="modal-dialog">
                     <div className="modal-dialogAlignOut">
                         <div className="modal-dialogAlignIn">

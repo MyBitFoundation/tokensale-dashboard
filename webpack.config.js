@@ -3,8 +3,6 @@ const path = require('path');
 const config = require("./config.js");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-//let scssLoaders = "style-loader!css-loader!postcss-loader!sass-loader?outputStyle=expanded";
-
 const PATHS = {
     src     : path.resolve(__dirname, 'src'),
     dist    : path.resolve(__dirname,'dist')
