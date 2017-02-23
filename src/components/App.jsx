@@ -11,6 +11,7 @@ import Footer from './Layout/Footer';
 
 function mapStateToProps(state, ownProps){
     return {
+        openModal: state.modals.open
     };
 }
 
@@ -20,8 +21,13 @@ function mapDispatchToProps(dispatch){
 
 class App extends React.Component {
 
+    constructor() {
+        super();
+    }
+
     render() {
         let {children} = this.props;
+
         return (
             <div className="out">
                 <ModalPayBTCStep1 />
@@ -32,6 +38,7 @@ class App extends React.Component {
                     {children}
             	</div>
                 <Footer />
+                {this.props.openModal ? <div className="modal-backdrop fade in"></div> : null}
             </div>
         );
     }
