@@ -154,10 +154,3 @@
 		}
 	}
 }
-.qr{
-	margin-top: 50px;
-	margin-bottom: 15px;
-	@include MQ(S){
-		margin: 15px 0;
-	};
-}

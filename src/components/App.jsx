@@ -18,7 +18,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="out">
                 <ModalPayBTCStep1 />
                 <ModalPayBTCStep2 />
                 <ModalPayMoneroStep2 />
@@ -199,12 +199,12 @@ class App extends React.Component {
             								<div className="card__info">
             									<div className="card__infoData">
             										<div className="colspan">
-            											<b className="mark1">1</b>
+            											<b className="mark1">1 </b>
             											<span>ETH</span>
             										</div>
             										<span className="equal">=</span>
             										<div className="colspan">
-            											<b className="mark1">100</b>
+            											<b className="mark1">100 </b>
             											<span>Token</span>
             										</div>
             									</div>
@@ -220,11 +220,11 @@ class App extends React.Component {
             								<div className="card__info">
             									<div className="card__infoData">
             										<div className="colspan">
-            											<b className="mark2">23</b>
+            											<b className="mark2">23 </b>
             											<span className="pr-10">Days</span>
             										</div>
             										<div className="colspan">
-            											<b className="mark3">7</b>
+            											<b className="mark3">7 </b>
             											<span>Hours</span>
             										</div>
             									</div>

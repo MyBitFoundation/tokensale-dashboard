@@ -1,33 +1,41 @@
 .field{
 	font-size: 18px;
+	font-family: $ff-main;
+	font-weight: 600;
 	color: #281f39;
 	border: 1px solid #dcdcdc;
 	height: 60px;
 	background: transparent;
 	width: 100%;
-	padding: 0 23px;
+	padding: 0 20px;
 	vertical-align: top;
 	@include border-radius(7px);
 	@include plhl-color(rgba(0,0,0,.37));
 	@include transition(all .15s ease);
+	@include plhl-color(#cecdd1);
 
 	&[disabled]{
 		background: #f9f9fa;
+		border-width: 1px;
+		border-color: #dcdcdc!important;
 	}
-	&[readonly]{
-		&:focus{
-			border-bottom: 1px solid #E4E0E9;
-		}
-	}
+	&[readonly]{}
 
 	&:focus{
-		border-bottom: 2px solid red;
+		border-width: 2px;
+		border-color: $brand-color;
+	}
+	&.error{
+		border-width: 2px;
+		border-color: #ef5172!important;
 	}
 
-	&-oneLine{
-		@include ellipsis;
-		padding-right: 0;
-	}
+}
+.field2{
+	@extend .field;
+	@include border-radius(3px);
+	font-size: 1rem;
+	height: 48px;
 }
 .textarea{
 	padding: 7px 30px 7px 0;
@@ -41,6 +49,7 @@
 	background: transparent;
 	vertical-align: top;
 	font-weight: 700;
+	font-family: $ff-main;
 	text-transform: uppercase;
 	@include border-radius(60px);
 	@include transition();
@@ -107,5 +116,12 @@
 				margin: 15px 0 0;
 			};
 		}
+	}
+	&-formSbm{
+		@extend .btn-orange;
+		font-size: 1rem;
+		text-transform: uppercase;
+		height: 40px;
+		width: 150px;
 	}
 }

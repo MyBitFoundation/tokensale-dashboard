@@ -1,6 +1,9 @@
 @import "variables";
 @import "mixins";
 
+.out{
+	height: 100%;
+}
 html{height: 100%; font-size: 100%;}
 body{
 	height: 100%;
@@ -31,6 +34,9 @@ b{
 	height: auto !important;
 	padding-bottom: 150px;
 	@include clearfix();
+	@include MQ(S){
+		padding-bottom: 100px;
+	};
 }
 .box{
 	padding: 0 $defXPad;
@@ -42,29 +48,6 @@ b{
 }
 .content{
 	margin: 0 auto;
-	&-2fa{
-		.h1{
-			text-align: center;
-			padding-bottom: 5px;
-		}
-		.descr{
-			text-align: center;
-		}
-		.main{
-			@include clearfix;
-		}
-		.title{
-			font-size: 1.75rem;
-			font-weight: 600;
-			margin-bottom: 10px;
-			padding: 0;
-			border: none;
-		}
-		p{
-			font-size: 1rem;
-			margin-bottom: 10px;
-		}
-	}
 }
 .h1{
 	color: #281f39;
@@ -88,19 +71,48 @@ b{
 			margin-left: 0;
 		};
 	}
-	&__col{
-		float: left;
-		width: 50%;
-		&.left{
-			padding-right: 55px;
+}
+.main__col{
+	float: left;
+	width: 47%;
+	max-width: 480px;
+	&.left{}
+	&.right{
+		background: #fff;
+		@include border-radius(5px);
+		@include box-shadow($shadow);
+		@include border-radius(8px);
+		float: right;
+		margin-top: 14px;
+		padding: 25px 40px 40px;
+	}
+	&.one{
+		background: #fff;
+		@include border-radius(5px);
+		@include box-shadow($shadow);
+		@include border-radius(8px);
+		float: none;
+		margin: auto;
+		padding: 40px;
+		.title{
+			text-align: center;
+			margin-bottom: 31px;
 		}
 	}
+	@include MQ(S){
+		width: 100%;
+		float: none!important;
+		margin: 0 0 10px!important;
+		padding: 10px 10px 20px!important;
+	};
 }
+
 
 .mark1{color: #8f9296;}
 .mark2{color: #fc8b19;}
 .mark3{color: #ffb66b;}
 .mark4{color: #34b3d1;}
+.mark5{color: #ef5172;font-style: normal;}
 .title{
 	font-size: 16px;
 	font-weight: 600;
@@ -150,4 +162,24 @@ b{
 
 .descr{
 	margin-bottom: 10px;
+	letter-spacing: -.2px;
+}
+.qr{
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	@include MQ(S){
+		margin: 15px 0;
+	};
+	&__text{
+		font-size: 1rem;
+		font-weight: 600;
+		text-align: center;
+	}
+}
+.attn{
+	font-size: 0.8125rem;
+	margin-bottom: 18px;
+	margin-top: 14px;
+	line-height: 1.6;
 }

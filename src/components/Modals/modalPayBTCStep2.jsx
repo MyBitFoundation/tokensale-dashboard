@@ -20,7 +20,7 @@ export default class Modal extends React.Component {
                                         in order to make a payment.
                                     </div>
                                     <div className="qr">
-                                        <img src="images/img_cont/qrcode.png" alt=""/>
+                                        <img src="images/qrcode.png" alt=""/>
                                     </div>
                                     <div className="row ">
                                         <label htmlFor="key01" className="label text_l">16-Digit_Key</label>
