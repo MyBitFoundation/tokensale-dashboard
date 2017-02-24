@@ -25,3 +25,11 @@ export function signOut() {
         });
     }
 }
+
+export function checkAuthorization() {
+    return (dispatch, getState) => {
+        get('/users/me').catch(err => {
+            window.location.href = __REDIRECT_URL__
+        });
+    }
+}

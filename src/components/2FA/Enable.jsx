@@ -27,12 +27,13 @@ class Enable extends React.Component {
             privateKeyError: '',
             password: '',
             passwordError: '',
-            checkbox: false
+            checkbox: false,
+            error: ''
         }
     }
 
     onChangeInput(type, e) {
-        this.setState({[type]: e.target.value});
+        this.setState({[type]: e.target.value, [`${type}Error`]: ''});
     }
 
     onToggleCheckbox() {
@@ -41,20 +42,22 @@ class Enable extends React.Component {
     }
 
     onEnable() {
-        let {error, privateKey, password, checkbox} = this.state;
+        let {privateKey, password, checkbox} = this.state;
 
-        if(!privateKey)
+        if(!privateKey || privateKey.length < 6)
             return this.setState({privateKeyError: "6-Digit Key is required and must contain 6 characters"});
-        if(!password)
+        if(!password || password.length < 6)
             return this.setState({passwordError: "Password is required and must contain at least 6 characters"});
         if(!checkbox)
-            return this.setState({error: "confim"});
-            console.log(password)
-        this.props.enableTFA(this.props.tfaSecret, password);
+            return this.setState({error: "Confirmation is required"});
+
+        this.props.enableTFA(this.props.tfaSecret, password).catch(error => {
+            this.setState({passwordError: "Invalid password"});
+        });
     }
 
     render() {
-        let {error, privateKey, password, checkbox} = this.state;
+        let {error, privateKey, password, checkbox, privateKeyError, passwordError} = this.state;
         let {tfaSecret, url} = this.props;
         return (
             <section className="content content-2fa">
@@ -92,25 +95,27 @@ class Enable extends React.Component {
         						</i>
         					</div>
         					<div className="row ">
-        						{error ? <div className="error__text">{error}</div> : null}
+        						{passwordError ? <div className="error__text">{passwordError}</div> : null}
         						<label htmlFor="key02" className="label text_l">Password</label>
         						<input
-                                    className={`field2 ${error ? 'error' : null}`}
+                                    className={`field2 ${passwordError ? 'error' : null}`}
                                     id="key02"
                                     type="password"
                                     value={password}
                                     onChange={this.onChangeInput.bind(this, 'password')}/>
         					</div>
         					<div className="row ">
+                                {privateKeyError ? <div className="error__text">{privateKeyError}</div> : null}
         						<label htmlFor="key03" className="label text_l">6-Digit Key</label>
         						<input
-                                    className="field2"
+                                    className={`field2 ${privateKeyError ? 'error' : null}`}
                                     id="key03"
                                     type="text"
                                     value={privateKey}
                                     onChange={this.onChangeInput.bind(this, 'privateKey')}/>
         					</div>
         					<div className="row">
+                                {error ? <div className="error__text">{error}</div> : null}
         						<label className="customCheck__label">
                                     <span className="customCheck__labelRelative">
                                         <input type="checkbox" className="customCheck__check" value={checkbox} onChange={this.onToggleCheckbox.bind(this)}/>

@@ -22,22 +22,28 @@ export function loadTFA() {
 
 export function enableTFA(secret, password) {
     return (dispatch, getState) => {
-        post('/users/enable-tfa', {secret, password}).then(data => {
-            dispatch({
-                type: 'TFA_ENABLED',
-                payload: data
-            })
+        return new Promise ((resolve, reject) => {
+            post('/users/enable-tfa', {secret, password}).then(data => {
+                dispatch({
+                    type: 'TFA_ENABLED',
+                    payload: data
+                })
+                resolve(data);
+            }).catch(error => reject(error));
         })
     }
 }
 
 export function disableTFA(token, password) {
     return (dispatch, getState) => {
-        post('/users/disable-tfa', {token, password}).then(data => {
-            dispatch({
-                type: 'TFA_DISABLED',
-                payload: data
-            })
+        return new Promise ((resolve, reject) => {
+            post('/users/disable-tfa', {token, password}).then(data => {
+                dispatch({
+                    type: 'TFA_DISABLED',
+                    payload: data
+                })
+                resolve(data);
+            }).catch(error => reject(error));
         })
     }
 }

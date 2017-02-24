@@ -6,13 +6,13 @@ import Dashboard from 'components/Dashboard/DashboardContainer';
 import FA from 'components/2FA/2FAContainer';
 import Settings from 'components/Settings/SettingsContainer';
 
-import {initialize} from 'actions/GlobalActions';
+import {checkAuthorization} from 'actions/GlobalActions';
 
 const component = (
-    <Route path='/' component={App}>
-        <IndexRoute component={Dashboard}/>
-        <Route path="fa" component={FA} />
-        <Route path="settings" component={Settings} />
+    <Route path='/' component={App} onEnter={checkAuthorization()}>
+        <IndexRoute component={Dashboard} onEnter={checkAuthorization()}/>
+        <Route path="fa" component={FA} onEnter={checkAuthorization()}/>
+        <Route path="settings" component={Settings} onEnter={checkAuthorization()}/>
     </Route>
 );
 

@@ -15,14 +15,12 @@ import { component } from 'app/routes';
 
 import {initialize} from 'actions/GlobalActions';
 import {load} from 'actions/DashboardActions';
-//import {loadTFA} from 'actions/TFAActions';
 
 const store = configureStore(browserHistory, window.__initialState__);
 const history = syncHistoryWithStore(browserHistory, store);
 
 store.dispatch(initialize());
 store.dispatch(load());
-//store.dispatch(loadTFA());
 
 ReactDOM.render(
     <Provider store={store}>
