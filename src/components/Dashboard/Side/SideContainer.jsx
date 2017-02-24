@@ -1,31 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Menu from './Menu';
 
-export default class Sidebar extends React.Component {
-    render() {
-        let currencies = [
-            {name: 'btc', num: 1.00000},
-            {name: 'etc', num: 803.0516},
-            {name: 'eth', num: 78.97709},
-            {name: 'xmr', num: 1.00000},
-            {name: 'dash', num: 1.00000},
-            {name: 'rep', num: 146842.87812}
-        ];
+function mapStateToProps(state, ownProps){
+    return {
+        rates: state.dashboard.get('rates')['crypto']
+    };
+}
 
-        let rows = currencies.map(cur => {
-            return (
-                <div key={cur.name + cur.num} className="sidebar__row">
+function mapDispatchToProps(dispatch){
+    return {};
+}
+
+class Sidebar extends React.Component {
+    render() {
+
+        let {rates} = this.props;
+
+        let rows = [];
+        for(let name in rates) {
+            rows.push(
+                <div key={name} className="sidebar__row">
                     <div className="sidebar__cur">
                         <span className="cur__icon">
-                            <img src={`images/${cur.name}_sm.png`} alt=""/>
+                            <img src={`images/${name.toLowerCase()}_sm.png`} alt=""/>
                         </span>
-                        <span className="cur__name">{cur.name}</span>
+                        <span className="cur__name">{name}</span>
                     </div>
-                    <div className="sidebar__num">{cur.num}</div>
+                    <div className="sidebar__num">{rates[name]}</div>
                 </div>
-            );
-        })
+            )
+        }
 
         return (
             <div className="sidebar">
@@ -38,3 +44,4 @@ export default class Sidebar extends React.Component {
         );
     }
 }
+export default connect(mapStateToProps,mapDispatchToProps)(Sidebar);

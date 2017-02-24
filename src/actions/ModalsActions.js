@@ -1,10 +1,11 @@
+import {get, post} from 'services/Api';
 
 class ModalsActions {
-    static openModal(modal) {
+    static openStep1(currency) {
         return (dispatch, getState) => {
             dispatch({
-                type: 'OPEN_MODAL',
-                payload: modal
+                type: 'OPEN_STEP_1',
+                payload: currency
             });
         }
     }
@@ -13,6 +14,20 @@ class ModalsActions {
             dispatch({
                 type: 'CLOSE_MODAL'
             });
+        }
+    }
+
+    static generate(currency) {
+        return (dispatch, getState) => {
+            post('/crowdsale/deposit', {currency}).then(data => {
+                console.log(data)
+                dispatch({
+                    type: 'OPEN_STEP_2',
+                    payload: data
+                })
+            }).catch(error => {
+                console.log(error)
+            })
         }
     }
 }

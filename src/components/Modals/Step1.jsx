@@ -3,34 +3,37 @@ import { connect } from 'react-redux';
 
 import ModalsActions from 'actions/ModalsActions';
 
+
 function mapStateToProps(state){
     return {
-        modal: state.modals.modal,
-        open: state.modals.open
+        modal: state.modals.get('modal'),
+        open: state.modals.get('open'),
+        currency: state.modals.get('currency')
     };
 }
 
 function mapDispatchToProps(dispatch){
     return {
         openModal: (modal) => dispatch(ModalsActions.openModal(modal)),
-        closeModal: () => dispatch(ModalsActions.closeModal())
+        closeModal: () => dispatch(ModalsActions.closeModal()),
+        generate: (currency) => dispatch(ModalsActions.generate(currency))
     };
 }
 
 
-class Modal extends React.Component {
+class Step1 extends React.Component {
 
     onGenerate() {
-        this.props.openModal('modalPayBTCStep2');
+        this.props.generate(this.props.currency);
     }
 
     render() {
-        let {modal, open} = this.props;
+        let {modal, open, currency} = this.props;
         return (
             <div
-                className={`modal fade ${open && modal === 'modalPayBTCStep1' ? 'in' : ''}`}
-                style={{display: open && modal === 'modalPayBTCStep1' ? 'block' : 'none'}}
-                id="modalPayBTCStep1"
+                className={`modal fade ${open && modal === 'step1' ? 'in' : ''}`}
+                style={{display: open && modal === 'step1' ? 'block' : 'none'}}
+                id="modalPayStep1"
             >
                 <div className="modal-dialog">
                     <div className="modal-dialogAlignOut">
@@ -40,19 +43,14 @@ class Modal extends React.Component {
 
                                 <div className="modal__body text_c">
                                     <div className="modal__curPic">
-                                        <img src="images/btc_lg.png" alt=""/>
+                                        <img src={currency ? `images/${currency.toLowerCase()}_lg.png` : ''} alt=""/>
                                     </div>
-                                    <h2 className="modal__title">Pay with BTC</h2>
+                                    <h2 className="modal__title">Pay with {currency.toUpperCase()}</h2>
                                     <div className="modal__note">Please Generate Wallet Address</div>
                                     <div className="modal__btns">
-                                        <button
-                                            className="btn btn-sbm js-btnGenerate"
-                                            data-dismiss="modal"
-                                            data-toggle="modal"
-                                            data-target="#modalPayBTCStep2"
-                                            type="button"
-                                            onClick={this.onGenerate.bind(this)}
-                                        >Generate</button>
+                                        <button className="btn btn-sbm js-btnGenerate" type="button" onClick={this.onGenerate.bind(this)} >
+                                            Generate
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -64,4 +62,4 @@ class Modal extends React.Component {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Modal);
+export default connect(mapStateToProps,mapDispatchToProps)(Step1);

@@ -1,23 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default class Menu extends React.Component {
+
+function mapStateToProps(state, ownProps){
+    return {
+        rates: state.dashboard.get('rates')['fiat']
+    };
+}
+
+function mapDispatchToProps(dispatch){
+    return {};
+}
+
+
+class Menu extends React.Component {
     constructor() {
         super();
         this.state = {
             open: false,
-            current: {name: 'EUR', num: 234.457},
-            list: [
-                {name: 'EUR', num: 234.457},
-                {name: 'USD', num: 803.0516},
-                {name: 'CNY', num: 78.97709},
-                {name: 'GBP', num: 1.00000},
-                {name: 'AUD', num: 1.00000},
-                {name: 'CAD', num: 146842.87812},
-                {name: 'SGD', num: 78.97709},
-                {name: 'INR', num: 1.00000},
-                {name: 'RUB', num: 1.00000},
-                {name: 'JPY', num: 146842.87812}
-            ]
+            current: 'EUR'
         };
     }
 
@@ -31,25 +32,28 @@ export default class Menu extends React.Component {
     }
 
     render() {
-        let {open, current, list} = this.state;
+        let {open, current} = this.state;
 
-        let menuItems = list.map(item => {
-            return (
-                <li key={item.name} className="ddMenu__li">
+        let {rates} = this.props;
+
+        let menuItems = [];
+        for(let name in rates) {
+            menuItems.push(
+                <li key={name} className="ddMenu__li">
                     <a
                         href="javascript:;"
-                        className={`ddMenu__item js-sel_dropDown ${current === item ? 'active' : ''}`}
-                        onClick={this.onChangeCurrent.bind(this, item)}
-                    >{item.name}</a>
+                        className={`ddMenu__item js-sel_dropDown ${current === name ? 'active' : ''}`}
+                        onClick={this.onChangeCurrent.bind(this, name)}
+                    >{name}</a>
                 </li>
-            );
-        })
+            )
+        }
 
         return (
             <div className="sidebar__tumbler">
                 <div className={`sidebar__select dd ${open ? 'open' : ''}`}>
                     <a href="javascript:;" className="ddTrigger ddArrow" data-toggle="dropdown" onClick={this.onToggleMenu.bind(this)}>
-                        <span className="ddTrigger__text">{current.name}</span>
+                        <span className="ddTrigger__text">{current}</span>
                     </a>
                     <div className="ddMenu">
                         <ul className="ddMenu__list">
@@ -57,8 +61,10 @@ export default class Menu extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div className="sidebar__num">{current.num}</div>
+                <div className="sidebar__num">{rates[current]}</div>
             </div>
         );
     }
 }
+
+export default connect(mapStateToProps,mapDispatchToProps)(Menu);

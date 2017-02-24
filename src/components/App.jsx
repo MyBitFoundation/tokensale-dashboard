@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import ModalPayBTCStep1 from './Modals/modalPayBTCStep1';
-import ModalPayBTCStep2 from './Modals/modalPayBTCStep2';
+import Step1 from './Modals/Step1';
+import Step2 from './Modals/Step2';
 import ModalPayMoneroStep2 from './Modals/modalPayMoneroStep2';
 
 import Header from './Layout/Header';
@@ -11,7 +11,7 @@ import Footer from './Layout/Footer';
 
 function mapStateToProps(state, ownProps){
     return {
-        openModal: state.modals.open
+        openModal: state.modals.get('open')
     };
 }
 
@@ -27,11 +27,10 @@ class App extends React.Component {
 
     render() {
         let {children} = this.props;
-        console.log('sd')
         return (
             <div className="out">
-                <ModalPayBTCStep1 />
-                <ModalPayBTCStep2 />
+                <Step1 />
+                <Step2 />
                 <ModalPayMoneroStep2 />
                 <div className="wrapper wrapper-with-footer">
                     <Header />

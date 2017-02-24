@@ -9,7 +9,7 @@ import Settings from 'components/Settings/SettingsContainer';
 import {initialize} from 'actions/GlobalActions';
 
 const component = (
-    <Route path='/' component={App} onEnter={() => initialize()}>
+    <Route path='/' component={App}>
         <IndexRoute component={Dashboard}/>
         <Route path="fa" component={FA} />
         <Route path="settings" component={Settings} />

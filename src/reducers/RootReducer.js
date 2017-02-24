@@ -6,12 +6,14 @@ import thunk from 'redux-thunk';
 
 import modalsReducer from './ModalsReducer';
 import accountReducer from './AccountReducer';
+import dashboardReducer from './DashboardReducer';
 
 export function configureStore(history, initialState) {
     const reducers = combineReducers({
         routing: routerReducer,
         modals: modalsReducer,
-        account: accountReducer
+        account: accountReducer,
+        dashboard: dashboardReducer
     });
 
     const store = createStore(

@@ -44,7 +44,8 @@ let createConfig = (options) => {
         }),
         new webpack.DefinePlugin({
             __API_URL__    : JSON.stringify(config.apiURL),
-            __REDIRECT_URL__ : JSON.stringify(config.redirectURL)
+            __REDIRECT_URL__ : JSON.stringify(config.redirectURL),
+            __TIME__ : JSON.stringify(config.time)
         }),
         new ExtractTextPlugin("style.css")
     ];

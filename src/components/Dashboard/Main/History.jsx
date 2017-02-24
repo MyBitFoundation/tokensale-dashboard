@@ -1,21 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default class History extends React.Component {
+
+function mapStateToProps(state, ownProps){
+    return {
+        history: state.dashboard.get('history')
+    };
+}
+
+function mapDispatchToProps(dispatch){
+    return {};
+}
+
+
+class History extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            history: [
-                {date: 'Feb 16, 16:39:02', amount: {amount: 10, cur: 'USD'}, rate: {base: {amount: 1, cur: 'USD'},query: {amount: 1, cur: 'BITS'}},address: '1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs'},
-                {date: 'Feb 16, 15:32:02', amount: {amount: 0.5, cur: 'BITS'}, rate: {base: {amount: 1, cur: 'BTC'}, query: {amount: 500, cur: 'Tokens'}}, address: 'agjsgo1jakskfhLsdgljasjgklasdagjsgo1jakskfhLsdgljasjgklasd'},
-                {date: 'Feb 02, 08:24:38', amount: {amount: 35, cur: 'ETH'}, rate: {base: {amount: 1, cur: 'ETH'}, query: {amount: 12, cur: 'Tokens'}}, address: '1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs'},
-                {date: 'Jan 31, 12:58:01', amount: {amount: 0.5, cur: 'BTC'}, rate: {base: {amount: 1, cur: 'USD'}, query: {amount: 1, cur: 'BITS'}}, address: '1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdsshhshZ9LwuPaEeHTgs'},
-                {date: 'Jan 31, 12:58:01', amount: {amount: 0.5, cur: 'BTC'}, rate: {base: {amount: 1, cur: 'USD'}, query: {amount: 1, cur: 'BITS'}}, address: '1HEc7sdhhshZ9LwuPaEeHTgs1kghHEc7sdhhshZ9LwuPaEeHTgs'},
-                {date: 'Jan 31, 12:58:01', amount: {amount: 0.5, cur: 'BTC'}, rate: {base: {amount: 1, cur: 'USD'}, query: {amount: 1, cur: 'BITS'}}, address: '1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhdfhhshZ9LwuPaEeHTgs'},
-                {date: 'Jan 31, 12:58:01', amount: {amount: 0.5, cur: 'BTC'}, rate: {base: {amount: 1, cur: 'USD'}, query: {amount: 1, cur: 'BITS'}}, address: '1HEc7sdhhshZ9LwuffPaEeHTgs1HEc7sdsshhshZ9LwuPaEeHTgs'},
-                {date: 'Jan 31, 12:58:01', amount: {amount: 0.5, cur: 'BTC'}, rate: {base: {amount: 1, cur: 'USD'}, query: {amount: 1, cur: 'BITS'}}, address: '1HEc7sdhhshZ9LwusdaPaEeHTgs1kghHEc7sdhhshZ9LwuPaEeHTgs'},
-                {date: 'Jan 31, 12:58:01', amount: {amount: 0.5, cur: 'BTC'}, rate: {base: {amount: 1, cur: 'USD'}, query: {amount: 1, cur: 'BITS'}}, address: '1HEc7sdhhsh48Z9LwuPaEeHTgs1HEc7sdhdfhhshZ9LwuPaEeHTgs'}
-            ],
             count: 4
         };
     }
@@ -27,21 +29,33 @@ export default class History extends React.Component {
 
     render() {
 
-        let {history, count} = this.state;
+        let {count} = this.state;
+        let {history} = this.props;
+
+        let presicion = 10;
+        let options = {
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: false
+        };
+        
 
         let table = history.map((item, index) => {
             return (
-                <div key={item.date + item.amount.cur + item.address} className={`tr ${index + 1 > count ? 'inactive' : '' }`}>
+                <div key={item.transactionId} className={`tr ${index + 1 > count ? 'inactive' : '' }`}>
                     <div className="td td-date">
-                        <div className="tdIn">{item.date}</div>
+                        <div className="tdIn">{new Date(item.date).toLocaleString("en-US", options)}</div>
                     </div>
                     <div className="td td-amount">
                         <div className="tdIn">
-                            <b>{item.amount.amount}</b> {item.amount.cur}
+                            <b>{item.sentAmount}</b> {item.sentCoinType}
                         </div>
                     </div>
                     <div className="td td-rate">
-                        <div className="tdIn">{item.rate.base.amount} {item.rate.base.cur} = {item.rate.query.amount} {item.rate.query.cur}</div>
+                        <div className="tdIn">1 token = {Math.floor(item.rate * presicion) / presicion} {item.sentCoinType}</div>
                     </div>
                     <div className="td td-address">
                         <div className="tdIn">{item.address}</div>
@@ -92,3 +106,5 @@ export default class History extends React.Component {
         );
     }
 }
+
+export default connect(mapStateToProps,mapDispatchToProps)(History);
