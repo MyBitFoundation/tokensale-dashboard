@@ -8,7 +8,7 @@ const initialState =  Map({
     }
 })
 
-export default function ModalsReducer(state = initialState, action) {
+export default function DashboardReducer(state = initialState, action) {
     switch(action.type) {
         case 'DASHBOARD_HISTORY':
             state = state.set('history', action.payload)

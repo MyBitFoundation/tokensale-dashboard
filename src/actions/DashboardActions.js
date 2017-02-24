@@ -1,4 +1,5 @@
 import {get, post} from 'services/Api';
+import {loadTFA} from './TFAActions';
 
 export function load() {
     return (dispatch, getState) => {
@@ -14,6 +15,7 @@ export function load() {
                 type: 'DASHBOARD_RATES',
                 payload: data
             })
+            dispatch(loadTFA());
         }).catch(err => {
                 console.log(err)
         });
