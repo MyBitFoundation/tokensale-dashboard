@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import Step1 from './Modals/Step1';
 import Step2 from './Modals/Step2';
-import ModalPayMoneroStep2 from './Modals/modalPayMoneroStep2';
 
 import Header from './Layout/Header';
 import Footer from './Layout/Footer';
@@ -31,7 +30,6 @@ class App extends React.Component {
             <div className="out">
                 <Step1 />
                 <Step2 />
-                <ModalPayMoneroStep2 />
                 <div className="wrapper wrapper-with-footer">
                     <Header />
                     {children}
