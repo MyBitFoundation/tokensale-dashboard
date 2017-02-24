@@ -20,7 +20,7 @@ export function get(url) {
         })
         .then(data => {
             resolve(JSON.parse(data))
-        }).catch(err => {
+        }).catch(error => {
             reject(error);
         });
     })
@@ -36,7 +36,7 @@ export function post(url, params){
         formBody.push(encodedKey + "=" + encodedValue);
     }
     formBody = formBody.join("&");
-    
+
     return new Promise((resolve, reject)=>{
 
         fetch(`${__API_URL__}${url}`, {

@@ -20,7 +20,6 @@ class ModalsActions {
     static generate(currency) {
         return (dispatch, getState) => {
             post('/crowdsale/deposit', {currency}).then(data => {
-                console.log(data)
                 dispatch({
                     type: 'OPEN_STEP_2',
                     payload: data
