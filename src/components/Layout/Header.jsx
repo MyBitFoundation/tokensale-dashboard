@@ -7,7 +7,7 @@ import { signOut } from 'actions/GlobalActions';
 function mapStateToProps(state, ownProps){
     return {
         location: state.routing.locationBeforeTransitions.pathname,
-        email: state.account.email
+        email: state.account.get('email')
     };
 }
 

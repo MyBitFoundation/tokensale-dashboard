@@ -1,21 +1,23 @@
+import { Map } from 'immutable';
 
-const initialState = {
+const initialState = Map({
     email: null,
     balance: 0,
     lastLoginDate: null
-}
+});
 
 export default function ModalsReducer(state = initialState, action) {
     switch(action.type) {
         case 'INIT_ACCOUNT':
-            return {
-                email: action.payload.email,
-                balance: action.payload.balance,
-                lastLoginDate: action.payload.lastLoginDate
-            };
+            state = state.set('email', action.payload.email);
+            state = state.set('balance', action.payload.balance);
+            state = state.set('lastLoginDate', action.payload.lastLoginDate);
+            return state;
         case 'LOGOUT':
-            return initialState;
+            state = initialState;
+            return state;
         default:
-            return initialState;
+            state = initialState;
+            return state;
     }
 }

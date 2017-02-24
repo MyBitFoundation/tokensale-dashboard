@@ -27,7 +27,7 @@ class App extends React.Component {
 
     render() {
         let {children} = this.props;
-
+        console.log('sd')
         return (
             <div className="out">
                 <ModalPayBTCStep1 />
