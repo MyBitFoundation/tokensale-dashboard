@@ -42,6 +42,7 @@ export function disableTFA(token, password) {
                     type: 'TFA_DISABLED',
                     payload: data
                 })
+                dispatch(loadTFA());
                 resolve(data);
             }).catch(error => reject(error));
         })
