@@ -8,4 +8,4 @@
 nginx.access.log
 nginx.error.log
 node_modules
-
+dist
