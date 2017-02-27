@@ -9,3 +9,4 @@ nginx.access.log
 nginx.error.log
 node_modules
 dist
+config.js
