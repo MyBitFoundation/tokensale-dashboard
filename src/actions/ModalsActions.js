@@ -19,6 +19,9 @@ class ModalsActions {
 
     static generate(currency) {
         return (dispatch, getState) => {
+            dispatch({
+                type: 'MODAL_LOADING'
+            });
             post('/crowdsale/deposit', {currency}).then(data => {
                 dispatch({
                     type: 'OPEN_STEP_2',
