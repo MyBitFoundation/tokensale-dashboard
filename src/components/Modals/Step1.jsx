@@ -50,7 +50,7 @@ class Step1 extends React.Component {
                                     <h2 className="modal__title">Pay with {currency.toUpperCase()}</h2>
                                     <div className="modal__note">Please Generate Wallet Address</div>
                                     <div className="modal__btns">
-                                        <button className="btn btn-sbm js-btnGenerate" type="button" onClick={this.onGenerate.bind(this)} >
+                                        <button className="btn btn-sbm js-btnGenerate" type="button" onClick={this.onGenerate.bind(this)} disabled={this.props.loading}>
                                           {this.props.loading ? <span className="loader"></span> : null}
                                           <span className="btnText">Generate</span>
                                         </button>

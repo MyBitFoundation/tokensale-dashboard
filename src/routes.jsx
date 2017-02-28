@@ -11,7 +11,7 @@ import {checkAuthorization} from 'actions/GlobalActions';
 const component = (
     <Route path='/' component={App} onEnter={checkAuthorization()}>
         <IndexRoute component={Dashboard} onEnter={checkAuthorization()}/>
-        <Route path="fa" component={FA} onEnter={checkAuthorization()}/>
+        <Route path="tfa" component={FA} onEnter={checkAuthorization()}/>
         <Route path="settings" component={Settings} onEnter={checkAuthorization()}/>
     </Route>
 );

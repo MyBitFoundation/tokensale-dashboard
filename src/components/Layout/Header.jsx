@@ -77,7 +77,7 @@ class Header extends React.Component {
                             </li>
                             <li className={`header__menuLi barParent ${location === "/fa" ? 'active' : ''}`}>
                                 <div className="bar"></div>
-                                <Link to="/fa" className="header__menuItem">2FA</Link>
+                                <Link to="/tfa" className="header__menuItem">2FA</Link>
                             </li>
                             <li className={`header__menuLi barParent ${location === "/settings" ? 'active' : ''}`}>
                                 <div className="bar"></div>
@@ -99,7 +99,7 @@ class Header extends React.Component {
                             </li>
                             <li className={`menuS__li barVerParent ${location === "/fa" ? 'active' : ''}`}>
                                 <div className="barVer"></div>
-                                <a href="/fa" className="menuS__item">2FA</a>
+                                <a href="/tfa" className="menuS__item">2FA</a>
                             </li>
                             <li className={`menuS__li barVerParent ${location === "/settings" ? 'active' : ''}`}>
                                 <div className="barVer"></div>
