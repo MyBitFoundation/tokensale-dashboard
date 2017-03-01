@@ -41,11 +41,12 @@ class Menu extends React.Component {
     }
 
     componentWillUnmount () {
-        document.getElementById('root').addEventListener('click', this.handleDocumentClick.bind(this))
+        document.getElementById('root').removeEventListener('click', this.handleDocumentClick.bind(this))
     }
 
     handleDocumentClick (e) {
-        const menu = ReactDOM.findDOMNode(this.refs.menu);
+        const menu = ReactDOM.findDOMNode(this.refs.sideMenu);
+        if(!menu) return;
 
         if (!menu.contains(e.target)) {
           this.setState({open: false})
@@ -71,7 +72,7 @@ class Menu extends React.Component {
         }
 
         return (
-            <div className="sidebar__tumbler" ref="menu">
+            <div className="sidebar__tumbler" ref="sideMenu">
                 <div className={`sidebar__select dd ${open ? 'open' : ''}`}>
                     <a href="javascript:;" className="ddTrigger ddArrow" data-toggle="dropdown" onClick={this.onToggleMenu.bind(this)}>
                         <span className="ddTrigger__text">{currency}</span>
