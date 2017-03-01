@@ -13,6 +13,36 @@ function mapDispatchToProps(dispatch) {
 }
 
 class CardList extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			daysLeft: 0,
+			hoursLeft: 0
+		};
+		this.interval = 0;
+	}
+	
+	componentWillMount() {
+		this.interval = setInterval(() => this.calculateLeftTime(), 60 * 1000);
+	}
+	
+	componentDidUnmount() {
+		clearInterval(this.interval);
+	}
+	
+	calculateLeftTime() {
+		let dayTimestamp = 24 * 60 * 60 * 1000;
+		let days = Math.floor(ms / dayTimestamp);
+		let hours = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
+		
+		if(days < 0) days = 0;
+		if(hours < 0) hours = 0;
+		this.setState({
+			daysLeft: days,
+			hoursLeft: hours
+		});
+	}
+	
 	render() {
 		let ms = new Date(__TIME__) - Date.now();
 		let dayTimestamp = 24 * 60 * 60 * 1000;

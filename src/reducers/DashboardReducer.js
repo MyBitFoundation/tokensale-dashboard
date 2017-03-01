@@ -7,7 +7,7 @@ const initialState =  Map({
         fiat: {}
     },
     currency: ''
-})
+});
 
 export default function DashboardReducer(state = initialState, action) {
     switch(action.type) {

@@ -21,6 +21,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 store.dispatch(initialize());
 store.dispatch(load());
+setInterval(() => store.dispatch(load()), 5 * 60 * 1000);
 
 ReactDOM.render(
     <Provider store={store}>
