@@ -11,13 +11,27 @@ export function load() {
         }).then(() => {
             return get('/crowdsale/rates')
         }).then(data => {
+            let currency = localStorage.getItem('currency') ? localStorage.getItem('currency') : 'EUR';
             dispatch({
                 type: 'DASHBOARD_RATES',
-                payload: data
+                payload: {
+                    rates: data,
+                    currency
+                }
             })
             dispatch(loadTFA());
         }).catch(err => {
                 console.log(err)
+        });
+    }
+}
+
+export function changeCurrency(name) {
+    return (dispatch, getState) => {
+        localStorage.setItem('currency', name);
+        dispatch({
+            type: 'DASHBOARD_CURRENCY',
+            payload: name
         });
     }
 }
