@@ -26,7 +26,7 @@ class CardList extends React.Component {
 		this.interval = setInterval(() => this.calculateLeftTime(), 60 * 1000);
 	}
 	
-	componentDidUnmount() {
+	componentWillUnmount() {
 		clearInterval(this.interval);
 	}
 	
