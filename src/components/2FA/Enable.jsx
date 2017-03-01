@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import QRCode from 'qrcode.react';
+import twoFactor from 'node-2fa';
 
 
 import {enableTFA} from 'actions/TFAActions';
@@ -50,6 +51,10 @@ class Enable extends React.Component {
             return this.setState({passwordError: "Password is required and must contain at least 6 characters"});
         if(!checkbox)
             return this.setState({error: "Confirmation is required"});
+
+        let check = twoFactor.verifyToken(this.props.tfaSecret, privateKey);
+        if(!check)
+            return this.setState({privateKeyError: "Invalid 6-Digit Key"});
 
         this.props.enableTFA(this.props.tfaSecret, password).catch(error => {
             this.setState({passwordError: "Invalid password"});

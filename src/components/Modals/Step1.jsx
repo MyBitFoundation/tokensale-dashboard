@@ -8,7 +8,8 @@ function mapStateToProps(state){
     return {
         modal: state.modals.get('modal'),
         open: state.modals.get('open'),
-        currency: state.modals.get('currency')
+        currency: state.modals.get('currency'),
+        loading: state.modals.get('loading')
     };
 }
 
@@ -23,7 +24,8 @@ function mapDispatchToProps(dispatch){
 
 class Step1 extends React.Component {
 
-    onGenerate() {
+    onGenerate(e) {
+        e.preventDefault();
         this.props.generate(this.props.currency);
     }
 
@@ -48,8 +50,9 @@ class Step1 extends React.Component {
                                     <h2 className="modal__title">Pay with {currency.toUpperCase()}</h2>
                                     <div className="modal__note">Please Generate Wallet Address</div>
                                     <div className="modal__btns">
-                                        <button className="btn btn-sbm js-btnGenerate" type="button" onClick={this.onGenerate.bind(this)} >
-                                            Generate
+                                        <button className="btn btn-sbm js-btnGenerate" type="button" onClick={this.onGenerate.bind(this)} disabled={this.props.loading}>
+                                          {this.props.loading ? <span className="loader"></span> : null}
+                                          <span className="btnText">Generate</span>
                                         </button>
                                     </div>
                                 </div>

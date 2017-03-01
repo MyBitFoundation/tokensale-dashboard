@@ -19,11 +19,16 @@ class ModalsActions {
 
     static generate(currency) {
         return (dispatch, getState) => {
+            dispatch({
+                type: 'MODAL_LOADING'
+            });
             post('/crowdsale/deposit', {currency}).then(data => {
-                dispatch({
-                    type: 'OPEN_STEP_2',
-                    payload: data
-                })
+                setTimeout(() => {
+                    dispatch({
+                        type: 'OPEN_STEP_2',
+                        payload: data
+                    })
+                }, 1000)
             }).catch(error => {
                 console.log(error)
             })

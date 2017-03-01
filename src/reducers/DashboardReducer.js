@@ -5,16 +5,21 @@ const initialState =  Map({
     rates: {
         crypto: {},
         fiat: {}
-    }
+    },
+    currency: ''
 })
 
 export default function DashboardReducer(state = initialState, action) {
     switch(action.type) {
         case 'DASHBOARD_HISTORY':
-            state = state.set('history', action.payload)
+            state = state.set('history', action.payload);
             return state;
         case 'DASHBOARD_RATES':
-            state = state.set('rates', action.payload)
+            state = state.set('rates', action.payload.rates);
+            state = state.set('currency', action.payload.currency)
+            return state;
+        case 'DASHBOARD_CURRENCY':
+            state = state.set('currency', action.payload);
             return state;
         default:
             return state;

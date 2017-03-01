@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 
 function mapStateToProps(state, ownProps) {
 	return {
-		balance: state.account.get('balance')
+		balance: state.account.get('balance'),
+		tokenPrice: state.account.get('tokenPrice')
 	};
 }
 
@@ -17,22 +18,10 @@ class CardList extends React.Component {
 		let dayTimestamp = 24 * 60 * 60 * 1000;
 		let days = Math.floor(ms / dayTimestamp);
 		let hours = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
-		
-		let endDate = new Date(__TIME__);
-		let currentDate = Date.now();
-		let tokenPrice;
-		
-		if(this.props.balance < 2000) {
-			tokenPrice = 250;
-		} else if(this.props.balance < 8000) {
-			tokenPrice = 150;
-		} else {
-			tokenPrice = 100;
-		}
-		
+
 		if(days < 0) days = 0;
 		if(hours < 0) hours = 0;
-		
+
 		return (
 			<div className="card__list">
 				<div className="card">
@@ -48,7 +37,7 @@ class CardList extends React.Component {
 								</div>
 								<span className="equal">=</span>
 								<div className="colspan">
-									<b className="mark1">{tokenPrice} </b>
+									<b className="mark1">{this.props.tokenPrice} </b>
 									<span>Token</span>
 								</div>
 							</div>
