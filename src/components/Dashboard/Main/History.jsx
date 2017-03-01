@@ -47,7 +47,7 @@ class History extends React.Component {
 					</div>
 					<div className="td td-amount">
 						<div className="tdIn">
-							<b>{item.sentAmount}</b> {item.sentCoinType}
+							<b>{parseFloat(item.sentAmount).toFixed(6)}</b> {item.sentCoinType}
 						</div>
 					</div>
 					<div className="td td-rate">
