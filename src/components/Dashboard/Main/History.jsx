@@ -29,7 +29,7 @@ class History extends React.Component {
 		let {history} = this.props;
 		let {count} = this.state;
 		
-		let presicion = 10;
+		let presicion = 1000000;
 		let options = {
 			month: 'short',
 			day: 'numeric',
@@ -47,7 +47,7 @@ class History extends React.Component {
 					</div>
 					<div className="td td-amount">
 						<div className="tdIn">
-							<b>{parseFloat(item.sentAmount).toFixed(6)}</b> {item.sentCoinType}
+							<b title={item.sentAmount}>{(parseInt(item.sentAmount * presicion) / presicion).toFixed(6)}</b> {item.sentCoinType}
 						</div>
 					</div>
 					<div className="td td-rate">
