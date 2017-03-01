@@ -24,6 +24,7 @@ class CardList extends React.Component {
 	
 	componentWillMount() {
 		this.interval = setInterval(() => this.calculateLeftTime(), 60 * 1000);
+		this.calculateLeftTime()
 	}
 	
 	componentWillUnmount() {
@@ -31,6 +32,7 @@ class CardList extends React.Component {
 	}
 	
 	calculateLeftTime() {
+		let ms = new Date(__TIME__) - Date.now();
 		let dayTimestamp = 24 * 60 * 60 * 1000;
 		let days = Math.floor(ms / dayTimestamp);
 		let hours = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
@@ -44,14 +46,6 @@ class CardList extends React.Component {
 	}
 	
 	render() {
-		let ms = new Date(__TIME__) - Date.now();
-		let dayTimestamp = 24 * 60 * 60 * 1000;
-		let days = Math.floor(ms / dayTimestamp);
-		let hours = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
-
-		if(days < 0) days = 0;
-		if(hours < 0) hours = 0;
-
 		return (
 			<div className="card__list">
 				<div className="card">
@@ -83,11 +77,11 @@ class CardList extends React.Component {
 						<div className="card__info">
 							<div className="card__infoData">
 								<div className="colspan">
-									<b className="mark2">{days} </b>
+									<b className="mark2">{this.state.daysLeft} </b>
 									<span className="pr-10">Days</span>
 								</div>
 								<div className="colspan">
-									<b className="mark3">{hours} </b>
+									<b className="mark3">{this.state.hoursLeft} </b>
 									<span>Hours</span>
 								</div>
 							</div>
