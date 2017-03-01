@@ -49,6 +49,11 @@ let createConfig = (options) => {
         }),
         new ExtractTextPlugin("style.css")
     ];
+    if(production) {
+    	webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
+		    compress: { warnings: false }
+	    }));
+    }
 
     webpackConfig.module = {
         rules: [
