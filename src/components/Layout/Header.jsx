@@ -75,7 +75,7 @@ class Header extends React.Component {
                                 <div className="bar"></div>
                                 <Link to="/" className="header__menuItem">Dashboard</Link>
                             </li>
-                            <li className={`header__menuLi barParent ${location === "/fa" ? 'active' : ''}`}>
+                            <li className={`header__menuLi barParent ${location === "/tfa" ? 'active' : ''}`}>
                                 <div className="bar"></div>
                                 <Link to="/tfa" className="header__menuItem">2FA</Link>
                             </li>

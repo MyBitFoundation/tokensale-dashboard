@@ -27,7 +27,10 @@ export function enableTFA(secret, password) {
                 dispatch({
                     type: 'TFA_ENABLED',
                     payload: data
-                })
+                });
+                dispatch({
+                    type: 'OPEN_TFA_CHANGED'
+                });
                 resolve(data);
             }).catch(error => reject(error));
         })
@@ -41,7 +44,10 @@ export function disableTFA(token, password) {
                 dispatch({
                     type: 'TFA_DISABLED',
                     payload: data
-                })
+                });
+                dispatch({
+                    type: 'OPEN_TFA_CHANGED'
+                });
                 dispatch(loadTFA());
                 resolve(data);
             }).catch(error => reject(error));

@@ -23,6 +23,14 @@ export default function ModalsReducer(state = initialState, action) {
             state = state.set('loading', false);
             state = state.set('keys', action.payload);
             return state;
+        case 'OPEN_PASSWORD_CHANGED':
+            state = state.set('modal', 'passwordChanged');
+            state = state.set('open', true);
+            return state;
+        case 'OPEN_TFA_CHANGED':
+            state = state.set('modal', 'tfaChanged');
+            state = state.set('open', true);
+            return state;
         case 'CLOSE_MODAL':
             return initialState;
         default:
