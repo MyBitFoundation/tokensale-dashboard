@@ -51,7 +51,7 @@ class History extends React.Component {
 						</div>
 					</div>
 					<div className="td td-rate">
-						<div className="tdIn">1 token = {item.tokenPrice} {item.sentCoinType}</div>
+						<div className="tdIn">1 {item.sentCoinType} = {item.tokenPrice} tokens</div>
 					</div>
 					<div className="td td-address">
 						<div className="tdIn">{item.address}</div>
