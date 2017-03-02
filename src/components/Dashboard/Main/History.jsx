@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import moment from "moment"
 
 function mapStateToProps(state, ownProps) {
 	return {
@@ -39,11 +40,13 @@ class History extends React.Component {
 			hour12: false
 		};
 		
-		let table = history.map((item, index) => {
+		let table = history.sort((a, b) => {
+			return a.date > b.date ? -1 : 1;
+		}).map((item, index) => {
 			return (
 				<div key={item.transactionId} className={`tr ${index + 1 > count ? 'inactive' : '' }`}>
 					<div className="td td-date">
-						<div className="tdIn">{new Date(item.date).toLocaleString("en-US", options)}</div>
+						<div className="tdIn">{moment(item.date).format('MMM D, HH:mm:ss')}</div>
 					</div>
 					<div className="td td-amount">
 						<div className="tdIn">
