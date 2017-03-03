@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 
 import ModalsActions from 'actions/ModalsActions';
 
@@ -13,11 +14,17 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        closeModal: () => dispatch(ModalsActions.closeModal())
+        closeModal: () => dispatch(ModalsActions.closeModal()),
+        navigateToDashbord: () => dispatch(push('/'))
     };
 }
 
 class PasswordChanged extends React.Component {
+
+    onClick() {
+        this.props.closeModal();
+        this.props.navigateToDashbord();
+    }
 
 
     render() {
@@ -33,12 +40,12 @@ class PasswordChanged extends React.Component {
             		<div className="modal-dialogAlignOut">
             			<div className="modal-dialogAlignIn">
             				<div className="modal-dialogContent">
-            					<span className="modal__close icon-cross" data-dismiss="modal" onClick={this.props.closeModal}></span>
+            					<span className="modal__close icon-cross" data-dismiss="modal" onClick={this.onClick.bind(this)}></span>
 
             					<div className="modal__body text_c">
-            						<h2 className="modal__title">Password was changed</h2>
+            						<h2 className="modal__title">Password has been changed</h2>
             						<div className="modal__btns">
-            							<button type="button" className="btn btn-sbm" onClick={this.props.closeModal}>
+            							<button type="button" className="btn btn-sbm" onClick={this.onClick.bind(this)}>
             								<span className="loader none"></span>
             								<span className="btnText">Ok</span>
             							</button>
