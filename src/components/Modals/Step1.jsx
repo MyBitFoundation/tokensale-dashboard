@@ -9,7 +9,8 @@ function mapStateToProps(state){
         modal: state.modals.get('modal'),
         open: state.modals.get('open'),
         currency: state.modals.get('currency'),
-        loading: state.modals.get('loading')
+        loading: state.modals.get('loading'),
+        error: state.modals.get('error')
     };
 }
 
@@ -30,7 +31,7 @@ class Step1 extends React.Component {
     }
 
     render() {
-        let {modal, open, currency} = this.props;
+        let {modal, open, currency, error} = this.props;
         return (
             <div
                 className={`modal fade ${open && modal === 'step1' ? 'in' : ''}`}
@@ -48,13 +49,18 @@ class Step1 extends React.Component {
                                         <img src={currency ? `images/${currency.toLowerCase()}_lg.png` : ''} alt=""/>
                                     </div>
                                     <h2 className="modal__title">Pay with {currency.toUpperCase()}</h2>
-                                    <div className="modal__note">Please Generate Wallet Address</div>
-                                    <div className="modal__btns">
-                                        <button className="btn btn-sbm js-btnGenerate" type="button" onClick={this.onGenerate.bind(this)} disabled={this.props.loading}>
-                                          {this.props.loading ? <span className="loader"></span> : null}
-                                          <span className="btnText">Generate</span>
-                                        </button>
+
+                                    <div className="modal__note">
+                                        {!error ? 'Please Generate Wallet Address': `Sorry, ${currency.toUpperCase()} deposits currently unavailable.`}
                                     </div>
+                                    { !error ?
+                                        <div className="modal__btns">
+                                            <button className="btn btn-sbm js-btnGenerate" type="button" onClick={this.onGenerate.bind(this)} disabled={this.props.loading}>
+                                              {this.props.loading ? <span className="loader"></span> : null}
+                                              <span className="btnText">Generate</span>
+                                            </button>
+                                        </div> : null
+                                    }
                                 </div>
                             </div>
                         </div>

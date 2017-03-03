@@ -30,6 +30,12 @@ class ModalsActions {
                     })
                 }, 1000)
             }).catch(error => {
+                setTimeout(() => {
+                    dispatch({
+                        type: 'MODAL_GENERATION_FAIL'
+                    });
+                }, 1000)
+
                 console.log(error)
             })
         }

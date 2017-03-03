@@ -1,5 +1,4 @@
 import React from 'react';
-import { Modal } from 'react-modal-bootstrap';
 import { connect } from 'react-redux';
 
 import ModalsActions from 'actions/ModalsActions';

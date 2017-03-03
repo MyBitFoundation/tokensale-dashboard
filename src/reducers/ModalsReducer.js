@@ -5,7 +5,8 @@ const initialState =  Map({
     open: false,
     currency: '',
     loading: false,
-    keys: {}
+    keys: {},
+    error: false
 })
 
 export default function ModalsReducer(state = initialState, action) {
@@ -17,6 +18,9 @@ export default function ModalsReducer(state = initialState, action) {
             return state;
         case 'MODAL_LOADING':
             state = state.set('loading', true);
+            return state;
+        case 'MODAL_GENERATION_FAIL':
+            state = state.set('error', true);
             return state;
         case 'OPEN_STEP_2':
             state = state.set('modal', 'step2');
