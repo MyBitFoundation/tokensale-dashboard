@@ -58,7 +58,7 @@ class Header extends React.Component {
                     </Link>
                     <div className="header__profile">
                         <div>
-                            <a href="" className="header__profileName ">{this.props.email}</a>
+                            <div className="header__profileName">{this.props.email}</div>
                             <a href="" className="header__login none" data-toggle="modal" data-target="#modalLogin">
                                 <span className="">LOGIN</span>
                                 <span className="header__loginIcon icon-door"></span>

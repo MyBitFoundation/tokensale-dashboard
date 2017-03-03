@@ -21,22 +21,22 @@ class CardList extends React.Component {
 		};
 		this.interval = 0;
 	}
-	
+
 	componentWillMount() {
 		this.interval = setInterval(() => this.calculateLeftTime(), 60 * 1000);
 		this.calculateLeftTime()
 	}
-	
+
 	componentWillUnmount() {
 		clearInterval(this.interval);
 	}
-	
+
 	calculateLeftTime() {
 		let ms = new Date(__TIME__) - Date.now();
 		let dayTimestamp = 24 * 60 * 60 * 1000;
 		let days = Math.floor(ms / dayTimestamp);
 		let hours = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
-		
+
 		if(days < 0) days = 0;
 		if(hours < 0) hours = 0;
 		this.setState({
@@ -44,7 +44,7 @@ class CardList extends React.Component {
 			hoursLeft: hours
 		});
 	}
-	
+
 	render() {
 		return (
 			<div className="card__list">
@@ -62,7 +62,7 @@ class CardList extends React.Component {
 								<span className="equal">=</span>
 								<div className="colspan">
 									<b className="mark1">{this.props.tokenPrice} </b>
-									<span>Token</span>
+									<span>Bits</span>
 								</div>
 							</div>
 							<div className="card__infoLabel">Crowdsale Price</div>

@@ -13,23 +13,23 @@ function mapDispatchToProps(dispatch) {
 }
 
 class History extends React.Component {
-	
+
 	constructor() {
 		super();
 		this.state = {
 			count: 4
 		};
 	}
-	
+
 	onMoreHistory() {
 		let count = this.state.count + 4;
 		this.setState({count});
 	}
-	
+
 	getHistoryTable() {
 		let {history} = this.props;
 		let {count} = this.state;
-		
+
 		let presicion = 1000000;
 		let options = {
 			month: 'short',
@@ -39,7 +39,7 @@ class History extends React.Component {
 			second: 'numeric',
 			hour12: false
 		};
-		
+
 		let table = history.sort((a, b) => {
 			return a.date > b.date ? -1 : 1;
 		}).map((item, index) => {
@@ -100,18 +100,18 @@ class History extends React.Component {
 			</div>
 		)
 	}
-	
+
 	render() {
-		
+
 		let {history} = this.props;
-		
+
 		return (
 			<div className="history">
 				<div className="title">
-					
+
 					{history.length ? "Transactions History" : "No recent transactions"}
 				</div>
-				
+
 				{history.length ? this.getHistoryTable() : null}
 			</div>
 		);
