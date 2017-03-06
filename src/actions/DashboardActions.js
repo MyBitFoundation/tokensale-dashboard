@@ -35,3 +35,12 @@ export function changeCurrency(name) {
         });
     }
 }
+
+export function sortBy(criterion) {
+    return (dispatch, getState) => {
+        dispatch({
+            type: 'DASHBOARD_SORT',
+            payload: criterion
+        })
+    }
+}

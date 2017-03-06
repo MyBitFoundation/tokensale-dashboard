@@ -6,7 +6,8 @@ const initialState =  Map({
         crypto: {},
         fiat: {}
     },
-    currency: ''
+    currency: '',
+    sort: null
 });
 
 export default function DashboardReducer(state = initialState, action) {
@@ -20,6 +21,9 @@ export default function DashboardReducer(state = initialState, action) {
             return state;
         case 'DASHBOARD_CURRENCY':
             state = state.set('currency', action.payload);
+            return state;
+        case 'DASHBOARD_SORT':
+            state = state.set('sort', action.payload);
             return state;
         default:
             return state;
