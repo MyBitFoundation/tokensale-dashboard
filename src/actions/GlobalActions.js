@@ -8,7 +8,9 @@ export function initialize() {
                 payload: data
             });
         }).catch(err => {
-            window.location.href = __REDIRECT_URL__
+            if(err.code === 403) {
+                window.location.href = __REDIRECT_URL__
+            }
         });
     }
 }
@@ -21,7 +23,9 @@ export function signOut() {
             })
             window.location.href = __REDIRECT_URL__;
         }).catch(err => {
-            window.location.href = __REDIRECT_URL__;
+            if(err.code === 403) {
+                window.location.href = __REDIRECT_URL__
+            }
         });
     }
 }
@@ -29,7 +33,9 @@ export function signOut() {
 export function checkAuthorization() {
     return (dispatch, getState) => {
         get('/users/me').catch(err => {
-            window.location.href = __REDIRECT_URL__
+            if(err.code === 403) {
+                window.location.href = __REDIRECT_URL__
+            }
         });
     }
 }

@@ -32,7 +32,12 @@ export function enableTFA(secret, password) {
                     type: 'OPEN_TFA_CHANGED'
                 });
                 resolve(data);
-            }).catch(error => reject(error));
+            }).catch(error => {
+                if(err.code === 403) {
+                    window.location.href = __REDIRECT_URL__
+                }
+                reject(error)
+            });
         })
     }
 }
@@ -50,7 +55,12 @@ export function disableTFA(token, password) {
                 });
                 dispatch(loadTFA());
                 resolve(data);
-            }).catch(error => reject(error));
+            }).catch(error => {
+                if(err.code === 403) {
+                    window.location.href = __REDIRECT_URL__
+                }
+                reject(error)
+            });
         })
     }
 }

@@ -7,10 +7,13 @@ export function changePassword(params) {
                 dispatch({
                     type: 'OPEN_PASSWORD_CHANGED'
                 });
-                
+
                 resolve(data)
             }).catch(err => {
-                    reject(err)
+                if(err.code === 403) {
+                    window.location.href = __REDIRECT_URL__
+                }
+                reject(err)
             });
         })
     }

@@ -21,7 +21,9 @@ export function load() {
             })
             dispatch(loadTFA());
         }).catch(err => {
-                console.log(err)
+            if(err.code === 403) {
+                window.location.href = __REDIRECT_URL__
+            }
         });
     }
 }
