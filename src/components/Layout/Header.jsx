@@ -109,6 +109,10 @@ class Header extends React.Component {
                                 <div className="barVer"></div>
                                 <a href="/settings" className="menuS__item">Account Settings</a>
                             </li>
+                            <li className={`menuS__li barVerParent ${location === "/terms&conditions" ? 'active' : ''}`}>
+                                <div className="barVer"></div>
+                                <a href="/terms&conditions" className="menuS__item">Terms and Conditions</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
