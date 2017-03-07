@@ -23,12 +23,16 @@ class ModalsActions {
                 type: 'MODAL_LOADING'
             });
             post('/crowdsale/deposit', {currency}).then(data => {
-                setTimeout(() => {
-                    dispatch({
-                        type: 'OPEN_STEP_2',
-                        payload: data
-                    })
-                }, 1000)
+                let currency = getState().modals.get('currency');
+
+                if(currency === data.type) {
+                    setTimeout(() => {
+                        dispatch({
+                            type: 'OPEN_STEP_2',
+                            payload: data
+                        })
+                    }, 1000);                    
+                }
             }).catch(error => {
                 setTimeout(() => {
                     dispatch({
