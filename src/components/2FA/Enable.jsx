@@ -94,7 +94,7 @@ class Enable extends React.Component {
         						<input className="field2" id="key01" type="text" value={tfaSecret} readOnly/>
         					</div>
         					<div className="attn">
-        						<b className="mark5">Important:</b>
+        						<b className="mark5">Important: </b>
         						<i className="">
         							Before turning on 2FA, write down the 16-digit key and put keep it in a safe place. If your phone gets lost, stolen, or erased, you will need this key to get back into your account!
         						</i>

@@ -51,11 +51,11 @@ class Disable extends React.Component {
             <section className="content content-2fa">
           		<div className="box">
           			<h1 className="h1 ">Two-Factor Authentication</h1>
-          			<div className="descr ">FWe use Google Authenticator for 2FA.</div>
+          			<div className="descr ">We use Google Authenticator for 2FA.</div>
           			<div className="main">
           				<div className="main__col one">
           					<div className="title">
-          						You have Two-Factor Authentication enebled
+          						You have Two-Factor Authentication enabled
           					</div>
           					<div className="form__title">
           						Disable 2FA
@@ -83,7 +83,7 @@ class Disable extends React.Component {
                                     onChange={this.onChangeInput.bind(this, 'password')}/>
           					</div>
           					<div className="attn">
-          						<b className="mark5">Warning:</b>
+          						<b className="mark5">Warning: </b>
           						<i className="">
           							Disabling 2FA will make your account less secure.
           						</i>
