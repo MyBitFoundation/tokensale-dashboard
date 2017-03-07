@@ -24,14 +24,13 @@ class ModalsActions {
             });
             post('/crowdsale/deposit', {currency}).then(data => {
                 let currency = getState().modals.get('currency');
-
-                if(currency === data.type) {
+                if(currency.toUpperCase() === data.type.toUpperCase()) {
                     setTimeout(() => {
                         dispatch({
                             type: 'OPEN_STEP_2',
                             payload: data
                         })
-                    }, 1000);                    
+                    }, 1000);
                 }
             }).catch(error => {
                 setTimeout(() => {
