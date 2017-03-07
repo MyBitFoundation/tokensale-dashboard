@@ -39,7 +39,7 @@ class Enable extends React.Component {
 
     onToggleCheckbox() {
         let checkbox = !this.state.checkbox;
-        this.setState({checkbox});
+        this.setState({checkbox, error: ''});
     }
 
     onEnable() {
