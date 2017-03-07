@@ -2,15 +2,19 @@ import {get} from 'services/Api';
 
 export function initialize() {
     return (dispatch, getState) => {
-        get('/users/me').then(data => {
-            dispatch({
-                type: 'INIT_ACCOUNT',
-                payload: data
+        return new Promise((resolve, reject) => {
+            get('/users/me').then(data => {
+                dispatch({
+                    type: 'INIT_ACCOUNT',
+                    payload: data
+                });
+                resolve();
+            }).catch(err => {
+                if(err.code === 403) {
+                    window.location.href = __REDIRECT_URL__
+                }
+                reject(err);
             });
-        }).catch(err => {
-            if(err.code === 403) {
-                window.location.href = __REDIRECT_URL__
-            }
         });
     }
 }

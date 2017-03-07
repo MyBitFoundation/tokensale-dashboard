@@ -19,16 +19,17 @@ import {load} from 'actions/DashboardActions';
 const store = configureStore(browserHistory, window.__initialState__);
 const history = syncHistoryWithStore(browserHistory, store);
 
-store.dispatch(initialize());
-store.dispatch(load());
-setInterval(() => {
+store.dispatch(initialize()).then(() => {
 	store.dispatch(load());
-	store.dispatch(initialize());
-}, 5 * 60 * 1000);
 
-ReactDOM.render(
-    <Provider store={store}>
-        <Router history={history} routes={component} />
-    </Provider>,
-    document.getElementById('root')
-);
+	setInterval(() => {
+		store.dispatch(load());
+	}, 5 * 60 * 1000);
+
+	ReactDOM.render(
+	    <Provider store={store}>
+	        <Router history={history} routes={component} />
+	    </Provider>,
+	    document.getElementById('root')
+	);
+});
