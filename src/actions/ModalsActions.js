@@ -38,7 +38,7 @@ class ModalsActions {
                         type: 'MODAL_GENERATION_FAIL'
                     });
                 }, 1000)
-                if(err.code === 403) {
+                if(error.code === 403) {
                     window.location.href = __REDIRECT_URL__
                 }
             })

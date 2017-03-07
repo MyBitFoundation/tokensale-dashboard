@@ -33,7 +33,7 @@ export function enableTFA(secret, password) {
                 });
                 resolve(data);
             }).catch(error => {
-                if(err.code === 403) {
+                if(error.code === 403) {
                     window.location.href = __REDIRECT_URL__
                 }
                 reject(error)
@@ -56,7 +56,7 @@ export function disableTFA(token, password) {
                 dispatch(loadTFA());
                 resolve(data);
             }).catch(error => {
-                if(err.code === 403) {
+                if(error.code === 403) {
                     window.location.href = __REDIRECT_URL__
                 }
                 reject(error)

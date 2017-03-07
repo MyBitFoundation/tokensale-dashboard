@@ -29,7 +29,7 @@ class Disable extends React.Component {
     }
 
     onChangeInput(type, e) {
-        this.setState({[type]: e.target.value});
+        this.setState({[type]: e.target.value, [`${type}Error`]: null});
     }
 
     onDisable() {
