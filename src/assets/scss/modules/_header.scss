@@ -66,6 +66,9 @@
 .header__menu{
 	text-align: center;
 	margin: 0 250px;
+	@media only screen and (max-width: 1200px) {
+		margin-left: 0;
+	}
 	@include MQ(M){
 		display: none;
 	};
@@ -76,7 +79,7 @@
 		position: relative;
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 65px;
+		margin-right: 35px;
 		@include MQ(L){
 			margin-right: 10px;
 		};
@@ -109,6 +112,6 @@
 		text-transform: uppercase;
 		color: #fff;
 		font-weight: 600;
-		padding: 0 15px;
+		padding: 0 10px;
 	}
 }
