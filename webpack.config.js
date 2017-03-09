@@ -72,10 +72,6 @@ let createConfig = (options) => {
                 },
             },
             {
-                test: /\.(ico)$/,
-                use: "file-loader?name=[name].[ext]"
-            },
-            {
                 test: /locale-[A-Za-z]{2}\.json$/,
                 use: "file-loader?name=locales/[name].[ext]"
             },

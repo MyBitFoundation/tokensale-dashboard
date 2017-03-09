@@ -21,3 +21,4 @@ require('assets/images/cur_lg/dash_lg.png');
 require('assets/images/cur_lg/rep_lg.png');
 require('assets/images/img_cont/qrcode.png');
 require('assets/images/img_cont/qrcode_lg.png');
+require('assets/images/favicon.ico');

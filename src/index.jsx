@@ -1,4 +1,3 @@
-import 'assets/favicon.ico';
 import 'file-loader?name=index.html!assets/index.html';
 import 'assets/images.loader.js';
 import 'assets/css.loader.js';
