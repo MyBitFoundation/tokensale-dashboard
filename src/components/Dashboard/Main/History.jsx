@@ -22,7 +22,8 @@ class History extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			count: 4
+			count: 4,
+			sortHighToLow: true
 		};
 	}
 
@@ -33,11 +34,13 @@ class History extends React.Component {
 
 	onSort(type) {
 		this.props.sortBy(type);
+		let sortHighToLow = !this.state.sortHighToLow;
+		this.setState({sortHighToLow});
 	}
 
 	getHistoryTable() {
 		let {history, sort} = this.props;
-		let {count} = this.state;
+		let {count, sortHighToLow} = this.state;
 
 		let presicion = 1000000;
 		let options = {
@@ -52,15 +55,15 @@ class History extends React.Component {
 		let table = history.sort((a, b) => {
 			switch(sort) {
 				case 'date':
-					return a.date > b.date ? -1 : 1;
+					return a.date > b.date ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
 				case 'amount':
-					return a.sentAmount > b.sentAmount ? -1 : 1;
+					return a.sentAmount > b.sentAmount ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
 				case 'rate':
-					return a.tokenPrice > b.tokenPrice ? -1 : 1;
+					return a.tokenPrice > b.tokenPrice ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
 				case 'address':
-					return a.address > b.address ? -1 : 1;
+					return a.address > b.address ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
 				default:
-					return a.date > b.date ? -1 : 1;
+					return a.date > b.date ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
 			}
 		}).map((item, index) => {
 			return (
