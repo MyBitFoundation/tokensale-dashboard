@@ -24,7 +24,7 @@ export default class TermsAndConditions extends React.Component {
         				</p>
         				<p>
         					<strong>
-        						WARNING: DO NOT PURCHASE MYBIT IF YOU ARE NOT AN EXPERT IN DEALING WITH CRYPTOGRAPHIC TOKENS AND BLOCKCHAINKBASED SOFTWARE SYSTEMS
+        						WARNING: DO NOT PURCHASE MYBIT IF YOU ARE NOT AN EXPERT IN DEALING WITH CRYPTOGRAPHIC TOKENS AND BLOCKCHAIN-BASED SOFTWARE SYSTEMS
         					</strong>
         				</p>
         				<p>
@@ -315,7 +315,7 @@ export default class TermsAndConditions extends React.Component {
         						</div>
         					</li>
         					<li className="">
-        						<div className="heading">All Purchases of MYBIT Are NonKRefundable</div>
+        						<div className="heading">All Purchases of MYBIT Are Non-Refundable</div>
         						<div className="info">
         							ALL PURCHASES OF MYBIT ARE FINAL. PURCHASES OF MYBIT ARE NON-REFUNDABLE. BY PURCHASING MYBIT, THE PURCHASER ACKNOWLEDGES THAT NEITHER MYBIT NOR ANY OTHER OF THE MYBIT PARTIES ARE REQUIRED TO PROVIDE A REFUND FOR ANY REASON, AND THAT THE PURCHASER WILL NOT RECEIVE MONEY OR OTHER COMPENSATION FOR ANY MYBIT THAT IS NOT USED OR REMAINS UNUSED.
         						</div>
