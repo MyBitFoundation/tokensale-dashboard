@@ -1,3 +1,6 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 export function get(url) {
 	return new Promise((resolve, reject) => {
 		fetch(`${__API_URL__}${url}`, {
@@ -7,7 +10,7 @@ export function get(url) {
 			credentials: 'include'
 		}).then(response => {
 			let contentType = response.headers.get("content-type");
-			
+
 			if(response.ok) {
 				if(contentType && contentType.indexOf("application/json") !== -1) {
 					return response.json();
@@ -27,7 +30,7 @@ export function get(url) {
 }
 
 export function post(url, params) {
-	
+
 	let details = params;
 	let formBody = [];
 	for(let property in details) {
@@ -36,9 +39,9 @@ export function post(url, params) {
 		formBody.push(encodedKey + "=" + encodedValue);
 	}
 	formBody = formBody.join("&");
-	
+
 	return new Promise((resolve, reject) => {
-		
+
 		fetch(`${__API_URL__}${url}`, {
 			method: 'POST',
 			headers: {
@@ -48,7 +51,7 @@ export function post(url, params) {
 			body: formBody
 		}).then(response => {
 			let contentType = response.headers.get("content-type");
-			
+
 			if(response.ok) {
 				if(contentType && contentType.indexOf("application/json") !== -1) {
 					return response.json();
