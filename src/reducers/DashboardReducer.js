@@ -7,7 +7,7 @@ const initialState =  Map({
         fiat: {}
     },
     currency: '',
-    sort: null
+    sort: 'date'
 });
 
 export default function DashboardReducer(state = initialState, action) {
