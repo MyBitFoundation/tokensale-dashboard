@@ -62,7 +62,7 @@ class CardList extends React.Component {
 								<span className="equal">=</span>
 								<div className="colspan">
 									<b className="mark1">{this.props.tokenPrice} </b>
-									<span>Bits</span>
+									<span>MyB</span>
 								</div>
 							</div>
 							<div className="card__infoLabel">Crowdsale Price</div>
@@ -98,7 +98,7 @@ class CardList extends React.Component {
 							<div className="card__infoData">
 								<b className="mark4">{this.props.balance}</b>
 							</div>
-							<div className="card__infoLabel">BITS Balance</div>
+							<div className="card__infoLabel">MyB Balance</div>
 						</div>
 					</div>
 				</div>
