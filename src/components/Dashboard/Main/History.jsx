@@ -23,7 +23,7 @@ class History extends React.Component {
 		super();
 		this.state = {
 			count: 4,
-			sortHighToLow: true
+			sortLTH: false
 		};
 	}
 
@@ -34,13 +34,13 @@ class History extends React.Component {
 
 	onSort(type) {
 		this.props.sortBy(type);
-		let sortHighToLow = !this.state.sortHighToLow;
-		this.setState({sortHighToLow});
+		let sortLTH = !this.state.sortLTH;
+		this.setState({sortLTH});
 	}
 
 	getHistoryTable() {
 		let {history, sort} = this.props;
-		let {count, sortHighToLow} = this.state;
+		let {count, sortLTH} = this.state;
 
 		let presicion = 1000000;
 		let options = {
@@ -55,15 +55,15 @@ class History extends React.Component {
 		let table = history.sort((a, b) => {
 			switch(sort) {
 				case 'date':
-					return a.date > b.date ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
+					return a.date > b.date ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
 				case 'amount':
-					return a.sentAmount > b.sentAmount ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
+					return a.sentAmount > b.sentAmount ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
 				case 'rate':
-					return a.tokenPrice > b.tokenPrice ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
+					return a.tokenPrice > b.tokenPrice ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
 				case 'address':
-					return a.address > b.address ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
+					return a.address > b.address ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
 				default:
-					return a.date > b.date ? (sortHighToLow ? -1 : 1) : (sortHighToLow ? 1 : -1);
+					return a.date > b.date ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
 			}
 		}).map((item, index) => {
 			return (
@@ -92,7 +92,7 @@ class History extends React.Component {
 						<div className="td td-date">
 							<a
 								href="javascript:;"
-								className={`sort ${sort === 'date' && sortHighToLow ? 'active' : ''}`}
+								className={`sort ${sort === 'date' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'date')}>
 								Date <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
@@ -100,7 +100,7 @@ class History extends React.Component {
 						<div className="td td-amount">
 							<a
 								href="javascript:;"
-								className={`sort ${sort === 'amount' && sortHighToLow ? 'active' : ''}`}
+								className={`sort ${sort === 'amount' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'amount')}>
 								Amount <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
@@ -108,7 +108,7 @@ class History extends React.Component {
 						<div className="td td-rate">
 							<a
 								href="javascript:;"
-								className={`sort ${sort === 'rate' && sortHighToLow ? 'active' : ''}`}
+								className={`sort ${sort === 'rate' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'rate')}>
 								Exchange Rate <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
@@ -116,7 +116,7 @@ class History extends React.Component {
 						<div className="td td-address">
 							<a
 								href="javascript:;"
-								className={`sort ${sort === 'address' && sortHighToLow ? 'active' : ''}`}
+								className={`sort ${sort === 'address' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'address')}>
 								Address <span className="sortIcon icon-arrow_dropdown"/>
 							</a>

@@ -3,6 +3,8 @@ import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 import modalsReducer from './ModalsReducer';
 import accountReducer from './AccountReducer';
