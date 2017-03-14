@@ -41,7 +41,33 @@ only screen and (                min-resolution: 3dppx) {
 			height: 25px;
 		}
 	}
-	.card__info{margin-left: 55px;}
+	.card__info{margin-left: 50px;}
+}
+/*------------... 1200 ---------------*/
+@media (max-width:1200px) {
+	.card__pic {
+		height: 25px;line-height: 25px;width: 25px;
+		img{
+			height: 15px;
+		}
+	}
+	.card__info{margin-left: 30px;}
+	.card__infoData {font-size: .8125rem;}
+	.card__infoData b {font-size: 1.4rem;}
+	.card__infoData .equal{font-size: 1.5rem;}
+}
+/*------------... 1024 ---------------*/
+@media (max-width:1024px) {
+	.card__pic {
+		height: 30px;line-height: 30px;width: 30px;
+		img{
+			height: 20px;
+		}
+	}
+	.card__info{margin-left: 40px;}
+	.card__infoData {font-size: 1rem;}
+	.card__infoData b {font-size: 1.5rem;}
+	.card__infoData .equal{font-size: 2rem;}
 }
 /*--------------------------------------------------------------------------------------------1280 ... ---------------*/
 @media (max-width:1280px) {
