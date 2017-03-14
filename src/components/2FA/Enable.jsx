@@ -45,10 +45,6 @@ class Enable extends React.Component {
     onEnable() {
         let {privateKey, password, checkbox} = this.state;
 
-        if(!privateKey || privateKey.length < 6)
-            return this.setState({privateKeyError: "6-Digit Key is required and must contain 6 characters"});
-        if(!password || password.length < 6)
-            return this.setState({passwordError: "Password is required and must contain at least 6 characters"});
         if(!checkbox)
             return this.setState({error: "Confirmation is required"});
 
@@ -56,8 +52,11 @@ class Enable extends React.Component {
         if(!check)
             return this.setState({privateKeyError: "Invalid 6-Digit Key"});
 
-        this.props.enableTFA(this.props.tfaSecret, password).catch(error => {
-            this.setState({passwordError: "Invalid password"});
+        this.props.enableTFA(this.props.tfaSecret, password).catch(err => {
+            const error = err.response.message;
+            if(/password/i.test(error)) {
+                return this.setState({passwordError: error});
+            }
         });
     }
 

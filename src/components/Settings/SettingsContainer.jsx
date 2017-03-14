@@ -39,22 +39,16 @@ class Settings extends React.Component {
 
     onChangePassword() {
         let {oldPassword, newPassword, newPasswordCopy} = this.state;
+        oldPassword = validate(oldPassword);
+        newPassword = validate(newPassword);
+        newPasswordCopy = validate(newPasswordCopy);
 
-        if(validate(oldPassword).error || validate(newPassword).error || validate(newPasswordCopy).error) {
+        if(oldPassword.error || newPassword.error || newPasswordCopy.error) {
             this.setState({
                 oldPassword,
                 newPassword,
                 newPasswordCopy,
                 error: "Password is required and must contain at least 6 characters"
-            });
-            return;
-        }
-
-        if(newPassword.value != newPasswordCopy.value) {
-            newPasswordCopy.error = true;
-            this.setState({
-                newPasswordCopy,
-                error: "New password does not match retyped password"
             });
             return;
         }
@@ -70,13 +64,16 @@ class Settings extends React.Component {
                 newPasswordCopy: {value: '', error: false},
                 error: ''
             })
-        }).catch(error => {
-            oldPassword.error = true;
-            this.setState({
-                oldPassword,
-                error: "Invalid password"
-            });
-            return;
+        }).catch(err => {
+            const error = err.response.message;
+            if(/new password/i.test(error)) {
+                newPassword.error = true;
+                newPasswordCopy.error = true;
+                return this.setState({ newPassword, newPasswordCopy, error });
+            } else if(/password/i.test(error)){
+                oldPassword.error = true;
+                return this.setState({ oldPassword, error });
+            }
         })
     }
 

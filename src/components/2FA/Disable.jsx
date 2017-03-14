@@ -34,13 +34,16 @@ class Disable extends React.Component {
 
     onDisable() {
         let {token, password} = this.state;
-        if(!token || token.length < 6)
-            return this.setState({tokenError: '6-Digit Key is required and must contain 6 characters'});
-        if(!password || password.length < 6)
-            return this.setState({passwordError: 'Password is required and must contain at least 6 characters'})
 
-        this.props.disableTFA(token, password).catch(error => {
-            this.setState({error: 'Invalid password or 6-Digit Key'});
+        this.props.disableTFA(token, password).catch(err => {
+            const error = err.response.message;
+            if(/password/i.test(error)) {
+                return this.setState({passwordError: 'Invalid password'});
+            } else if(/token/i.test(error)) {
+                return this.setState({tokenError: 'Invalid 6-Digit Key'});
+            } else {
+                this.setState({error: 'Undefined error.'});                
+            }
         })
     }
 

@@ -5,13 +5,14 @@ export function get(url) {
 	return new Promise((resolve, reject) => {
 		const xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = () => {
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				resolve(JSON.parse(xhr.responseText));
+			if (xhr.readyState == 4) {
+				if(xhr.status == 200) {
+					resolve(JSON.parse(xhr.responseText));
+				} else {
+					reject({code: xhr.status, response: response.message})
+				}
 			}
 		};
-		xhr.onerror = () => {
-			reject(JSON.parse(xhr.responseText));
-		}
 		xhr.open('GET', `${__API_URL__}${url}`, true);
 		xhr.withCredentials = true;
 		xhr.send(null);
@@ -31,13 +32,14 @@ export function post(url, params) {
 
 		const xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = () => {
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				resolve(JSON.parse(xhr.responseText));
+			if (xhr.readyState == 4) {
+				if(xhr.status == 200) {
+					resolve(JSON.parse(xhr.responseText));
+				} else {
+					reject({code: xhr.status, response: JSON.parse(xhr.responseText)})
+				}
 			}
 		};
-		xhr.onerror = () => {
-			reject(JSON.parse(xhr.responseText));
-		}
 		xhr.open('POST', `${__API_URL__}${url}`, true);
 		xhr.withCredentials = true;
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
