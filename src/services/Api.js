@@ -9,7 +9,7 @@ export function get(url) {
 				if(xhr.status == 200) {
 					resolve(JSON.parse(xhr.responseText));
 				} else {
-					reject({code: xhr.status, response: response.message})
+					reject({code: xhr.status, response: JSON.parse(xhr.responseText)})
 				}
 			}
 		};
