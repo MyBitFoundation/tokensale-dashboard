@@ -81,7 +81,7 @@ class History extends React.Component {
 					<div className="td td-rate">
 						<div className="tdIn">1 {item.sentCoinType} = {item.tokenPrice} MyB</div>
 					</div>
-					<div className="td td-purchase">
+					<div className="td td-purchased">
 						<div className="tdIn">{item.receivedAmount} MyB</div>
 					</div>
 					<div className="td td-address">
@@ -118,7 +118,7 @@ class History extends React.Component {
 								Exchange Rate <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
 						</div>
-						<div className="td td-purchase">
+						<div className="td td-purchased">
 							<a
 								href="javascript:;"
 								className={`sort ${sort === 'purchase' && sortLTH ? 'active' : ''}`}

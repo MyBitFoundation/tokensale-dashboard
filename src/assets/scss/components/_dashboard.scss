@@ -100,40 +100,57 @@
 		}
 		.td-date{
 			padding-left: 40px;
-			width: 25%;
+			width: 21%;
 			font-size: 0.9375rem;
 			@include MQ(S){
-				width: 34%;
+				width: 28%;
 				padding-left: 10px;
 				font-size: 0.8125rem;
 			};
 		}
 		.td-amount{
-			width: 18%;
+			width: 14%;
 			font-size: 1.125rem;
 			color: #281f39;
 			b{
 				font-weight: 700;
 			}
 			@include MQ(S){
-				width: 22%;
+				width: 21%;
 				font-size: 0.8125rem;
 			};
 		}
 		.td-rate{
-			width: 30%;
+			width: 26%;
 			font-size: 1.125rem;
 			color: #281f39;
 			@include MQ(S){
-				width: 44%;
+				width: 31%;
+				font-size: 0.8125rem;
+			};
+		}
+		.td-purchased{
+			width: 16%;
+			font-size: 1.125rem;
+			color: #281f39;
+			padding-right: 0!important;
+			padding-left: 0!important;
+			@include MQ(L){
+				width: 20%;
+			};
+			@include MQ(S){
+				//width: 15%;
 				font-size: 0.8125rem;
 			};
 		}
 		.td-address{
-			width: 27%;
+			width: 23%;
 			text-align: right;
 			font-size: 1.125rem;
 			padding-right: 35px;
+			@include MQ(L){
+				width: 19%;
+			};
 			@include MQ(S){
 				display: none;
 			};

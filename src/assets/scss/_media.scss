@@ -56,6 +56,27 @@ only screen and (                min-resolution: 3dppx) {
 	.card__infoData b {font-size: 1.4rem;}
 	.card__infoData .equal{font-size: 1.5rem;}
 }
+
+@media (max-width:1130px) {
+	.history{
+		.title{
+			padding-left: 20px;
+		}
+		&__table{
+			.td{
+				font-size: 1rem;
+			}
+			.td-date{
+				padding-left: 20px;
+				font-size: 0.9375rem;
+			}
+			.td-address{
+				padding-right: 20px;
+			}
+		}
+	}
+
+}
 /*------------... 1024 ---------------*/
 @media (max-width:1024px) {
 	.card__pic {

@@ -127,6 +127,9 @@ b{
 	color: #aaaeb3;
 	font-size: 1rem;
 	font-weight: 600;
+	@include MQ(S){
+		font-size: 0.8125rem;
+	};
 	&:hover{
 		color: #686471;
 		.sortIcon{
