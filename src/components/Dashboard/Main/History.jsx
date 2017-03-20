@@ -60,6 +60,8 @@ class History extends React.Component {
 					return a.sentAmount > b.sentAmount ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
 				case 'rate':
 					return a.tokenPrice > b.tokenPrice ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
+				case 'purchase':
+					return a.tokenPrice > b.tokenPrice ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
 				case 'address':
 					return a.address > b.address ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
 				default:
@@ -78,6 +80,9 @@ class History extends React.Component {
 					</div>
 					<div className="td td-rate">
 						<div className="tdIn">1 {item.sentCoinType} = {item.tokenPrice} MyB</div>
+					</div>
+					<div className="td td-purchase">
+						<div className="tdIn">{item.receivedAmount} MyB</div>
 					</div>
 					<div className="td td-address">
 						<div className="tdIn">{item.address}</div>
@@ -111,6 +116,14 @@ class History extends React.Component {
 								className={`sort ${sort === 'rate' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'rate')}>
 								Exchange Rate <span className="sortIcon icon-arrow_dropdown"/>
+							</a>
+						</div>
+						<div className="td td-purchase">
+							<a
+								href="javascript:;"
+								className={`sort ${sort === 'purchase' && sortLTH ? 'active' : ''}`}
+								onClick={this.onSort.bind(this, 'purchase')}>
+								MyB Purchased <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
 						</div>
 						<div className="td td-address">
