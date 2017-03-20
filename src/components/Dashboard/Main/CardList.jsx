@@ -4,7 +4,8 @@ import {connect} from 'react-redux';
 function mapStateToProps(state, ownProps) {
 	return {
 		balance: state.account.get('balance'),
-		tokenPrice: state.account.get('tokenPrice')
+		tokenPrice: state.account.get('tokenPrice'),
+		precision: state.account.get('precision')
 	};
 }
 
@@ -46,6 +47,8 @@ class CardList extends React.Component {
 	}
 
 	render() {
+		let {tokenPrice, balance, precision} = this.props;
+
 		return (
 			<div className="card__list">
 				<div className="card">
@@ -96,7 +99,7 @@ class CardList extends React.Component {
 						</div>
 						<div className="card__info">
 							<div className="card__infoData">
-								<b className="mark4">{this.props.balance}</b>
+								<b className="mark4">{balance / precision}</b>
 							</div>
 							<div className="card__infoLabel">MyB Balance</div>
 						</div>

@@ -6,7 +6,8 @@ const initialState = Map({
     tokenPrice: 0,
     lastLoginDate: null,
     address: null,
-    tfa: null
+    tfa: null,
+    precision: 0
 });
 
 export default function AccountReducer(state = initialState, action) {
@@ -18,6 +19,7 @@ export default function AccountReducer(state = initialState, action) {
             state = state.set('address', action.payload.address);
             state = state.set('tfa', action.payload.tfa);
             state = state.set('tokenPrice', action.payload.tokenPrice);
+            state = state.set('precision', action.payload.precision);
             return state;
         case 'LOGOUT':
             state = initialState;
