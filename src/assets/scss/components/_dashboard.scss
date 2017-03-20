@@ -103,7 +103,7 @@
 			width: 21%;
 			font-size: 0.9375rem;
 			@include MQ(S){
-				width: 28%;
+				width: 39%;
 				padding-left: 10px;
 				font-size: 0.8125rem;
 			};
@@ -116,7 +116,7 @@
 				font-weight: 700;
 			}
 			@include MQ(S){
-				width: 21%;
+				width: 26%;
 				font-size: 0.8125rem;
 			};
 		}
@@ -125,8 +125,9 @@
 			font-size: 1.125rem;
 			color: #281f39;
 			@include MQ(S){
-				width: 31%;
-				font-size: 0.8125rem;
+				display: none;
+				//width: 31%;
+				//font-size: 0.8125rem;
 			};
 		}
 		.td-purchased{
@@ -139,7 +140,7 @@
 				width: 20%;
 			};
 			@include MQ(S){
-				//width: 15%;
+				width: 35%;
 				font-size: 0.8125rem;
 			};
 		}
