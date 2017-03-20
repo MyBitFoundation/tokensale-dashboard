@@ -54,6 +54,9 @@ class Modal extends React.Component {
                                         <img src={currency ? `images/${currency.toLowerCase()}_lg.png` : ''} alt=""/>
                                     </div>
                                     <h2 className="modal__title">Pay with {currency.toUpperCase()}</h2>
+                                    <div className="modal__sum">
+                                        <i>Minimum payment: <b>{keys.min} {keys.type}</b></i>
+                                    </div>
                                     <div className="modal__note">
                                         Scan QR-code on your phone <br/>
                                         in order to make a payment.
