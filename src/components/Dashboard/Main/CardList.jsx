@@ -99,7 +99,7 @@ class CardList extends React.Component {
 						</div>
 						<div className="card__info">
 							<div className="card__infoData">
-								<b className="mark4">{balance / precision}</b>
+								<b className="mark4">{(parseInt(balance  * precision) / precision).toFixed(precision.length - 1)}</b>
 							</div>
 							<div className="card__infoLabel">MyB Balance</div>
 						</div>
