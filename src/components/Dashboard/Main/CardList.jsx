@@ -48,8 +48,6 @@ class CardList extends React.Component {
 
 	render() {
 		let {tokenPrice, balance, precision} = this.props;
-		console.log(precision);
-		console.log(parseInt(precision.toFixed().length) - 1);
 
 		return (
 			<div className="card__list">
