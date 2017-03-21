@@ -49,7 +49,7 @@ class CardList extends React.Component {
 	render() {
 		let {tokenPrice, balance, precision} = this.props;
 		console.log(precision);
-		console.log(precision.length - 1);
+		console.log(parseInt(precision.toFixed().length) - 1);
 
 		return (
 			<div className="card__list">
@@ -101,7 +101,7 @@ class CardList extends React.Component {
 						</div>
 						<div className="card__info">
 							<div className="card__infoData">
-								<b className="mark4">{(parseInt(balance  * precision) / precision).toFixed(precision.length - 1)}</b>
+								<b className="mark4">{(parseInt(balance  * precision) / precision).toFixed(precision.toFixed().length - 1)}</b>
 							</div>
 							<div className="card__infoLabel">MyB Balance</div>
 						</div>
