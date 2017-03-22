@@ -9,7 +9,7 @@ export default class Modal extends React.Component {
                         © 2017 My Bit.   All rights reserved.
                     </div>
                     <div className="">
-                        <a href="" className="footer__contact">Contact Us</a>
+                        <a href={__REDIRECT_URL__} className="footer__contact">Contact Us</a>
                     </div>
                 </div>
             </footer>
