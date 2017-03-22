@@ -61,7 +61,15 @@ let createConfig = (options) => {
                 test: /\.(scss|css)$/,
                 loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader', 'sass-loader'] })
             },
-
+            {
+                test: /\.(pdf)$/,
+                use : {
+                    loader: 'file-loader',
+                    options: {
+                        name : "[name].[ext]"
+                    }
+                },
+            },
             {
                 test: /\.(png|gif|jpg|ico)$/,
                 use : {

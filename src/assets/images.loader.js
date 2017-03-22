@@ -22,3 +22,4 @@ require('assets/images/cur_lg/rep_lg.png');
 require('assets/images/img_cont/qrcode.png');
 require('assets/images/img_cont/qrcode_lg.png');
 require('assets/images/favicon.ico');
+require('assets/MyBit_Deal_Sheet.pdf');
