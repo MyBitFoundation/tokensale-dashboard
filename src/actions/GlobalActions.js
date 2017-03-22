@@ -3,7 +3,7 @@ import {get} from 'services/Api';
 export function initialize() {
     return (dispatch, getState) => {
         return new Promise((resolve, reject) => {
-            get('/users/me').then(data => {
+            get('/users/info').then(data => {
                 dispatch({
                     type: 'INIT_ACCOUNT',
                     payload: data
@@ -36,7 +36,7 @@ export function signOut() {
 
 export function checkAuthorization() {
     return (dispatch, getState) => {
-        get('/users/me').catch(err => {
+        get('/users/info').catch(err => {
             if(err.code === 403) {
                 window.location.href = __REDIRECT_URL__
             }

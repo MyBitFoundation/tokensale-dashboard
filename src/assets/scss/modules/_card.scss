@@ -3,13 +3,14 @@
 	&__list{
 		@include clearfix;
 	}
-	width: 34%;
+	//width: 34%;
+	width: 25%;
 	float: left;
 	padding-right: $defXPad2;
 	padding-bottom: 30px;
 	@include MQ(L){
 		padding-right: 15px;
-		padding-bottom: 0;
+		padding-bottom: 20px;
 	};
 	@include MQ(S){
 		width: 100%!important;
@@ -18,7 +19,7 @@
 	};
 	&:last-child{
 		padding-right: 0;
-		width: 32%;
+		//width: 32%;
 	}
 	&In{
 		height: 140px;
@@ -34,9 +35,9 @@
 	}
 	&__pic{
 		float: left;
-		height: 62px;
-		line-height: 62px;
-		width: 62px;
+		height: 52px;
+		line-height: 52px;
+		width: 52px;
 		font-size: 0;
 		text-align: center;
 		@include border-radius(50%);
@@ -51,19 +52,19 @@
 		}
 	}
 	&__info{
-		margin-left: 85px;
+		margin-left: 75px;
 		overflow: hidden;
 		&Data{
-			font-size: 1rem;
+			font-size: 0.875rem;
 			color: #aaaeb3;
 			margin-bottom: 7px;
 			.equal{
-				font-size: 2rem;
+				font-size: 1.4rem;
 				line-height: 32px;
 				padding: 0 2%;
 			}
 			b{
-				font-size: 2rem;
+				font-size: 1.4rem;
 				line-height: 35px;
 			}
 			& > *{
@@ -80,6 +81,26 @@
 			display: inline-block;
 			vertical-align: top;
 			white-space: nowrap;
+		}
+	}
+	&__total{
+		padding-right: 30px;
+		margin-top: -20px;
+		&Row{
+			font-size: 1.4rem;
+			color: #281f39;
+			text-align: right;
+		}
+		&Num{}
+		&Cur{
+			font-size: 90%;
+		}
+		&Title{
+			font-size: 1rem;
+			height: 22px;
+			line-height: 13px;
+			font-weight: 600;
+			color: #281f39;
 		}
 	}
 }

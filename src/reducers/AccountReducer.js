@@ -2,6 +2,8 @@ import { Map } from 'immutable';
 
 const initialState = Map({
     email: null,
+    amountRaised: 0,
+    amountRaisedEUR: 0,
     balance: 0,
     tokenPrice: 0,
     lastLoginDate: null,
@@ -14,6 +16,8 @@ export default function AccountReducer(state = initialState, action) {
     switch(action.type) {
         case 'INIT_ACCOUNT':
             state = state.set('email', action.payload.email);
+            state = state.set('amountRaised', action.payload.amountRaised);
+            state = state.set('amountRaisedEUR', action.payload.amountRaisedEUR);
             state = state.set('balance', action.payload.balance);
             state = state.set('lastLoginDate', action.payload.lastLoginDate);
             state = state.set('address', action.payload.address);
