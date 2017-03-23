@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import countdown from "countdown";
 
 function mapStateToProps(state, ownProps) {
 	return {
@@ -36,13 +35,16 @@ class CardList extends React.Component {
 	}
 
 	calculateLeftTime() {
-		console.log(countdown(Date.now(), new Date(1492992000000)).toString());
-		let ms = new Date(1492992000000) - Date.now();
-		let dayTimestamp = 24 * 60 * 60 * 1000;
-		let days = Math.floor(ms / dayTimestamp);
-		let hours = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
-		let minutes = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
-
+		let ss = (1492992000000 - Date.now()) / 1000;
+		let days = Math.floor(ss / (60 * 60 * 24));
+		console.log(days);
+		
+		ss -= (60 * 60 * 24) * days;
+		
+		let hours = Math.floor(ss / (60 * 60));
+		ss -= (60 * 60) * hours;
+		let minutes = Math.floor(ss / 60);
+		
 		if(days < 0) days = 0;
 		if(hours < 0) hours = 0;
 		if(minutes < 0) minutes = 0;
@@ -100,7 +102,7 @@ class CardList extends React.Component {
 							<img src="images/clock@2x.png" alt="" height="32"/>
 						</div>
 						<div className="card__info">
-							<div className="card__infoData">
+							<div className="card__infoData" style={{fontSize: "0.8rem"}}>
 								<div className="colspan">
 									<b className="mark2">{this.state.daysLeft} </b>
 									<span className="pr-10">Days</span>
@@ -108,6 +110,10 @@ class CardList extends React.Component {
 								<div className="colspan">
 									<b className="mark3">{this.state.hoursLeft} </b>
 									<span>Hours</span>
+								</div>
+								<div className="colspan">
+									<b className="mark3">{this.state.minutesLeft} </b>
+									<span>Minutes</span>
 								</div>
 							</div>
 							<div className="card__infoLabel">Time Left</div>

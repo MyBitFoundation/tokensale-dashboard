@@ -24,7 +24,7 @@ export function signOut() {
         get('/users/logout').then(data => {
             dispatch({
                 type: 'LOGOUT'
-            })
+            });
             window.location.href = __REDIRECT_URL__;
         }).catch(err => {
             if(err.code === 403) {
