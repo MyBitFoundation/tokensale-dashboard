@@ -57,7 +57,7 @@ export default class TermsAndConditions extends React.Component {
         							<div className="text_c" style={{padding: '15px 0'}}>
         								<div>TIMING OF SALE</div>
         								<br/>
-        								The initial sale will begin at 00:00:00 EST on Mach 24, 2017.
+        								The initial sale will begin at 00:00:00 GMT (+0) on Mach 24, 2017.
         								<br/>--<br/>
         								The initial Sale will run for 30 days and will end at 23:59:59 EST on April 23, 2017.
         							</div>
