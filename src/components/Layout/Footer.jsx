@@ -16,7 +16,7 @@ export default class Modal extends React.Component {
                             target="_blank"
                         >Code</Link>
         				<Link to="/MyBit_Deal_Sheet.pdf" className="footer__link" target="_blank">Deal Sheet</Link>
-        				<Link to={__REDIRECT_URL__} className="footer__link" target="_blank">Contact Us</Link>
+        				<Link to="https://mybit.io#contact" className="footer__link" target="_blank">Contact Us</Link>
         			</div>
                 </div>
             </footer>
