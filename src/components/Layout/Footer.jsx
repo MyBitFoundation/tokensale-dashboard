@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default class Modal extends React.Component {
     render() {
@@ -9,12 +10,12 @@ export default class Modal extends React.Component {
                         © 2017 My Bit.   All rights reserved.
                     </div>
                     <div className="footer__linkWrap">
-        				<a
-                            href="https://gist.github.com/MyBitDev/4bbd6aec6904a6c21eb47c3179287078"
+        				<Link
+                            to="https://gist.github.com/MyBitDev/4bbd6aec6904a6c21eb47c3179287078"
                             className="footer__link"
                             target="_blank"
-                        >Code</a>
-        				<a href="/MyBit_Deal_Sheet.pdf" className="footer__link" target="_blank">Deal Sheet</a>
+                        >Code</Link>
+        				<Link to="/MyBit_Deal_Sheet.pdf" className="footer__link" target="_blank">Deal Sheet</Link>
         				<Link to={__REDIRECT_URL__} className="footer__link" target="_blank">Contact Us</Link>
         			</div>
                 </div>
