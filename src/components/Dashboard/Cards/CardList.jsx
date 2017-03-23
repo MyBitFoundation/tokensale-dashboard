@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import countdown from "countdown";
 
 function mapStateToProps(state, ownProps) {
 	return {
@@ -35,16 +36,20 @@ class CardList extends React.Component {
 	}
 
 	calculateLeftTime() {
-		let ms = new Date(__TIME__) - Date.now();
+		console.log(countdown(Date.now(), new Date(1492992000000)).toString());
+		let ms = new Date(1492992000000) - Date.now();
 		let dayTimestamp = 24 * 60 * 60 * 1000;
 		let days = Math.floor(ms / dayTimestamp);
 		let hours = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
+		let minutes = Math.floor(ms / 1000 / 60 / 60) - (days * 24);
 
 		if(days < 0) days = 0;
 		if(hours < 0) hours = 0;
+		if(minutes < 0) minutes = 0;
 		this.setState({
 			daysLeft: days,
-			hoursLeft: hours
+			hoursLeft: hours,
+			minutesLeft: minutes
 		});
 	}
 
