@@ -59,7 +59,7 @@ export default class TermsAndConditions extends React.Component {
         								<br/>
         								The initial sale will begin at 00:00:00 GMT (+0) on Mach 24, 2017.
         								<br/>--<br/>
-        								The initial Sale will run for 30 days and will end at 23:59:59 GMT (+0) on April 23, 2017.
+        								The initial Sale will run for 30 days and will end at 23:59:59 GMT (+0) on April 22, 2017.
         							</div>
         							<div>
         								MYBIT reserves the right to change the date when the initial sale will begin and further reserves the right to extend the sale duration for any reason, including the unavailability of the website https://MyBit.io or other unforeseen security or procedural issues. Though it does not currently anticipate doing so, MYBIT also reserves the right to shorten the sale duration for any reason.
