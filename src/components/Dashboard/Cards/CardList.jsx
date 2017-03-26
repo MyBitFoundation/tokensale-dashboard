@@ -35,14 +35,14 @@ class CardList extends React.Component {
 	}
 
 	calculateLeftTime() {
-		let ss = (1492992000000 - Date.now()) / 1000;
+		let ss = (1492905600000 - Date.now()) / 1000;
 		let days = Math.floor(ss / (60 * 60 * 24));
 		ss -= (60 * 60 * 24) * days;
-		
+
 		let hours = Math.floor(ss / (60 * 60));
 		ss -= (60 * 60) * hours;
 		let minutes = Math.floor(ss / 60);
-		
+
 		if(days < 0) days = 0;
 		if(hours < 0) hours = 0;
 		if(minutes < 0) minutes = 0;
