@@ -63,11 +63,11 @@ class CardList extends React.Component {
 						<div className="card__total">
 							<div className="card__totalTitle">Total Amount Raised</div>
 							<div className="card__totalRow">
-								<b className="card__totalNum">{amountRaised} </b>
+								<b className="card__totalNum">{parseFloat(amountRaised).toFixed(2)} </b>
 								<span className="card__totalCur">ETH</span>
 							</div>
 							<div className="card__totalRow">
-								<b className="card__totalNum">{amountRaisedEUR} </b>
+								<b className="card__totalNum">{parseFloat(amountRaisedEUR).toFixed(2)} </b>
 								<span className="card__totalCur">EUR</span>
 							</div>
 						</div>
