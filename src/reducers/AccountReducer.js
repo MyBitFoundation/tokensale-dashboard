@@ -3,12 +3,14 @@ import { Map } from 'immutable';
 const initialState = Map({
     email: null,
     amountRaised: 0,
+	contractAddress: '',
     amountRaisedEUR: 0,
     balance: 0,
     tokenPrice: 0,
     lastLoginDate: null,
     address: null,
     tfa: null,
+	endTime: null,
     precision: 0
 });
 
@@ -24,6 +26,8 @@ export default function AccountReducer(state = initialState, action) {
             state = state.set('tfa', action.payload.tfa);
             state = state.set('tokenPrice', action.payload.tokenPrice);
             state = state.set('precision', action.payload.precision);
+            state = state.set('contractAddress', action.payload.contractAddress);
+            state = state.set('endTime', action.payload.endTime);
             return state;
         case 'LOGOUT':
             state = initialState;

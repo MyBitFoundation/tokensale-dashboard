@@ -7,7 +7,8 @@ function mapStateToProps(state, ownProps) {
 		amountRaised: state.account.get('amountRaised'),
 		amountRaisedEUR: state.account.get('amountRaisedEUR'),
 		tokenPrice: state.account.get('tokenPrice'),
-		precision: state.account.get('precision')
+		precision: state.account.get('precision'),
+		endTime: state.account.get('endTime')
 	};
 }
 
@@ -35,7 +36,8 @@ class CardList extends React.Component {
 	}
 
 	calculateLeftTime() {
-		let ss = (1492905600000 - Date.now()) / 1000;
+		let {endTime} = this.props;
+		let ss = (new Date(endTime).getTime() - Date.now()) / 1000;
 		let days = Math.floor(ss / (60 * 60 * 24));
 		ss -= (60 * 60 * 24) * days;
 
@@ -57,22 +59,22 @@ class CardList extends React.Component {
 		let {tokenPrice, balance, precision, amountRaised, amountRaisedEUR} = this.props;
 
 		return (
-			<div className="card__list">
-				<div className="card">
-					<div className="cardIn">
-						<div className="card__total">
-							<div className="card__totalTitle">Total Amount Raised</div>
-							<div className="card__totalRow">
-								<b className="card__totalNum">{parseFloat(amountRaised).toFixed(2)} </b>
-								<span className="card__totalCur">ETH</span>
-							</div>
-							<div className="card__totalRow">
-								<b className="card__totalNum">{parseFloat(amountRaisedEUR).toFixed(2)} </b>
-								<span className="card__totalCur">EUR</span>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div className="card__list items-3">
+				{/*<div className="card">*/}
+					{/*<div className="cardIn">*/}
+						{/*<div className="card__total">*/}
+							{/*<div className="card__totalTitle">Total Amount Raised</div>*/}
+							{/*<div className="card__totalRow">*/}
+								{/*<b className="card__totalNum">{parseFloat(amountRaised).toFixed(2)} </b>*/}
+								{/*<span className="card__totalCur">ETH</span>*/}
+							{/*</div>*/}
+							{/*<div className="card__totalRow">*/}
+								{/*<b className="card__totalNum">{parseFloat(amountRaisedEUR).toFixed(2)} </b>*/}
+								{/*<span className="card__totalCur">EUR</span>*/}
+							{/*</div>*/}
+						{/*</div>*/}
+					{/*</div>*/}
+				{/*</div>*/}
 				<div className="card">
 					<div className="cardIn">
 						<div className="card__pic bg1">
@@ -86,7 +88,7 @@ class CardList extends React.Component {
 								</div>
 								<span className="equal">=</span>
 								<div className="colspan">
-									<b className="mark1">{this.props.tokenPrice} </b>
+									<b className="mark1">{parseFloat(this.props.tokenPrice).toFixed(2)} </b>
 									<span>MyB</span>
 								</div>
 							</div>

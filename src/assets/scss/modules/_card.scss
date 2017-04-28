@@ -3,6 +3,12 @@
 	&__list{
 		@include clearfix;
 	}
+	.items-3 &{
+		width: 33%;
+		&:last-child{
+			width: 34%;
+		}
+	}
 	//width: 34%;
 	width: 25%;
 	float: left;

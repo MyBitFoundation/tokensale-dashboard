@@ -179,3 +179,40 @@
 		}
 	}
 }
+.address{
+	background: #fff;
+	@include border-radius(5px);
+	@include box-shadow($shadow);
+	margin-bottom: 30px;
+	font-size: 1.25rem;
+	padding: 27px 30px;
+	@include MQ(L){
+		margin-bottom: 20px;
+	};
+	@include MQ(S){
+		margin-bottom: 10px;
+		padding: 15px 10px;
+		font-size: 1.125rem;
+	};
+	.cur__icon {
+		img{
+			@include MQ(S){
+				height: 16px;
+			};
+		}
+	}
+	&__title{
+		display: inline-block;
+		vertical-align: middle;
+		color: #281f39;
+		padding-right: 10px;
+	}
+	&__text{
+		display: inline-block;
+		vertical-align: middle;
+		color: #96949c;
+	}
+	.cur__text{
+		vertical-align: middle;
+	}
+}

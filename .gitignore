@@ -10,3 +10,5 @@ nginx.error.log
 node_modules
 config.js
 dist
+coding
+*.log

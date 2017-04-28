@@ -69,10 +69,14 @@ b{
 		overflow: hidden;
 		@include MQ(L){
 			margin-left: 315px;
+			margin-top: 0!important;
 		};
 		@include MQ(M){
 			margin-left: 0;
 		};
+	}
+	&.margin1{
+		margin-top: -40px;
 	}
 }
 .main__col{
