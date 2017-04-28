@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import CardList from '../Cards/CardList';
 // import Box from './Box';
 import PresaleAddress from './PresaleAddress';
