@@ -40,13 +40,13 @@ class PasswordChanged extends React.Component {
             		<div className="modal-dialogAlignOut">
             			<div className="modal-dialogAlignIn">
             				<div className="modal-dialogContent">
-            					<span className="modal__close icon-cross" data-dismiss="modal" onClick={this.onClick.bind(this)}></span>
+            					<span className="modal__close icon-cross" data-dismiss="modal" onClick={this.onClick.bind(this)} />
 
             					<div className="modal__body text_c">
-            						<h2 className="modal__title">Password has been changed</h2>
+            						<h2 className="modal__title">Settings has been changed</h2>
             						<div className="modal__btns">
             							<button type="button" className="btn btn-sbm" onClick={this.onClick.bind(this)}>
-            								<span className="loader none"></span>
+            								<span className="loader none" />
             								<span className="btnText">Ok</span>
             							</button>
             						</div>
