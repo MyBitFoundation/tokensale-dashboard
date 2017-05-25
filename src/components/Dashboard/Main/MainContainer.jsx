@@ -25,7 +25,7 @@ export default class Main extends React.Component {
 									<img src="images/eth_sm.png" alt="" />&nbsp;
 								</span>
 					            <b>100+ ETHER &nbsp;</b>
-					            <span className="">receives a 25% Discount</span>
+					            <span className="">receives a 15% Discount</span>
 				            </div>
 			            </div>
 		            </div>
