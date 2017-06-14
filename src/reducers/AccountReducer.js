@@ -11,7 +11,9 @@ const initialState = Map({
     address: null,
     tfa: null,
 	endTime: null,
-    precision: 0
+    precision: 0,
+	deadline: 0,
+	presaleDeadline: 0
 });
 
 export default function AccountReducer(state = initialState, action) {
@@ -28,15 +30,17 @@ export default function AccountReducer(state = initialState, action) {
             state = state.set('precision', action.payload.precision);
             state = state.set('contractAddress', action.payload.contractAddress);
             state = state.set('endTime', action.payload.endTime);
+            state = state.set('deadline', action.payload.deadline);
+            state = state.set('presaleDeadline', action.payload.presaleDeadline);
             return state;
         case 'LOGOUT':
             state = initialState;
             return state;
         case 'TFA_ENABLED':
-            state = state.set('tfa', action.payload.tfa)
+            state = state.set('tfa', action.payload.tfa);
             return state;
         case 'TFA_DISABLED':
-            state = state.set('tfa', action.payload.tfa)
+            state = state.set('tfa', action.payload.tfa);
             return state;
         default:
             return state;

@@ -57,9 +57,9 @@ export default class TermsAndConditions extends React.Component {
         							<div className="text_c" style={{padding: '15px 0'}}>
         								<div>TIMING OF SALE</div>
         								<br/>
-        								The initial sale will begin at 00:00:00 GMT (+0) on Mach 24, 2017.
+								        The initial sale will begin at 12:00:00 GMT (+1) on July 17th, 2017
         								<br/>--<br/>
-        								The initial Sale will run for 30 days and will end at 23:59:59 GMT (+0) on April 22, 2017.
+								        The initial sale will run for 30 days and will end at 12:00:00 GMT (+1) on August 15th, 2017
         							</div>
         							<div>
         								MYBIT reserves the right to change the date when the initial sale will begin and further reserves the right to extend the sale duration for any reason, including the unavailability of the website https://MyBit.io or other unforeseen security or procedural issues. Though it does not currently anticipate doing so, MYBIT also reserves the right to shorten the sale duration for any reason.
@@ -80,82 +80,106 @@ export default class TermsAndConditions extends React.Component {
             									<th>Cumulative MyB</th>
             									<th>Price per MyB in ETH</th>
             									<th>ETH per Stage</th>
-            									<th>Est. USD per Stage</th>
-            									<th>% of total batch)</th>
             								</tr>
                                         </thead>
         								<tbody>
                                             <tr>
             									<td>1-early bird</td>
-            									<td>4,500,000</td>
-            									<td>4,500,000</td>
+            									<td>300 000</td>
+            									<td>300 000</td>
             									<td>0.0075</td>
-            									<td>33750</td>
-            									<td>$459,000.00</td>
-            									<td>19%</td>
+            									<td>2 250</td>
             								</tr>
             								<tr>
             									<td>2</td>
-            									<td>5,000,000</td>
-            									<td>9,500,000</td>
+            									<td>750 000</td>
+            									<td>1 050 000</td>
             									<td>0.0085</td>
-            									<td>42500</td>
-            									<td>$578,000.00</td>
-            									<td>22%</td>
+            									<td>6 375</td>
             								</tr>
             								<tr>
             									<td>3</td>
-            									<td>6,000,000</td>
-            									<td>15,500,000</td>
+            									<td>1 250 000</td>
+            									<td>2 300 000</td>
             									<td>0.009</td>
-            									<td>54000</td>
-            									<td>$734,400.00</td>
-            									<td>27%</td>
+            									<td>11 250</td>
             								</tr>
             								<tr>
             									<td>4</td>
-            									<td>7,000,000</td>
-            									<td>22,500,000</td>
+            									<td>2 500 000</td>
+            									<td>4 800 000</td>
             									<td>0.01</td>
-            									<td>70000</td>
-            									<td>$952,000.00</td>
-            									<td>32%</td>
+            									<td>25 000</td>
             								</tr>
             								<tr>
-            									<td></td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
+            									<td/>
+            									<td/>
+            									<td/>
+            									<td/>
+            									<td/>
             								</tr>
+                                            <tr>
+	                                            <td>Total</td>
+	                                            <td>4 800 000</td>
+	                                            <td/>
+	                                            <td/>
+	                                            <td>44 875</td>
+                                            </tr>
+                                            <tr>
+	                                            <td/>
+	                                            <td/>
+	                                            <td/>
+	                                            <td/>
+	                                            <td/>
+                                            </tr>
             								<tr>
             									<td>Bounty Fund</td>
-            									<td>500,000</td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
+            									<td>300 000</td>
+									            <td>5%</td>
+            									<td/>
+            									<td/>
             								</tr>
             								<tr>
             									<td>To Founders</td>
-            									<td>2,000,000</td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
-            									<td></td>
+            									<td>600 000</td>
+            									<td>10%</td>
+            									<td/>
+            									<td/>
             								</tr>
             								<tr>
-            									<td>Total</td>
-            									<td>25,000,000</td>
-            									<td></td>
-            									<td></td>
-            									<td>200250</td>
-            									<td>$2,723,400.00</td>
-            									<td></td>
+            									<td>Advisors</td>
+            									<td>300 000</td>
+            									<td>5%</td>
+            									<td/>
+            									<td/>
+            								</tr>
+                                            <tr>
+	                                            <td/>
+	                                            <td/>
+	                                            <td/>
+	                                            <td/>
+	                                            <td/>
+                                            </tr>
+            								<tr>
+            									<td>Total potential supply</td>
+            									<td/>
+            									<td>6 000 000</td>
+            									<td/>
+            									<td/>
+            								</tr>
+            								<tr>
+            									<td>Pre-mine (goes to beneficiary wallet)</td>
+            									<td/>
+            									<td>1 000 000</td>
+            									<td/>
+            									<td/>
+            								</tr>
+            								<tr>
+            									<td>Total Supply</td>
+									            <td/>
+            									<td>7 000 000</td>
+            									<td/>
+            									<td/>
             								</tr>
         								</tbody>
         							</table>

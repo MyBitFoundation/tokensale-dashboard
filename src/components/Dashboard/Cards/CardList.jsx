@@ -8,7 +8,9 @@ function mapStateToProps(state, ownProps) {
 		amountRaisedEUR: state.account.get('amountRaisedEUR'),
 		tokenPrice: state.account.get('tokenPrice'),
 		precision: state.account.get('precision'),
-		endTime: state.account.get('endTime')
+		endTime: state.account.get('endTime'),
+		deadline: state.account.get('deadline'),
+		presaleDeadline: state.account.get('presaleDeadline')
 	};
 }
 
@@ -21,59 +23,77 @@ class CardList extends React.Component {
 		super();
 		this.state = {
 			daysLeft: 0,
-			hoursLeft: 0
+			hoursLeft: 0,
+			timer: null
 		};
 		this.interval = 0;
 	}
-
+	
 	componentWillMount() {
 		this.interval = setInterval(() => this.calculateLeftTime(), 60 * 1000);
 		this.calculateLeftTime()
 	}
-
+	
 	componentWillUnmount() {
 		clearInterval(this.interval);
 	}
-
+	
 	calculateLeftTime() {
-		let {endTime} = this.props;
-		let ss = (new Date(endTime).getTime() - Date.now()) / 1000;
-		let days = Math.floor(ss / (60 * 60 * 24));
-		ss -= (60 * 60 * 24) * days;
-
-		let hours = Math.floor(ss / (60 * 60));
-		ss -= (60 * 60) * hours;
-		let minutes = Math.floor(ss / 60);
-
-		if(days < 0) days = 0;
-		if(hours < 0) hours = 0;
-		if(minutes < 0) minutes = 0;
-		this.setState({
-			daysLeft: days,
-			hoursLeft: hours,
-			minutesLeft: minutes
-		});
+		let {deadline, presaleDeadline} = this.props;
+		
+		let endTime = null;
+		if(presaleDeadline - Date.now() / 1000 > 0) {
+			endTime = presaleDeadline * 1000;
+		} else if(deadline - Date.now() / 1000 > 0) {
+			endTime = deadline * 1000;
+		}
+		
+		if(endTime) {
+			let ss = (new Date(endTime).getTime() - Date.now()) / 1000;
+			let days = Math.floor(ss / (60 * 60 * 24));
+			ss -= (60 * 60 * 24) * days;
+			
+			let hours = Math.floor(ss / (60 * 60));
+			ss -= (60 * 60) * hours;
+			let minutes = Math.floor(ss / 60);
+			
+			if(days < 0) days = 0;
+			if(hours < 0) hours = 0;
+			if(minutes < 0) minutes = 0;
+			this.setState({
+				timer: {
+					daysLeft: days,
+					hoursLeft: hours,
+					minutesLeft: minutes
+				}
+			});
+		} else {
+			this.setState({
+				timer: null
+			});
+		}
 	}
-
+	
 	render() {
 		let {tokenPrice, balance, precision, amountRaised, amountRaisedEUR} = this.props;
-
+		let {timer} = this.state;
+		
 		return (
 			<div className="card__list items-3">
 				{/*<div className="card">*/}
-					{/*<div className="cardIn">*/}
-						{/*<div className="card__total">*/}
-							{/*<div className="card__totalTitle">Total Amount Raised</div>*/}
-							{/*<div className="card__totalRow">*/}
-								{/*<b className="card__totalNum">{parseFloat(amountRaised).toFixed(2)} </b>*/}
-								{/*<span className="card__totalCur">ETH</span>*/}
-							{/*</div>*/}
-							{/*<div className="card__totalRow">*/}
-								{/*<b className="card__totalNum">{parseFloat(amountRaisedEUR).toFixed(2)} </b>*/}
-								{/*<span className="card__totalCur">EUR</span>*/}
-							{/*</div>*/}
-						{/*</div>*/}
-					{/*</div>*/}
+				{/*<div className="cardIn">*/}
+				{/*<div className="card__total">*/}
+				{/*<div className="card__totalTitle">Total Amount Raised</div>*/}
+				{/*<div className="card__totalRow">*/}
+				{/*<b className="card__totalNum">{parseFloat(amountRaised).toFixed(2)} </b>*/}
+				{/*<span className="card__totalCur">ETH</span>*/}
+				{/*</div>*/}
+				{/*<div className="card__totalRow">*/}
+				{/*<b className="card__totalNum">{parseFloat(amountRaisedEUR).toFixed(2)} </b>*/}
+				{/*<span className="card__totalCur">EUR</span>*/}
+				{/*</div>*/}
+				{/*</div>*/}
+				{/*</div>*/}
 				{/*</div>*/}
 				<div className="card">
 					<div className="cardIn">
@@ -101,23 +121,33 @@ class CardList extends React.Component {
 						<div className="card__pic bg2">
 							<img src="images/clock@2x.png" alt="" height="32"/>
 						</div>
-						<div className="card__info">
-							<div className="card__infoData" style={{fontSize: "0.8rem"}}>
-								<div className="colspan">
-									<b className="mark2">{this.state.daysLeft} </b>
-									<span className="pr-10">Days</span>
+						{timer ? (
+							<div className="card__info">
+								<div className="card__infoData" style={{fontSize: "0.8rem"}}>
+									<div className="colspan">
+										<b className="mark2">{timer.daysLeft} </b>
+										<span className="pr-10">Days</span>
+									</div>
+									<div className="colspan">
+										<b className="mark3">{timer.hoursLeft} </b>
+										<span>Hours</span>
+									</div>
+									<div className="colspan">
+										<b className="mark3">{timer.minutesLeft} </b>
+										<span>Minutes</span>
+									</div>
 								</div>
-								<div className="colspan">
-									<b className="mark3">{this.state.hoursLeft} </b>
-									<span>Hours</span>
-								</div>
-								<div className="colspan">
-									<b className="mark3">{this.state.minutesLeft} </b>
-									<span>Minutes</span>
+								<div className="card__infoLabel">Time Left</div>
+							</div>
+						) : (
+							<div className="card__info">
+								<div className="card__infoData" style={{fontSize: "0.8rem"}}>
+									<div className="colspan">
+										<b className="">Crowdsale over</b>
+									</div>
 								</div>
 							</div>
-							<div className="card__infoLabel">Time Left</div>
-						</div>
+						)}
 					</div>
 				</div>
 				<div className="card">
@@ -127,7 +157,7 @@ class CardList extends React.Component {
 						</div>
 						<div className="card__info">
 							<div className="card__infoData">
-								<b className="mark4">{(parseInt(balance  * precision) / precision).toFixed(precision.toFixed().length - 1)}</b>
+								<b className="mark4">{(parseInt(balance * precision) / precision).toFixed(precision.toFixed().length - 1)}</b>
 							</div>
 							<div className="card__infoLabel">MyB Balance</div>
 						</div>
