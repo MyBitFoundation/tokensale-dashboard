@@ -4,6 +4,7 @@ import CardList from '../Cards/CardList';
 // import Box from './Box';
 import PresaleAddress from './PresaleAddress';
 import History from './History';
+// Bonus/Bonuses
 
 export default class Main extends React.Component {
     render() {
@@ -11,27 +12,27 @@ export default class Main extends React.Component {
             <div className="main margin1">
 	            <div className="presale">
 		            <div className="presale__head">
-			            <div className="presale__headLeft"><b>Pre-Sale Discounts:</b></div>
+			            <div className="presale__headLeft"><b>Pre-Sale Bonuses:</b></div>
 			            <div className="presale__headRight">
 				            <div className="presale__headItem">
 								<span className="cur__icon">
 									<img src="images/eth_sm.png" alt="" />&nbsp;
 								</span>
 					            <b>25+ ETHER &nbsp;</b>
-					            <span className="">receives a 10% Discount</span>
+					            <span className="">receives a 10% Bonus</span>
 				            </div>
 				            <div className="presale__headItem">
 								<span className="cur__icon">
 									<img src="images/eth_sm.png" alt="" />&nbsp;
 								</span>
 					            <b>100+ ETHER &nbsp;</b>
-					            <span className="">receives a 15% Discount</span>
+					            <span className="">receives a 15% Bonus</span>
 				            </div>
 			            </div>
 		            </div>
 		            <div className="presale__body">
 			            <div className="presale__note">
-				            Discounts will be in the form of ETHER refund at the close of the crowdsale.
+				            Bonuses will be in the form of MyB tokens issued after the close of Tokensale.
 			            </div>
 			            <div className="presale__attn">
 				            <b className="presale__attnTitle">IMPORTANT NOTICE:</b>
