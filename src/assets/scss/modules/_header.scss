@@ -65,10 +65,8 @@
 }
 .header__menu{
 	text-align: center;
-	margin: 0 250px;
-	@media only screen and (max-width: 1200px) {
-		margin-left: 0;
-	}
+	//margin: 0 250px 0 0;
+
 	@include MQ(M){
 		display: none;
 	};
@@ -113,5 +111,11 @@
 		color: #fff;
 		font-weight: 600;
 		padding: 0 10px;
+		@media only screen and (max-width: 1200px) {
+			font-size: 0.75rem;
+		}
+		@media only screen and (max-width: 1080px) {
+			padding: 0 5px;
+		}
 	}
 }
