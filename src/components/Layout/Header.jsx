@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
+import Translate from 'react-translate-component';
 
 import {signOut} from 'actions/GlobalActions';
 
@@ -18,33 +19,33 @@ function mapDispatchToProps(dispatch) {
 }
 
 class Header extends React.Component {
-	
+
 	constructor() {
 		super();
 		this.state = {
 			open: false
 		}
 	}
-	
+
 	onToggleMenu() {
 		let open = !this.state.open;
 		document.body.className = open ? "menu-open" : "";
 		this.setState({open});
 	}
-	
+
 	onClose() {
 		document.body.className = "";
 		this.setState({open: false});
 	}
-	
+
 	onSignOut() {
 		this.props.signOut();
 	}
-	
+
 	render() {
 		let {location} = this.props;
 		let {open} = this.state;
-		
+
 		return (
 			<div>
 				<header className="header">
@@ -64,33 +65,32 @@ class Header extends React.Component {
 								<span className="header__loginIcon icon-door"></span>
 							</a>
 						</div>
-						
+
 						<div>
-							<a href="javascript:;" className="header__sign" onClick={this.onSignOut.bind(this)}>Sign
-							                                                                                    Out</a>
+							<a href="javascript:;" className="header__sign" onClick={this.onSignOut.bind(this)}><Translate content="header.sign_out"/></a>
 						</div>
 					</div>
 					<div className="header__menu">
 						<ul className="header__menuList">
 							<li className={`header__menuLi barParent`}>
 								<div className="bar"/>
-								<a href={__REDIRECT_URL__} className="header__menuItem">BACK TO WEBSITE </a>
+								<a href={__REDIRECT_URL__} className="header__menuItem"><Translate content="header.back"/> </a>
 							</li>
 							<li className={`header__menuLi barParent ${location === "/" ? 'active' : ''}`}>
 								<div className="bar"/>
-								<Link to="/" className="header__menuItem">Dashboard</Link>
+								<Link to="/" className="header__menuItem"><Translate content="header.dashboard"/></Link>
 							</li>
 							<li className={`header__menuLi barParent ${location === "/tfa" ? 'active' : ''}`}>
 								<div className="bar"/>
-								<Link to="/tfa" className="header__menuItem">2FA</Link>
+								<Link to="/tfa" className="header__menuItem"><Translate content="header.tfa"/></Link>
 							</li>
 							<li className={`header__menuLi barParent ${location === "/settings" ? 'active' : ''}`}>
 								<div className="bar"/>
-								<Link to="/settings" className="header__menuItem">Account Settings</Link>
+								<Link to="/settings" className="header__menuItem"><Translate content="header.account_settings"/></Link>
 							</li>
 							<li className={`header__menuLi barParent ${location === "/terms&conditions" ? 'active' : ''}`}>
 								<div className="bar"/>
-								<Link to="/terms&conditions" className="header__menuItem">Terms and Conditions</Link>
+								<Link to="/terms&conditions" className="header__menuItem"><Translate content="header.tac"/></Link>
 							</li>
 						</ul>
 					</div>
@@ -104,19 +104,19 @@ class Header extends React.Component {
 						<ul className="menuS__list">
 							<li className={`menuS__li barVerParent ${location === "/" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/" className="menuS__item">Dashboard</a>
+								<a href="/" className="menuS__item"><Translate content="header.dashboard"/></a>
 							</li>
 							<li className={`menuS__li barVerParent ${location === "/tfa" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/tfa" className="menuS__item">2FA</a>
+								<a href="/tfa" className="menuS__item"><Translate content="header.tfa"/></a>
 							</li>
 							<li className={`menuS__li barVerParent ${location === "/settings" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/settings" className="menuS__item">Account Settings</a>
+								<a href="/settings" className="menuS__item"><Translate content="header.account_settings"/></a>
 							</li>
 							<li className={`menuS__li barVerParent ${location === "/terms&conditions" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/terms&conditions" className="menuS__item">Terms and Conditions</a>
+								<a href="/terms&conditions" className="menuS__item"><Translate content="header.tac"/></a>
 							</li>
 						</ul>
 					</div>

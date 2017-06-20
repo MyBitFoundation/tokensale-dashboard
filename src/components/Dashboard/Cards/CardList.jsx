@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Translate from 'react-translate-component';
 
 function mapStateToProps(state, ownProps) {
 	return {
@@ -28,35 +29,35 @@ class CardList extends React.Component {
 		};
 		this.interval = 0;
 	}
-	
+
 	componentWillMount() {
 		this.interval = setInterval(() => this.calculateLeftTime(), 60 * 1000);
 		this.calculateLeftTime()
 	}
-	
+
 	componentWillUnmount() {
 		clearInterval(this.interval);
 	}
-	
+
 	calculateLeftTime() {
 		let {deadline, presaleDeadline} = this.props;
-		
+
 		let endTime = null;
 		if(presaleDeadline - Date.now() / 1000 > 0) {
 			endTime = presaleDeadline * 1000;
 		} else if(deadline - Date.now() / 1000 > 0) {
 			endTime = deadline * 1000;
 		}
-		
+
 		if(endTime) {
 			let ss = (new Date(endTime).getTime() - Date.now()) / 1000;
 			let days = Math.floor(ss / (60 * 60 * 24));
 			ss -= (60 * 60 * 24) * days;
-			
+
 			let hours = Math.floor(ss / (60 * 60));
 			ss -= (60 * 60) * hours;
 			let minutes = Math.floor(ss / 60);
-			
+
 			if(days < 0) days = 0;
 			if(hours < 0) hours = 0;
 			if(minutes < 0) minutes = 0;
@@ -73,11 +74,11 @@ class CardList extends React.Component {
 			});
 		}
 	}
-	
+
 	render() {
 		let {tokenPrice, balance, precision, amountRaised, amountRaisedEUR} = this.props;
 		let {timer} = this.state;
-		
+
 		return (
 			<div className="card__list items-3">
 				{/*<div className="card">*/}
@@ -112,7 +113,7 @@ class CardList extends React.Component {
 									<span>MyB</span>
 								</div>
 							</div>
-							<div className="card__infoLabel">Crowdsale Price</div>
+							<div className="card__infoLabel"><Translate content="dashboard.main.cards.crowdsale_price"/></div>
 						</div>
 					</div>
 				</div>
@@ -126,24 +127,24 @@ class CardList extends React.Component {
 								<div className="card__infoData" style={{fontSize: "0.8rem"}}>
 									<div className="colspan">
 										<b className="mark2">{timer.daysLeft} </b>
-										<span className="pr-10">Days</span>
+										<span className="pr-10"><Translate content="dashboard.main.cards.days"/></span>
 									</div>
 									<div className="colspan">
 										<b className="mark3">{timer.hoursLeft} </b>
-										<span>Hours</span>
+										<span><Translate content="dashboard.main.cards.hours"/></span>
 									</div>
 									<div className="colspan">
 										<b className="mark3">{timer.minutesLeft} </b>
-										<span>Minutes</span>
+										<span><Translate content="dashboard.main.cards.minutes"/></span>
 									</div>
 								</div>
-								<div className="card__infoLabel">Time Left</div>
+								<div className="card__infoLabel"><Translate content="dashboard.main.cards.time_left"/></div>
 							</div>
 						) : (
 							<div className="card__info">
 								<div className="card__infoData" style={{fontSize: "0.8rem"}}>
 									<div className="colspan">
-										<b className="">Crowdsale over</b>
+										<b className=""><Translate content="dashboard.main.cards.crowdsale_over"/></b>
 									</div>
 								</div>
 							</div>
@@ -159,7 +160,7 @@ class CardList extends React.Component {
 							<div className="card__infoData">
 								<b className="mark4">{(parseInt(balance * precision) / precision).toFixed(precision.toFixed().length - 1)}</b>
 							</div>
-							<div className="card__infoLabel">MyB Balance</div>
+							<div className="card__infoLabel">MyB <Translate content="dashboard.main.cards.balance"/></div>
 						</div>
 					</div>
 				</div>

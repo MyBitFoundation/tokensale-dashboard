@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Translate from 'react-translate-component';
 
 import {disableTFA} from 'actions/TFAActions';
 
@@ -42,7 +43,7 @@ class Disable extends React.Component {
             } else if(/token/i.test(error)) {
                 return this.setState({tokenError: 'Invalid 6-Digit Key'});
             } else {
-                this.setState({error: 'Undefined error.'});                
+                this.setState({error: 'Undefined error.'});
             }
         })
     }
@@ -53,19 +54,19 @@ class Disable extends React.Component {
         return (
             <section className="content content-2fa">
           		<div className="box">
-          			<h1 className="h1 ">Two-Factor Authentication</h1>
-          			<div className="descr ">We use Google Authenticator for 2FA.</div>
+          			<h1 className="h1 "><Translate content="tfa.header"/></h1>
+          			<div className="descr "><Translate content="tfa.description"/></div>
           			<div className="main">
           				<div className="main__col one">
           					<div className="title">
-          						You have Two-Factor Authentication enabled
+          						<Translate content="tfa.disable.title"/>
           					</div>
           					<div className="form__title">
-          						Disable 2FA
+          						<Translate content="tfa.disable.disable_tfa"/>
           					</div>
           					<div className="row ">
                                 {tokenError || error ? <div className="error__text">{tokenError || error}</div> : null}
-          						<label htmlFor="key01" className="label text_l">6-Digit_Key</label>
+          						<label htmlFor="key01" className="label text_l"><Translate content="tfa.disable.6_digit_key"/></label>
           						<input
                                     className={`field2 ${tokenError || error ? 'error' : ''}`}
                                     id="key01"
@@ -86,13 +87,13 @@ class Disable extends React.Component {
                                     onChange={this.onChangeInput.bind(this, 'password')}/>
           					</div>
           					<div className="attn">
-          						<b className="mark5">Warning: </b>
+          						<b className="mark5"><Translate content="tfa.disable.warning_title"/> </b>
           						<i className="">
-          							Disabling 2FA will make your account less secure.
+                                    <Translate content="tfa.disable.warning"/>
           						</i>
           					</div>
           					<div className="form__btns">
-          						<button className="btn btn-formSbm" type="button" onClick={this.onDisable.bind(this)}>Disable 2FA</button>
+          						<button className="btn btn-formSbm" type="button" onClick={this.onDisable.bind(this)}><Translate content="tfa.disable.disable_tfa"/></button>
           					</div>
           				</div>
           			</div>

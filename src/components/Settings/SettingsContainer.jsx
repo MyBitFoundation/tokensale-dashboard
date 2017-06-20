@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Translate from 'react-translate-component';
 
 import {changePassword} from 'actions/SettingsActions';
 
@@ -35,18 +36,18 @@ class Settings extends React.Component {
 			error: ''
 		}
 	}
-	
+
 	onChangeInput(type, e) {
 		this.setState({[type]: {value: e.target.value, error: false}})
 	}
-	
+
 	onChangePassword() {
 		let {oldPassword, newPassword, newPasswordCopy, address} = this.state;
 		oldPassword = validate(oldPassword);
 		address = validate(address);
 		newPassword = validate(newPassword);
 		newPasswordCopy = validate(newPasswordCopy);
-		
+
 		if(oldPassword.error || newPassword.error || newPasswordCopy.error) {
 			this.setState({
 				oldPassword,
@@ -56,7 +57,7 @@ class Settings extends React.Component {
 			});
 			return;
 		}
-		
+
 		this.props.changePassword({
 			password_old: oldPassword.value,
 			password_new: newPassword.value,
@@ -85,19 +86,19 @@ class Settings extends React.Component {
 			}
 		})
 	}
-	
+
 	render() {
 		let {oldPassword, newPassword, newPasswordCopy, address, error} = this.state;
-		
+
 		return (
 			<section className="content content-pass">
 				<div className="box">
-					<h1 className="h1 ">Change Account Settings</h1>
+					<h1 className="h1 "><Translate content="settings.header"/></h1>
 					<div className="main">
 						<div className="main__col one">
 							<div className="row ">
 								{error && oldPassword.error ? <div className="error__text">{error}</div> : null}
-								<label htmlFor="key01" className="label text_l">Old Password</label>
+								<label htmlFor="key01" className="label text_l"><Translate content="settings.old_password"/></label>
 								<input
 									className={`field2 ${error && oldPassword.error ? 'error' : ''}`}
 									id="key01"
@@ -108,7 +109,7 @@ class Settings extends React.Component {
 							</div>
 							<div className="row ">
 								{error && newPassword.error ? <div className="error__text">{error}</div> : null}
-								<label htmlFor="key02" className="label text_l">New Password</label>
+								<label htmlFor="key02" className="label text_l"><Translate content="settings.new_password"/></label>
 								<input
 									className={`field2 ${error && newPassword.error ? 'error' : ''}`}
 									id="key02"
@@ -119,7 +120,7 @@ class Settings extends React.Component {
 							</div>
 							<div className="row ">
 								{error && newPasswordCopy.error ? <div className="error__text">{error}</div> : null}
-								<label htmlFor="key03" className="label text_l">New Password Confirmation</label>
+								<label htmlFor="key03" className="label text_l"><Translate content="settings.new_password_confirmation"/></label>
 								<input
 									className={`field2 ${error && newPasswordCopy.error ? 'error' : ''}`}
 									id="key03"
@@ -130,7 +131,7 @@ class Settings extends React.Component {
 							</div>
 							<div className="row ">
 								{error && address.error ? <div className="error__text">{error}</div> : null}
-								<label htmlFor="key03" className="label text_l">Change wallet address</label>
+								<label htmlFor="key03" className="label text_l"><Translate content="settings.change_wallet_address"/></label>
 								<input
 									className={`field2 ${error && address.error ? 'error' : ''}`}
 									id="key03"
@@ -141,7 +142,7 @@ class Settings extends React.Component {
 							</div>
 							<div className="form__btns text_c">
 								<button className="btn btn-formSbm" type="button" onClick={this.onChangePassword.bind(this)}>
-									Change
+									<Translate content="settings.change"/>
 								</button>
 							</div>
 						</div>

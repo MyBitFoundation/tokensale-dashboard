@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import QRCode from 'qrcode.react';
 import twoFactor from 'node-2fa';
+import Translate from 'react-translate-component';
 
 
 import {enableTFA} from 'actions/TFAActions';
@@ -66,18 +67,18 @@ class Enable extends React.Component {
         return (
             <section className="content content-2fa">
         		<div className="box">
-        			<h1 className="h1 ">Two-Factor Authentication</h1>
-        			<div className="descr ">For extra account security, you can turn on two-factor authentication <b>(2FA)</b>.</div>
+        			<h1 className="h1 "><Translate content="tfa.header"/></h1>
+        			<div className="descr "><Translate content="tfa.enable.description"/> <b>(2FA)</b>.</div>
         			<div className="main">
         				<div className="main__col left">
         					<div className="title">
-        						We use Google Authenticator for 2FA.
+        						<Translate content="tfa.description"/>
         					</div>
         					<p>
-        						In order to use 2FA, scan QR code into the Google Authenticator app on your phone, or enter the 16-digit key and appears under the QR code.
+        						<Translate content="tfa.enable.qrcode"/>
         					</p>
         					<p>
-        						Input the six-digit code provided by the Google Authenticator app and your account password elow, then click “Enable 2FA”.
+        						<Translate content="tfa.enable.key"/>
         					</p>
         					<div className="qr">
                                 <QRCode value={url || ''}  size={280} level={'Q'}/>
@@ -86,16 +87,16 @@ class Enable extends React.Component {
         				</div>
         				<div className="main__col right">
         					<div className="form__title">
-        						Enable 2FA
+        						<Translate content="tfa.enable.enable_tfa"/>
         					</div>
         					<div className="row ">
-        						<label htmlFor="key01" className="label text_l">16-Digit_Key</label>
+        						<label htmlFor="key01" className="label text_l"><Translate content="tfa.enable.16_digit_key"/></label>
         						<input className="field2" id="key01" type="text" value={tfaSecret} readOnly/>
         					</div>
         					<div className="attn">
-        						<b className="mark5">Important: </b>
+        						<b className="mark5"><Translate content="tfa.enable.attention_title"/></b>
         						<i className="">
-        							Before turning on 2FA, write down the 16-digit key and put keep it in a safe place. If your phone gets lost, stolen, or erased, you will need this key to get back into your account!
+        							<Translate content="tfa.enable.attention"/>
         						</i>
         					</div>
         					<div className="row ">
@@ -110,7 +111,7 @@ class Enable extends React.Component {
         					</div>
         					<div className="row ">
                                 {privateKeyError ? <div className="error__text">{privateKeyError}</div> : null}
-        						<label htmlFor="key03" className="label text_l">6-Digit Key</label>
+        						<label htmlFor="key03" className="label text_l"><Translate content="tfa.disable.6_digit_key"/></label>
         						<input
                                     className={`field2 ${privateKeyError ? 'error' : null}`}
                                     id="key03"
@@ -125,11 +126,11 @@ class Enable extends React.Component {
                                         <input type="checkbox" className="customCheck__check" value={checkbox} onChange={this.onToggleCheckbox.bind(this)}/>
                                         <span className="customCheck__checkPseudo"></span>
                                     </span>
-        							<span className="customCheck__labelPseudo">I have backed up my 16-digit key</span>
+        							<span className="customCheck__labelPseudo"><Translate content="tfa.enable.check"/></span>
         						</label>
         					</div>
         					<div className="form__btns">
-        						<button className="btn btn-formSbm" type="button" onClick={this.onEnable.bind(this)}>Enable 2FA</button>
+        						<button className="btn btn-formSbm" type="button" onClick={this.onEnable.bind(this)}><Translate content="tfa.enable.enable_tfa"/></button>
         					</div>
         				</div>
         			</div>

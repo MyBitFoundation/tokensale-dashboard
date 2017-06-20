@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Translate from 'react-translate-component';
 
 import Menu from './Menu';
 
@@ -35,7 +36,7 @@ class Sidebar extends React.Component {
 
         return (
             <div className="sidebar">
-                <div className="title">Exchange Rates</div>
+                <div className="title"><Translate content="dashboard.side.header"/></div>
                 <Menu />
                 <div className="sidebar__body">
                     {rows}

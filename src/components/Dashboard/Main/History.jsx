@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import moment from "moment"
+import moment from "moment";
+import Translate from 'react-translate-component';
+import counterpart from 'counterpart';
 
 import {sortBy} from 'actions/DashboardActions';
 
@@ -99,7 +101,7 @@ class History extends React.Component {
 								href="javascript:;"
 								className={`sort ${sort === 'date' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'date')}>
-								Date <span className="sortIcon icon-arrow_dropdown"/>
+								<Translate content="dashboard.main.history.date"/> <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
 						</div>
 						<div className="td td-amount">
@@ -107,7 +109,7 @@ class History extends React.Component {
 								href="javascript:;"
 								className={`sort ${sort === 'amount' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'amount')}>
-								Amount <span className="sortIcon icon-arrow_dropdown"/>
+								<Translate content="dashboard.main.history.amount"/> <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
 						</div>
 						<div className="td td-rate">
@@ -115,7 +117,7 @@ class History extends React.Component {
 								href="javascript:;"
 								className={`sort ${sort === 'rate' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'rate')}>
-								Exchange Rate <span className="sortIcon icon-arrow_dropdown"/>
+								<Translate content="dashboard.main.history.exchange_rate"/> <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
 						</div>
 						<div className="td td-purchased">
@@ -123,7 +125,7 @@ class History extends React.Component {
 								href="javascript:;"
 								className={`sort ${sort === 'purchase' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'purchase')}>
-								MyB Purchased <span className="sortIcon icon-arrow_dropdown"/>
+								MyB <Translate content="dashboard.main.history.purchased"/> <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
 						</div>
 						<div className="td td-address">
@@ -131,7 +133,7 @@ class History extends React.Component {
 								href="javascript:;"
 								className={`sort ${sort === 'address' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'address')}>
-								Address <span className="sortIcon icon-arrow_dropdown"/>
+								<Translate content="dashboard.main.history.address"/> <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
 						</div>
 					</div>
@@ -141,7 +143,7 @@ class History extends React.Component {
 				</div>
 				<div className={`history__tableBtns ${history.length <= count ? 'inactive' : ''}`}>
 					<button type="button" className="btn btn-more js-btnMore" onClick={this.onMoreHistory.bind(this)}>
-						<span className="btnText">More</span>
+						<span className="btnText"><Translate content="dashboard.main.history.more"/></span>
 						<span className="btnIcon icon-arrow"/>
 					</button>
 				</div>
@@ -157,7 +159,7 @@ class History extends React.Component {
 			<div className="history">
 				<div className="title">
 
-					{history.length ? "Transactions History" : "No recent transactions"}
+					{history.length ? counterpart.translate('dashboard.main.history.transactions_history') : counterpart.translate('dashboard.main.history.no_recent_transactions')}
 				</div>
 
 				{history.length ? this.getHistoryTable() : null}

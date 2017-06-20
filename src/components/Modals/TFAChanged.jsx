@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import Translate from 'react-translate-component';
+import counterpart from 'counterpart';
 
 import ModalsActions from 'actions/ModalsActions';
 
@@ -43,11 +45,11 @@ class TFAChanged extends React.Component {
             					<span className="modal__close icon-cross" data-dismiss="modal" onClick={this.onClick.bind(this)}></span>
 
             					<div className="modal__body text_c">
-            						<h2 className="modal__title">{`Two-Factor Authentication has been ${tfa ? 'enabled' : 'disabled'}`}</h2>
+            						<h2 className="modal__title">{counterpart.translate('modal.tfa', {status: tfa ? 'enabled' : 'disabled'})}</h2>
             						<div className="modal__btns">
             							<button type="button" className="btn btn-sbm" onClick={this.onClick.bind(this)}>
             								<span className="loader none"></span>
-            								<span className="btnText">Ok</span>
+            								<span className="btnText"><Translate content="modal.ok"/></span>
             							</button>
             						</div>
             					</div>

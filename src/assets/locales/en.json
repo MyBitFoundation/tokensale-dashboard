@@ -1,32 +1,96 @@
 {
-  "Go_to_dashboard": "返回控制面板",
-  "Are_you_a_US_citizen?": "你是美国人吗",
-  "Sign_out": "登出",
-  "Dashboard": "控制面板",
-  "Exchange_Rates": "兑换比率",
-  "Pre-Sale_Discounts": "预售折扣",
-  "ETHER_receives_a_10_Discount": "25+ ETHER  获得10%折扣",
-  "ETHER_receives_a_15_Discount": "100+ ETHER  获得15%折扣",
-  "Discounts_will_be_in_the_form_of_ETHER_refund_at_the_close_of_the_crowdsale": "折扣是在众筹结束的时候会返还以太坊",
-  "IMPORTANT_NOTICE": "The minimum amount to participate in the pre-sale is 25 ETHER. If you send less than this amount during the pre-sale, your funds will be returned to you. For amounts under 25 ETHER please wait until the pre-sale is over and the official crowdsale begins to ensure your funds are not lost.",
-  "Crowdsale_Price": "众筹价格",
-  "Time_Left": "剩余时间",
-  "MyB_Balance": "MyB 余额",
-  "No_recent_transactions": "没有交易记录",
-  "Two-Factor_Authentication": "双重验证",
-  "For_extra_account_security_turn_tfa)": "为了增加账户的安全性，请开启双重验证(2FA)",
-  "We_use_Google_Authenticator_for_2FA": "我们使用谷歌认证2FA",
-  "In_order_to_use_2FA": "为了使用2FA，扫描安装在手机中的谷歌认证APP上的 QR代码，或者输入显示在QR代码下面的16位秘钥",
-  "Enable_2FA": "激活 2FA",
-  "16-Digit_Key": "16位秘钥",
-  "Important": "重要：在激活 2FA之前，写下16位秘钥并保存在安全的地方。假如手机丢失了，或者被盗，系统还原，你需要这个密码恢复账号。",
-  "Password": "密码",
-  "I_have_backed_up_my_16-digit_key": "我已经备份我的16位秘钥",
-  "Change_Account_Settings": "更改账户设置",
-  "Old_Password": "旧密码",
-  "New_Password": "新密码",
-  "New_Password_Confirmation": "新密码确认",
-  "Change_wallet_address": "更换钱包地址",
-  "Change": "变化",
-  "Terms_and_Conditions": "条约条款"
+    "dashboard": {
+        "header": "Dashboard",
+        "side": {
+            "header": "Exchange Rates"
+        },
+        "main": {
+            "presale": {
+                "head": "Pre-Sale Bonuses:",
+                "receives_10_bonus": "receives a 10% Bonus",
+                "receives_15_bonus": "receives a 15% Bonus",
+                "note": "Bonuses will be in the form of MyB tokens issued after the close of Tokensale.",
+                "attention_title": "IMPORTANT NOTICE:",
+                "attention": "The minimum amount to participate in the pre-sale is 25 ETHER. If you send less than this amount during the pre-sale, your funds will be returned to you. For amounts under 25 ETHER please wait until the pre-sale is over and the official crowdsale begins to ensure your funds are not lost."
+            },
+            "cards": {
+                "crowdsale_price": "Crowdsale Price",
+                "days": "Days",
+                "hours": "Hours",
+                "minutes": "Minutes",
+                "time_left": "Time Left",
+                "crowdsale_over": "Crowdsale over",
+                "balance": "Balance"
+            },
+            "history": {
+                "transactions_history": "Transactions History",
+                "no_recent_transactions": "No recent transactions",
+                "date": "Date",
+                "amount": "Amount",
+                "exchange_rate": "Exchange Rate",
+                "purchased": "Purchased",
+                "address": "Address",
+                "more": "More"
+            }
+        }
+    },
+    "tfa": {
+        "header": "Two-Factor Authentication",
+        "description": "We use Google Authenticator for 2FA.",
+        "disable": {
+            "title": "You have Two-Factor Authentication enabled",
+            "disable_tfa": "Disable 2FA",
+            "6_digit_key": "6-Digit_Key",
+            "warning_title": "Warning:",
+            "warning": "Disabling 2FA will make your account less secure."
+        },
+        "enable": {
+            "description": "For extra account security, you can turn on two-factor authentication",
+            "qrcode": "In order to use 2FA, scan QR code into the Google Authenticator app on your phone, or enter the 16-digit key and appears under the QR code.",
+            "key": "Input the six-digit code provided by the Google Authenticator app and your account password elow, then click “Enable 2FA”.",
+            "enable_tfa": "Enable 2FA",
+            "16_digit_key": "16-Digit_Key",
+            "attention_title": "Important: ",
+            "attention": "Before turning on 2FA, write down the 16-digit key and put keep it in a safe place. If your phone gets lost, stolen, or erased, you will need this key to get back into your account!",
+            "check": "I have backed up my 16-digit key"
+        }
+    },
+    "settings": {
+        "header": "Change Account Settings",
+        "old_password": "Old Password",
+        "new_password": "New Password",
+        "new_password_confirmation": "New Password Confirmation",
+        "change_wallet_address": "Change wallet address",
+        "change": "Change"
+    },
+    "modal": {
+        "settings_changed": "Settings has been changed",
+        "ok": "Ok",
+        "pay_with": "Pay with",
+        "generate_address": "Please Generate Wallet Address",
+        "deposit_unavailable": "Sorry, %(currency)s deposits currently unavailable.",
+        "generate": "Generate",
+        "minimum_payment": "Minimum payment",
+        "scan": "Scan QR-code on your phone",
+        "order": "in order to make a payment.",
+        "address": "Address",
+        "payment_id": "Payment ID",
+        "copy_address": "Copy Address",
+        "copy_payment_id": "Copy Payment Id",
+        "tfa": "Two-Factor Authentication has been %(status)s"
+    },
+    "header": {
+        "sign_out": "Sign Out",
+        "back": "BACK TO WEBSITE",
+        "dashboard": "Dashboard",
+        "tfa": "2FA",
+        "account_settings": "Account Settings",
+        "tac": "Terms and Conditions"
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "deel": "Deal Sheet",
+        "contact": "Contact Us",
+        "code": "Code"
+    }
 }

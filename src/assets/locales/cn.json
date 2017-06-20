@@ -1,32 +1,96 @@
 {
-  "Go_to_dashboard": "返回控制面板",
-  "Are_you_a_US_citizen?": "你是美国人吗",
-  "Sign_out": "登出",
-  "Dashboard": "控制面板",
-  "Exchange_Rates": "兑换比率",
-  "Pre-Sale_Discounts": "预售折扣",
-  "ETHER_receives_a_10_Discount": "25+ ETHER  获得10%折扣",
-  "ETHER_receives_a_15_Discount": "100+ ETHER  获得15%折扣",
-  "Discounts_will_be_in_the_form_of_ETHER_refund_at_the_close_of_the_crowdsale": "折扣是在众筹结束的时候会返还以太坊",
-  "IMPORTANT_NOTICE": "重要提醒：参与预售 pre-sale 最低金额是 25 ETHER。假如在预售期间发送少于这个金额的币，你的资金将会被返还。少于 25 ETHER 的投资者请等到预售结束，参与正式的众筹",
-  "Crowdsale_Price": "众筹价格",
-  "Time_Left": "剩余时间",
-  "MyB_Balance": "MyB 余额",
-  "No_recent_transactions": "没有交易记录",
-  "Two-Factor_Authentication": "双重验证",
-  "For_extra_account_security_turn_tfa)": "为了增加账户的安全性，请开启双重验证(2FA)",
-  "We_use_Google_Authenticator_for_2FA": "我们使用谷歌认证2FA",
-  "In_order_to_use_2FA": "为了使用2FA，扫描安装在手机中的谷歌认证APP上的 QR代码，或者输入显示在QR代码下面的16位秘钥",
-  "Enable_2FA": "激活 2FA",
-  "16-Digit_Key": "16位秘钥",
-  "Important": "重要：在激活 2FA之前，写下16位秘钥并保存在安全的地方。假如手机丢失了，或者被盗，系统还原，你需要这个密码恢复账号。",
-  "Password": "密码",
-  "I_have_backed_up_my_16-digit_key": "我已经备份我的16位秘钥",
-  "Change_Account_Settings": "更改账户设置",
-  "Old_Password": "旧密码",
-  "New_Password": "新密码",
-  "New_Password_Confirmation": "新密码确认",
-  "Change_wallet_address": "更换钱包地址",
-  "Change": "变化",
-  "Terms_and_Conditions": "条约条款"
+    "dashboard": {
+        "header": "控制面板",
+        "side": {
+            "header": "兑换比率"
+        },
+        "main": {
+            "presale": {
+                "head": "预售奖金:",
+                "receives_10_bonus": "获得10%折扣",
+                "receives_15_bonus": "获得15%折扣",
+                "note": "奖金将以Tokensale结束后发行的MyB令牌的形式。",
+                "attention_title": "重要提醒: ",
+                "attention": "参与预售的最低金额为25埃斯。 如果您在预售期间发送少于此金额，您的资金将退还给您。 对于25以下的金额，请等待预售结束，官方人气开始确保您的资金不会丢失。"
+            },
+            "cards": {
+                "crowdsale_price": "众筹价格",
+                "days": "天",
+                "hours": "小时",
+                "minutes": "分钟",
+                "time_left": "剩余时间",
+                "crowdsale_over": "人群众多",
+                "balance": "余额"
+            },
+            "history": {
+                "transactions_history": "交易历史",
+                "no_recent_transactions": "没有交易记录",
+                "date": "日期",
+                "amount": "金额",
+                "exchange_rate": "兑换比率",
+                "purchased": "已购买",
+                "address": "地址",
+                "more": "更多"
+            }
+        }
+    },
+    "tfa": {
+        "header": "双重验证",
+        "description": "我们使用谷歌认证2FA",
+        "disable": {
+            "title": "您启用了双因素身份验证",
+            "disable_tfa": "禁用2FA",
+            "6_digit_key": "6位秘钥",
+            "warning_title": "警告:",
+            "warning": "禁用2FA将使您的帐户安全。"
+        },
+        "enable": {
+            "description": "为了增加账户的安全性，请开启双重验证",
+            "qrcode": "为了使用2FA，请将QR码扫描到手机上的Google Authenticator应用程序中，或输入16位数字键，并显示在QR码下。",
+            "key": "输入Google Authenticator应用提供的六位数代码，然后输入您的帐户密码，然后点击“启用2FA”。",
+            "enable_tfa": "激活 2FA",
+            "16_digit_key": "16位秘钥",
+            "attention_title": "重要：",
+            "attention": "在激活 2FA之前，写下16位秘钥并保存在安全的地方。假如手机丢失了，或者被盗，系统还原，你需要这个密码恢复账号。",
+            "check": "我已经备份我的16位秘钥"
+        }
+    },
+    "settings": {
+        "header": "更改账户设置",
+        "old_password": "旧密码",
+        "new_password": "新密码",
+        "new_password_confirmation": "新密码确认",
+        "change_wallet_address": "更换钱包地址",
+        "change": "变化"
+    },
+    "modal": {
+        "settings_changed": "设置已更改",
+        "ok": "好",
+        "pay_with": "支付",
+        "generate_address": "请生成电子钱包地址",
+        "deposit_unavailable": "对不起，%(currency)s 存款目前无法使用。",
+        "generate": "生成",
+        "minimum_payment": "最低付款",
+        "scan": "扫描手机上的QR码",
+        "order": "为了付款",
+        "address": "地址",
+        "payment_id": "付款 ID",
+        "copy_address": "复制 地址",
+        "copy_payment_id": "复制 付款 Id",
+        "tfa": "双 因素 认证 已经 %(status)s"
+    },
+    "header": {
+        "sign_out": "登出",
+        "back": "返回 网站",
+        "dashboard": "控制面板",
+        "tfa": "2FA",
+        "account_settings": "帐号 设定",
+        "tac": "条约条款"
+    },
+    "footer": {
+        "rights": "保留 所有 权利",
+        "deel": "交易 单",
+        "contact": "联系 我们",
+        "code": "代码"
+    }
 }

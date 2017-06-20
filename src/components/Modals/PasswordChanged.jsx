@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import Translate from 'react-translate-component';
 
 import ModalsActions from 'actions/ModalsActions';
 
@@ -43,11 +44,11 @@ class PasswordChanged extends React.Component {
             					<span className="modal__close icon-cross" data-dismiss="modal" onClick={this.onClick.bind(this)} />
 
             					<div className="modal__body text_c">
-            						<h2 className="modal__title">Settings has been changed</h2>
+            						<h2 className="modal__title"><Translate content="modal.settings_changed"/></h2>
             						<div className="modal__btns">
             							<button type="button" className="btn btn-sbm" onClick={this.onClick.bind(this)}>
             								<span className="loader none" />
-            								<span className="btnText">Ok</span>
+            								<span className="btnText"><Translate content="modal.ok"/></span>
             							</button>
             						</div>
             					</div>

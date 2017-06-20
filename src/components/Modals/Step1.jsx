@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Translate from 'react-translate-component';
+import counterpart from 'counterpart';
 
 import ModalsActions from 'actions/ModalsActions';
 
@@ -48,16 +50,16 @@ class Step1 extends React.Component {
                                     <div className="modal__curPic">
                                         <img src={currency ? `images/${currency.toLowerCase()}_lg.png` : ''} alt=""/>
                                     </div>
-                                    <h2 className="modal__title">Pay with {currency.toUpperCase()}</h2>
+                                    <h2 className="modal__title"><Translate content="modal.pay_with"/> {currency.toUpperCase()}</h2>
 
                                     <div className="modal__note">
-                                        {!error ? 'Please Generate Wallet Address': `Sorry, ${currency.toUpperCase()} deposits currently unavailable.`}
+                                        {!error ? counterpart.translate('modal.generate_address') : counterpart.translate('deposit_unavailable', {currency: currency.toUpperCase()})}
                                     </div>
                                     { !error ?
                                         <div className="modal__btns">
                                             <button className="btn btn-sbm js-btnGenerate" type="button" onClick={this.onGenerate.bind(this)} disabled={this.props.loading}>
                                               {this.props.loading ? <span className="loader"></span> : null}
-                                              <span className="btnText">Generate</span>
+                                              <span className="btnText"><Translate content="modal.generate"/></span>
                                             </button>
                                         </div> : null
                                     }
