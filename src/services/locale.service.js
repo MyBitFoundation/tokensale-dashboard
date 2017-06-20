@@ -1,6 +1,5 @@
 const counterpart = require("counterpart");
 
-
 let locales = ["cn", "en"];
 
 let localeData = {};
@@ -14,6 +13,8 @@ let registerLocale = (locale) => {
     counterpart.registerTranslations(locale, localeData[locale]);
 
     counterpart.setLocale(locale);
+
+    localStorage.setItem('locale', locale);
 }
 
 export {locales, registerLocale};

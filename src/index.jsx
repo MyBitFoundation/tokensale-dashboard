@@ -25,7 +25,7 @@ if(locales.indexOf(path) != -1) {
 	registerLocale(path);
 	browserHistory.push('/')
 } else {
-	registerLocale('en');
+	registerLocale(localStorage.getItem('locale') ? localStorage.getItem('locale') : 'en');
 }
 
 store.dispatch(initialize()).then(() => {
