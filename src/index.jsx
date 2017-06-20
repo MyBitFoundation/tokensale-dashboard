@@ -15,8 +15,18 @@ import { component } from 'app/routes';
 import {initialize} from 'actions/GlobalActions';
 import {load} from 'actions/DashboardActions';
 
+import {locales, registerLocale} from 'services/locale.service';
+
 const store = configureStore(browserHistory, window.__initialState__);
 const history = syncHistoryWithStore(browserHistory, store);
+
+let path = window.location.pathname.slice(1);
+if(locales.indexOf(path) != -1) {
+	registerLocale(path);
+	browserHistory.push('/')
+} else {
+	registerLocale('en');
+}
 
 store.dispatch(initialize()).then(() => {
 	store.dispatch(load());

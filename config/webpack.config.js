@@ -13,7 +13,7 @@ const config = require(`./${configFile}`);
 
 let createConfig = (options) => {
 	let webpackConfig = {};
-	
+
 	webpackConfig.entry = {
 		app: production ?
 			[
@@ -26,13 +26,13 @@ let createConfig = (options) => {
 				path.resolve(PATHS.src, "index.jsx")
 			]
 	};
-	
+
 	webpackConfig.output = {
 		path: PATHS.dist,
 		publicPath: './',
 		filename: "bundle.js"
 	};
-	
+
 	webpackConfig.devtool = production ? "cheap-eval-source-map" : "inline-source-map";
 	webpackConfig.plugins = [
 		new webpack.HotModuleReplacementPlugin(),
@@ -52,7 +52,7 @@ let createConfig = (options) => {
 			compress: {warnings: false}
 		}));
 	}
-	
+
 	webpackConfig.module = {
 		rules: [
 			{
@@ -81,13 +81,14 @@ let createConfig = (options) => {
 				},
 			},
 			{
-				test: /locale-[A-Za-z]{2}\.json$/,
-				use: "file-loader?name=locales/[name].[ext]"
-			},
-			{
-				test: /^((?!locale-[A-Za-z]{2,2}).)*\.json$/,
-				use: "json-loader?name=[name].[ext]"
-			},
+                test: /[A-Za-z]+\.json$/,
+                loader: 'file-loader',
+                include: path.resolve(__dirname, 'src/assets/locales'),
+                options: {
+                    context: path.resolve(__dirname, "./src/assets"),
+                    name: '[path][name].[ext]'
+                }
+            },
 			{
 				test: /\.(js|jsx)$/,
 				include: [PATHS.src],
@@ -96,7 +97,7 @@ let createConfig = (options) => {
 			{test: /\.(woff|eot|ttf|svg)$/, loader: "file-loader?name=[name].[ext]"},
 		]
 	};
-	
+
 	webpackConfig.resolve = {
 		enforceExtension: false,
 		extensions: [".js", ".jsx", ".json"],
@@ -110,7 +111,7 @@ let createConfig = (options) => {
 			services: path.resolve(PATHS.src, 'services')
 		}
 	};
-	
+
 	webpackConfig.stats = {
 		reasons: true,
 		errorDetails: true,
