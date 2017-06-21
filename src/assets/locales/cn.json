@@ -6,31 +6,31 @@
         },
         "main": {
             "presale": {
-                "head": "预售奖金:",
-                "receives_10_bonus": "获得10%折扣",
-                "receives_15_bonus": "获得15%折扣",
-                "note": "奖金将以Tokensale结束后发行的MyB令牌的形式。",
-                "attention_title": "重要提醒: ",
-                "attention": "参与预售的最低金额为25埃斯。 如果您在预售期间发送少于此金额，您的资金将退还给您。 对于25以下的金额，请等待预售结束，官方人气开始确保您的资金不会丢失。"
+                "head": "Pre-Sale Bonuses:",
+                "receives_10_bonus": "receives a 10% Bonus",
+                "receives_15_bonus": "receives a 15% Bonus",
+                "note": "Bonuses will be in the form of MyB tokens issued after the close of Tokensale.",
+                "attention_title": "重要提醒:",
+                "attention": "参与预售 pre-sale 最低金额是 25 ETHER。假如在预售期间发送少于这个金额的币，你的资金将会被返还。少于 25 ETHER 的投资者请等到预售结束，参与正式的众筹。"
             },
             "cards": {
                 "crowdsale_price": "众筹价格",
-                "days": "天",
-                "hours": "小时",
-                "minutes": "分钟",
+                "days": "Days",
+                "hours": "Hours",
+                "minutes": "Minutes",
                 "time_left": "剩余时间",
-                "crowdsale_over": "人群众多",
+                "crowdsale_over": "Crowdsale over",
                 "balance": "余额"
             },
             "history": {
-                "transactions_history": "交易历史",
+                "transactions_history": "Transactions History",
                 "no_recent_transactions": "没有交易记录",
-                "date": "日期",
-                "amount": "金额",
+                "date": "Date",
+                "amount": "Amount",
                 "exchange_rate": "兑换比率",
-                "purchased": "已购买",
-                "address": "地址",
-                "more": "更多"
+                "purchased": "Purchased",
+                "address": "Address",
+                "more": "More"
             }
         }
     },
@@ -38,19 +38,19 @@
         "header": "双重验证",
         "description": "我们使用谷歌认证2FA",
         "disable": {
-            "title": "您启用了双因素身份验证",
-            "disable_tfa": "禁用2FA",
-            "6_digit_key": "6位秘钥",
-            "warning_title": "警告:",
-            "warning": "禁用2FA将使您的帐户安全。"
+            "title": "You have Two-Factor Authentication enabled",
+            "disable_tfa": "Disable 2FA",
+            "6_digit_key": "6-Digit_Key",
+            "warning_title": "Warning:",
+            "warning": "Disabling 2FA will make your account less secure."
         },
         "enable": {
             "description": "为了增加账户的安全性，请开启双重验证",
-            "qrcode": "为了使用2FA，请将QR码扫描到手机上的Google Authenticator应用程序中，或输入16位数字键，并显示在QR码下。",
-            "key": "输入Google Authenticator应用提供的六位数代码，然后输入您的帐户密码，然后点击“启用2FA”。",
+            "qrcode": "为了使用2FA，扫描安装在手机中的谷歌认证APP上的 QR代码，或者输入显示在QR代码下面的16位秘钥",
+            "key": "Input the six-digit code provided by the Google Authenticator app and your account password elow, then click “Enable 2FA”.",
             "enable_tfa": "激活 2FA",
             "16_digit_key": "16位秘钥",
-            "attention_title": "重要：",
+            "attention_title": "重要: ",
             "attention": "在激活 2FA之前，写下16位秘钥并保存在安全的地方。假如手机丢失了，或者被盗，系统还原，你需要这个密码恢复账号。",
             "check": "我已经备份我的16位秘钥"
         }
@@ -64,33 +64,33 @@
         "change": "变化"
     },
     "modal": {
-        "settings_changed": "设置已更改",
-        "ok": "好",
-        "pay_with": "支付",
-        "generate_address": "请生成电子钱包地址",
-        "deposit_unavailable": "对不起，%(currency)s 存款目前无法使用。",
-        "generate": "生成",
-        "minimum_payment": "最低付款",
-        "scan": "扫描手机上的QR码",
-        "order": "为了付款",
-        "address": "地址",
-        "payment_id": "付款 ID",
-        "copy_address": "复制 地址",
-        "copy_payment_id": "复制 付款 Id",
-        "tfa": "双 因素 认证 已经 %(status)s"
+        "settings_changed": "Settings has been changed",
+        "ok": "Ok",
+        "pay_with": "Pay with",
+        "generate_address": "Please Generate Wallet Address",
+        "deposit_unavailable": "Sorry, %(currency)s deposits currently unavailable.",
+        "generate": "Generate",
+        "minimum_payment": "Minimum payment",
+        "scan": "Scan QR-code on your phone",
+        "order": "in order to make a payment.",
+        "address": "Address",
+        "payment_id": "Payment ID",
+        "copy_address": "Copy Address",
+        "copy_payment_id": "Copy Payment Id",
+        "tfa": "Two-Factor Authentication has been %(status)s"
     },
     "header": {
         "sign_out": "登出",
-        "back": "返回 网站",
+        "back": "BACK TO WEBSITE",
         "dashboard": "控制面板",
         "tfa": "2FA",
-        "account_settings": "帐号 设定",
+        "account_settings": "Account Settings",
         "tac": "条约条款"
     },
     "footer": {
-        "rights": "保留 所有 权利",
-        "deel": "交易 单",
-        "contact": "联系 我们",
-        "code": "代码"
+        "rights": "All rights reserved.",
+        "deel": "Deal Sheet",
+        "contact": "Contact Us",
+        "code": "Code"
     }
 }
