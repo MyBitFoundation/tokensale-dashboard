@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Translate from 'react-translate-component';
+import counterpart from 'counterpart';
 
 import {changePassword} from 'actions/SettingsActions';
 
@@ -103,7 +104,7 @@ class Settings extends React.Component {
 									className={`field2 ${error && oldPassword.error ? 'error' : ''}`}
 									id="key01"
 									type="password"
-									placeholder="Old Password"
+									placeholder={counterpart.translate("settings.old_password")}
 									value={oldPassword.value}
 									onChange={this.onChangeInput.bind(this, 'oldPassword')}/>
 							</div>
@@ -114,7 +115,7 @@ class Settings extends React.Component {
 									className={`field2 ${error && newPassword.error ? 'error' : ''}`}
 									id="key02"
 									type="password"
-									placeholder="New Password"
+									placeholder={counterpart.translate("settings.new_password")}
 									value={newPassword.value}
 									onChange={this.onChangeInput.bind(this, 'newPassword')}/>
 							</div>
@@ -125,7 +126,7 @@ class Settings extends React.Component {
 									className={`field2 ${error && newPasswordCopy.error ? 'error' : ''}`}
 									id="key03"
 									type="password"
-									placeholder="Repeat New Password"
+									placeholder={counterpart.translate("settings.new_password_confirmation")}
 									value={newPasswordCopy.value}
 									onChange={this.onChangeInput.bind(this, 'newPasswordCopy')}/>
 							</div>
