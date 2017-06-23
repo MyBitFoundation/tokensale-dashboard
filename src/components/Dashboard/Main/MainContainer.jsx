@@ -13,7 +13,7 @@ export default class Main extends React.Component {
 	            <div className="presale">
 		            <div className="presale__head">
 			            <div className="presale__headLeft"><b><Translate content="dashboard.main.presale.head"/></b></div>
-			            <div className="presale__headRight">
+			            {/*<div className="presale__headRight">
 				            <div className="presale__headItem">
 								<span className="cur__icon">
 									<img src="images/eth_sm.png" alt="" />&nbsp;
@@ -28,14 +28,14 @@ export default class Main extends React.Component {
 					            <b>100+ ETHER &nbsp;</b>
 					            <span className=""><Translate content="dashboard.main.presale.receives_15_bonus"/></span>
 				            </div>
-			            </div>
+			            </div>*/}
 		            </div>
 		            <div className="presale__body">
 			            <div className="presale__note">
 				            <Translate content="dashboard.main.presale.note"/>
 			            </div>
 			            <div className="presale__attn">
-				            <b className="presale__attnTitle"><Translate content="dashboard.main.presale.attention_title"/></b>
+				            <b className="presale__attnTitle"><Translate content="dashboard.main.presale.attention_title"/> </b>
 				            <Translate content="dashboard.main.presale.attention"/>
 			            </div>
 		            </div>

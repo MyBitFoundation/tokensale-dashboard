@@ -6,12 +6,12 @@
         },
         "main": {
             "presale": {
-                "head": "Pre-Sale Bonuses:",
+                "head": "Auto-Buy Script:",
                 "receives_10_bonus": "receives a 10% Bonus",
                 "receives_15_bonus": "receives a 15% Bonus",
-                "note": "Bonuses will be in the form of MyB tokens issued after the close of Tokensale.",
+                "note": "The Auto-Buy script is designed to allow users to send funds to the smart contract prior to the start of the TokenSale. This automates the buying process for users right at the start of the Tokensale to ensure they receive the best price and are included in the TokenSale. We designed this auto-buy script to reduce the load on the Ethereum network and our platform. This ensures that anyone who sent funds to the contract prior to the start will automatically participate in the TokenSale and is guaranteed to receive MyB Tokens.",
                 "attention_title": "重要提醒:",
-                "attention": "参与预售 pre-sale 最低金额是 25 ETHER。假如在预售期间发送少于这个金额的币，你的资金将会被返还。少于 25 ETHER 的投资者请等到预售结束，参与正式的众筹。"
+                "attention": "The minimum amount to utilize the auto-buy functionality i is 1 ETHER. If you send less than this amount your funds will be returned to you. For amounts under 1 ETHER please wait until the official TokenSale begins on July 17th to ensure your funds are not lost. Auto-buy script will be made available here on June 28th. If you plan to contribute 25 ether or more you may be eligible for a pre-sale bonus. Please contact info@mybit.io to learn more."
             },
             "cards": {
                 "crowdsale_price": "众筹价格",

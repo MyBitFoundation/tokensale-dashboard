@@ -57,9 +57,9 @@ export default class TermsAndConditions extends React.Component {
         							<div className="text_c" style={{padding: '15px 0'}}>
         								<div>TIMING OF SALE</div>
         								<br/>
-								        The initial sale will begin at 12:00:00 GMT (+1) on July 17th, 2017
+								        The initial sale will begin at 12:00:00 GMT (+0) on July 17th, 2017
         								<br/>--<br/>
-								        The initial sale will run for 30 days and will end at 12:00:00 GMT (+1) on August 15th, 2017
+								        The initial sale will run for 30 days and will end at 12:00:00 GMT (+0) on August 15th, 2017
         							</div>
         							<div>
         								MYBIT reserves the right to change the date when the initial sale will begin and further reserves the right to extend the sale duration for any reason, including the unavailability of the website https://MyBit.io or other unforeseen security or procedural issues. Though it does not currently anticipate doing so, MYBIT also reserves the right to shorten the sale duration for any reason.
@@ -85,19 +85,19 @@ export default class TermsAndConditions extends React.Component {
         								<tbody>
                                             <tr>
             									<td>1-early bird</td>
-            									<td>300 000</td>
-            									<td>300 000</td>
+            									<td>1 250 000</td>
+            									<td>1 250 000</td>
             									<td>0.0075</td>
-            									<td>2 250</td>
+            									<td>9 375</td>
             								</tr>
             								<tr>
             									<td>2</td>
-            									<td>750 000</td>
-            									<td>1 050 000</td>
-            									<td>0.0085</td>
-            									<td>6 375</td>
+            									<td>1 750 000</td>
+            									<td>3 000 000</td>
+            									<td>0.01</td>
+            									<td>17 500</td>
             								</tr>
-            								<tr>
+            								{/*<tr>
             									<td>3</td>
             									<td>1 250 000</td>
             									<td>2 300 000</td>
@@ -110,7 +110,7 @@ export default class TermsAndConditions extends React.Component {
             									<td>4 800 000</td>
             									<td>0.01</td>
             									<td>25 000</td>
-            								</tr>
+            								</tr>*/}
             								<tr>
             									<td/>
             									<td/>
@@ -120,10 +120,10 @@ export default class TermsAndConditions extends React.Component {
             								</tr>
                                             <tr>
 	                                            <td>Total</td>
-	                                            <td>4 800 000</td>
+	                                            <td>3 000 000</td>
 	                                            <td/>
 	                                            <td/>
-	                                            <td>44 875</td>
+	                                            <td>26 875</td>
                                             </tr>
                                             <tr>
 	                                            <td/>
@@ -133,16 +133,16 @@ export default class TermsAndConditions extends React.Component {
 	                                            <td/>
                                             </tr>
             								<tr>
-            									<td>Bounty Fund</td>
-            									<td>300 000</td>
-									            <td>5%</td>
+            									<td>Bounties</td>
+            									<td>400 000</td>
+									            <td>10.26%</td>
             									<td/>
             									<td/>
             								</tr>
             								<tr>
-            									<td>To Founders</td>
-            									<td>600 000</td>
-            									<td>10%</td>
+            									<td>Founders</td>
+            									<td>500 000</td>
+            									<td>12.82%</td>
             									<td/>
             									<td/>
             								</tr>
@@ -163,21 +163,21 @@ export default class TermsAndConditions extends React.Component {
             								<tr>
             									<td>Total potential supply</td>
             									<td/>
-            									<td>6 000 000</td>
+            									<td>3 900 000</td>
             									<td/>
             									<td/>
             								</tr>
             								<tr>
             									<td>Pre-mine (goes to beneficiary wallet)</td>
             									<td/>
-            									<td>1 000 000</td>
+            									<td>1 100 000</td>
             									<td/>
             									<td/>
             								</tr>
             								<tr>
             									<td>Total Supply</td>
 									            <td/>
-            									<td>7 000 000</td>
+            									<td>5 000 000</td>
             									<td/>
             									<td/>
             								</tr>
