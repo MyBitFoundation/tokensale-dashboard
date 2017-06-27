@@ -15,8 +15,6 @@ class PresaleAddress extends React.Component {
 	
 	render() {
 		let {contractAddress} = this.props;
-		// TODO
-		return null;
 		return (
 			<div className="address">
 				<div className="address__title">
