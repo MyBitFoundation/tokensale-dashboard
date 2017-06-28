@@ -180,19 +180,15 @@
 	}
 }
 .address{
-	background: #fff;
-	@include border-radius(5px);
-	@include box-shadow($shadow);
+	width: 100%;
 	margin-bottom: 30px;
-	font-size: 1.25rem;
-	padding: 27px 30px;
+	font-size: 1rem;
+	height: 48px;
 	@include MQ(L){
 		margin-bottom: 20px;
 	};
 	@include MQ(S){
 		margin-bottom: 10px;
-		padding: 15px 10px;
-		font-size: 1.125rem;
 	};
 	.cur__icon {
 		img{
@@ -202,17 +198,57 @@
 		}
 	}
 	&__title{
-		display: inline-block;
-		vertical-align: middle;
+		float: left;
+		background: #d7d7d8;
 		color: #281f39;
-		padding-right: 10px;
-	}
-	&__text{
-		display: inline-block;
-		vertical-align: middle;
-		color: #96949c;
+		padding: 0 20px;
+		height: 48px;
+		@include border-radius(5px 0 0 5px);
 	}
 	.cur__text{
 		vertical-align: middle;
+		line-height: 48px;
+	}
+
+	&__btn{
+		float: right;
+		height: 48px;
+		width: 160px;
+		text-align: center;
+		@include border-radius(50px);
+		background: #fcca59;
+		font-size: 1rem;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: 700;
+		margin-left: 20px;
+		@include transition();
+		&:hover{opacity: .6;}
+		&.active{
+			background: #fc8c19;
+		}
+		.btnText{}
+		.btnIcon{
+			font-size: 10px;
+		}
+	}
+
+	&__fieldWrap{
+		overflow: hidden;
+	}
+	&__field{
+		border: 1px solid #d7d7d8;
+		background: #fff;
+		color: #989b9e;
+		padding: 0 17px;
+		height: 48px;
+		font-size: 1rem;
+		@include border-radius(0 5px 5px 0);
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 1350px){
+	.address {
+		width: 80%;
 	}
 }
