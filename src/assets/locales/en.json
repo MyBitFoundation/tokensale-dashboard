@@ -11,7 +11,7 @@
                 "receives_15_bonus": "receives a 15% Bonus",
                 "note": "The Auto-Buy script is designed to allow users to send funds to the smart contract prior to the start of the TokenSale. This automates the buying process for users right at the start of the Tokensale to ensure they receive the best price and are included in the TokenSale. We designed this auto-buy script to reduce the load on the Ethereum network and our platform. This ensures that anyone who sent funds to the contract prior to the start will automatically participate in the TokenSale and is guaranteed to receive MyB Tokens.",
                 "attention_title": "IMPORTANT NOTICE:",
-                "attention": "The minimum amount to utilize the auto-buy functionality i is 1 ETHER. If you send less than this amount your funds will be returned to you. For amounts under 1 ETHER please wait until the official TokenSale begins on July 17th to ensure your funds are not lost. Auto-buy script will be made available here on June 28th. If you plan to contribute 25 ether or more you may be eligible for a pre-sale bonus. Please contact info@mybit.io to learn more."
+                "attention": "The minimum amount to utilize the auto-buy functionality i is 1 ETHER. If you send less than this amount your funds will be returned to you. For amounts under 1 ETHER please wait until the official TokenSale begins on July 17th to ensure your funds are not lost. Auto-buy script will be made available here on June 28th. "
             },
             "cards": {
                 "crowdsale_price": "Crowdsale Price",
