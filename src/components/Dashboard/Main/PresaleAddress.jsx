@@ -40,7 +40,7 @@ class PresaleAddress extends React.Component {
 				</div>
 				<button className={`address__btn ${copied ? 'active' : ''}`} type="button" onClick={() => this.copy()}>
 					<span className="btnText">{copied ? 'Copied' : 'Copy Address'} </span>
-					{copied ? <span className="btnIcon icon-check"></span> : null}
+					{copied ? <span className="btnIcon icon-check" /> : null}
 				</button>
 				<div className="address__fieldWrap">
 					<input type="text" readOnly className="address__field" value={contractAddress} />

@@ -8,7 +8,7 @@ const PATHS = {
 };
 
 const production = (process.env.NODE_ENV == 'production');
-const configFile = production ? 'prod.config.js' : 'local.config.js';
+const configFile = `${process.env.NODE_ENV}.js`;
 const config = require(`./${configFile}`);
 
 let createConfig = (options) => {
