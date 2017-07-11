@@ -1,5 +1,5 @@
 module.exports = {
 	port : '8081',
-	apiURL: 'https://server.mybit.io',
-	redirectURL: 'https://mybit.io'
+	apiURL: 'https://st-age-server.mybit.io',
+	redirectURL: 'https://st-age.mybit.io'
 };
