@@ -35,7 +35,7 @@
     "redux": "^3.6.0",
     "redux-modules": "^1.0.1",
     "redux-thunk": "^2.2.0",
-    "sass-loader": "^6.0.2",
+    "sass-loader": "^6.0.6",
     "speakeasy": "^2.0.0"
   },
   "devDependencies": {
