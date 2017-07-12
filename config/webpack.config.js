@@ -7,7 +7,7 @@ const PATHS = {
 	dist: path.resolve(__dirname, '../dist')
 };
 
-const production = (process.env.NODE_ENV == 'production');
+const production = (process.env.NODE_ENV == 'production' || process.env.NODE_BUILD == 'true');
 const configFile = `${process.env.NODE_ENV}.config.js`;
 const config = require(`./${configFile}`);
 

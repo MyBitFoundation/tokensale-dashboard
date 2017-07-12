@@ -8,7 +8,7 @@
     "start-local": "NODE_ENV=local node server.js",
     "start-stage": "NODE_ENV=stage node server.js",
     "build": "NODE_ENV=production webpack --config config/webpack.config.js --progress --display-error-details --colors",
-    "build-stage": "NODE_ENV=stage webpack --config config/webpack.config.js --progress --display-error-details --colors",
+    "build-stage": "NODE_BUILD=true NODE_ENV=stage webpack --config config/webpack.config.js --progress --display-error-details --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
