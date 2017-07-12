@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require(`./config/webpack.config`);
 const production = (process.env.NODE_ENV == 'production');
-const configFile = `${process.env.NODE_ENV}.js`;
+const configFile = `${process.env.NODE_ENV}.config.js`;
 const config = require(`./config/${configFile}`);
 
 let compiler = webpack(webpackConfig);
