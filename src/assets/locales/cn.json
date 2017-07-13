@@ -6,18 +6,21 @@
         },
         "main": {
             "presale": {
-                "head": "Auto-Buy Script:",
+                "head": "自动购买脚本:",
                 "receives_10_bonus": "receives a 10% Bonus",
                 "receives_15_bonus": "receives a 15% Bonus",
-                "note": "The Auto-Buy script is designed to allow users to send funds to the smart contract prior to the start of the TokenSale. This automates the buying process for users right at the start of the Tokensale to ensure they receive the best price and are included in the TokenSale. We designed this auto-buy script to reduce the load on the Ethereum network and our platform. This ensures that anyone who sent funds to the contract prior to the start will automatically participate in the TokenSale and is guaranteed to receive MyB Tokens.",
+                "note": "自动购买脚本设计的目的 是让用户能够在代币销售之前发送资金到智能合约。用户在代币销售开始的时候，能够自动以折扣价格购买代币。这种自动购买脚本会在众筹的时候减少以太坊网络和我们平台的拥堵情况发生。这样确保任何人能够在众筹开始之前发送资金到合约地址，并自动参与代币销售，并得到收到 MyB 代币的保证。",
                 "attention_title": "重要提醒:",
-                "attention": "The minimum amount to utilize the auto-buy functionality i is 1 ETHER. If you send less than this amount your funds will be returned to you. For amounts under 1 ETHER please wait until the official TokenSale begins on July 17th to ensure your funds are not lost. Auto-buy script will be made available here on June 28th."
+                "attention": "使用自动购买功能最低的金额是 1 ETHER。 假如你发送低于这个金额，你的资金会被返还。想要投资低于1 ETHER，请等到官方正式的代币销售，开始于2017年7月17日，这样你所发过来的资金就不会丢失。自动购买功能从6月28号以来就有效了。",
+                "eth_address": "ETH 地址",
+                "copied_address": "复制地址",
+                "copied": "复制"
             },
             "cards": {
                 "crowdsale_price": "众筹价格",
-                "days": "Days",
-                "hours": "Hours",
-                "minutes": "Minutes",
+                "days": "天",
+                "hours": "小时",
+                "minutes": "分钟",
                 "time_left": "剩余时间",
                 "crowdsale_over": "Crowdsale over",
                 "balance": "余额"
@@ -47,7 +50,7 @@
         "enable": {
             "description": "为了增加账户的安全性，请开启双重验证",
             "qrcode": "为了使用2FA，扫描安装在手机中的谷歌认证APP上的 QR代码，或者输入显示在QR代码下面的16位秘钥",
-            "key": "Input the six-digit code provided by the Google Authenticator app and your account password elow, then click “Enable 2FA”.",
+            "key": "输入谷歌认证软件提供的 6 个数字代码和账户的密码，然后点击“激活2FA”。",
             "enable_tfa": "激活 2FA",
             "16_digit_key": "16位秘钥",
             "attention_title": "重要: ",
@@ -81,16 +84,16 @@
     },
     "header": {
         "sign_out": "登出",
-        "back": "BACK TO WEBSITE",
+        "back": "返回主页",
         "dashboard": "控制面板",
         "tfa": "2FA",
-        "account_settings": "Account Settings",
+        "account_settings": "账户设置",
         "tac": "条约条款"
     },
     "footer": {
-        "rights": "All rights reserved.",
-        "deel": "Deal Sheet",
-        "contact": "Contact Us",
-        "code": "Code"
+        "rights": "版权所有",
+        "deel": "交易清单",
+        "contact": "联系我们",
+        "code": "代码"
     }
 }

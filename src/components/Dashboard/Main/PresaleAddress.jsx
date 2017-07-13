@@ -1,6 +1,8 @@
 import React from "react";
 import {connect} from 'react-redux';
 import copy from 'copy-to-clipboard';
+import Translate from 'react-translate-component';
+import counterpart from 'counterpart';
 
 function mapStateToProps(state, ownProps) {
 	return {
@@ -36,10 +38,10 @@ class PresaleAddress extends React.Component {
 					<span className="cur__icon">
 						<img src="images/eth.png" alt=""  />
 					</span>
-					<span className="cur__text">ETH Address:</span>
+					<span className="cur__text"><Translate content="dashboard.main.presale.eth_address"/>:</span>
 				</div>
 				<button className={`address__btn ${copied ? 'active' : ''}`} type="button" onClick={() => this.copy()}>
-					<span className="btnText">{copied ? 'Copied' : 'Copy Address'} </span>
+					<span className="btnText">{copied ? counterpart.translate('dashboard.main.presale.copied') : counterpart.translate('dashboard.main.presale.copied_address')} </span>
 					{copied ? <span className="btnIcon icon-check" /> : null}
 				</button>
 				<div className="address__fieldWrap">
