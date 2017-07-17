@@ -42,8 +42,7 @@ class InviteLink extends React.Component {
                     <input type="text" readOnly className="address__field" value={referralLink} />
                 </div>
                 <button className={`address__btn ${copied ? 'active' : ''}`} onClick={() => this.copy()}>
-                    <span className="btnText">{copied ? counterpart.translate('affiliates.copied') : counterpart.translate('affiliates.copy_link')}</span>
-                    {copied ? <span className="btnIcon icon-check" /> : null}
+                    <span className="btnText">{copied ? counterpart.translate('affiliates.copied') : counterpart.translate('affiliates.copy_link')}</span> {copied ? <span className="btnIcon icon-check" /> : null}
                 </button>
                 <div className="address__fieldWrap hidden-xs">
                     <input type="text" readOnly className="address__field" value={referralLink} />

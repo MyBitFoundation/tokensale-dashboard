@@ -8,7 +8,6 @@ import TableReferrer from './TableReferrer';
 import { referrals } from 'actions/AffiliatesActions';
 
 function mapStateToProps(state, ownProps) {
-    console.log(state);
     return {
         referrer: state.affiliates.get('referrer'),
     };

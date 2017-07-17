@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import Translate from 'react-translate-component';
 
 function mapStateToProps(state, ownProps) {
-    // console.log(state.affiliates.getState('referrer'));
-    // console.log(state.dashboard.get('referrer'));
-    return {};
+    return {
+        referrer: state.affiliates.get('referrer'),
+        count: 4
+    };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -28,93 +29,68 @@ class TableReferrer extends React.Component {
     }
 
     getReferrerTable() {
+        let {referrer} = this.props;
 
+        let table = referrer.map((item, index) => {
+            return (
+                <div key={index} className="tr">
+                    <div className="td td-email">
+                        <div className="tdIn">{item.email}</div>
+                    </div>
+                    <div className="td td-address">
+                        <div className="tdIn">{item.address}</div>
+                    </div>
+                    <div className="td td-amount">
+                        <div className="tdIn">
+                            <b>{item.contributeEthAmount}</b> <span>ETH</span> <span className="cur__icon"> <img src="images/eth_sm.png" alt="" /></span>
+                        </div>
+                    </div>
+                </div>
+            );
+        });
+
+         return (
+             <div className="ref__table">
+                 <div className="ref__tableHead">
+                     <div className="tr">
+                         <div className="td td-email">
+                             <span className="sort">
+                                 Email
+                             </span>
+                         </div>
+                         <div className="td td-address">
+                              <span className="sort">
+                                 ETH Address
+                                </span>
+                         </div>
+                         <div className="td td-amount">
+                            <span className="sort">
+                                 Amount In ETH Contributed
+                            </span>
+                         </div>
+                     </div>
+                 </div>
+                 <div className="ref__tableBody">
+                     {table}
+                 </div>
+                 <div className="ref__tableBtns">
+                     {/*<button className="btn btn-more ">*/}
+                         {/*<span className="btnText">More</span>*/}
+                         {/*<span className="btnIcon icon-arrow"></span>*/}
+                     {/*</button>*/}
+                 </div>
+             </div>
+         );
     }
 
     render() {
+        let {referrer} = this.props;
+        {referrer.length ? this.getReferrerTable() : null}
+
         return (
             <div className="ref">
                 <div className="title">Affileates</div>
-                <div className="ref__table">
-                    <div className="ref__tableHead">
-                        <div className="tr">
-                            <div className="td td-email">
-                                <a href="" className="sort">
-                                    Email <span className="sortIcon icon-arrow_dropdown"></span>
-                                </a>
-                            </div>
-                            <div className="td td-address">
-                                <a href="" className="sort">
-                                    ETH Address <span className="sortIcon icon-arrow_dropdown"></span>
-                                </a>
-                            </div>
-                            <div className="td td-amount">
-                                <a href="" className="sort">
-                                    Amount In ETH Contributed <span className="sortIcon icon-arrow_dropdown"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="ref__tableBody">
-                        <div className="tr">
-                            <div className="td td-email">
-                                <div className="tdIn">valentinecook_087@gmail.com</div>
-                            </div>
-                            <div className="td td-address">
-                                <div className="tdIn">0x6e0eC952e49212F2e2E2f94FEdaa84f5C044acef</div>
-                            </div>
-                            <div className="td td-amount">
-                                <div className="tdIn">
-                                    <b>0.156007</b>
-                                    <span>ETH</span>
-                                    <span className="cur__icon">
-                                        <img src="images/eth_sm.png" alt="" />
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="tr">
-                            <div className="td td-email">
-                                <div className="tdIn">valentinecook_087@gmail.com</div>
-                            </div>
-                            <div className="td td-address">
-                                <div className="tdIn">0x6e0eC952e49212F2e2E2f94FEdaa84f5C044acef</div>
-                            </div>
-                            <div className="td td-amount">
-                                <div className="tdIn">
-                                    <b>0.006789167</b>
-                                    <span>ETH</span>
-                                    <span className="cur__icon">
-                                        <img src="images/eth_sm.png" alt="" />
-										</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="tr">
-                            <div className="td td-email">
-                                <div className="tdIn">valentinecook_087@gmail.com</div>
-                            </div>
-                            <div className="td td-address">
-                                <div className="tdIn">0x6e0eC952e49212F2e2E2f94FEdaa84f5C044acef</div>
-                            </div>
-                            <div className="td td-amount">
-                                <div className="tdIn">
-                                    <b>2.6</b>
-                                    <span>ETH</span>
-                                    <span className="cur__icon">
-                                        <img src="images/eth_sm.png" alt="" />
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="ref__tableBtns">
-                        <button className="btn btn-more ">
-                            <span className="btnText">More</span>
-                            <span className="btnIcon icon-arrow"></span>
-                        </button>
-                    </div>
-                </div>
+                {referrer.length ? this.getReferrerTable() : null}
             </div>
         );
     }
