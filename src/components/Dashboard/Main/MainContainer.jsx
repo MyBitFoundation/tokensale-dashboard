@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CardList from '../Cards/CardList';
-// import Box from './Box';
+import Box from './Box';
 import PresaleAddress from './PresaleAddress';
 import History from './History';
 import Translate from 'react-translate-component';
@@ -43,7 +43,7 @@ export default class Main extends React.Component {
 	            </div>
 	            <CardList />
                 {/*<Box />*/}
-				{/*<PresaleAddress />*/}
+				<PresaleAddress />
                 <History />
             </div>
         );

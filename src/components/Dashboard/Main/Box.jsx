@@ -38,12 +38,12 @@ class Box extends React.Component {
                             </span>
                             <span className="cur__name">etc</span>
                         </a>
-                        <a href="javascript:;" className="cur__item" onClick={this.onOpenStep1.bind(this, 'eth')}>
-                            <span className="cur__icon">
-                                <img src="images/eth.png" alt=""/>
-                            </span>
-                            <span className="cur__name">eth</span>
-                        </a>
+                        {/*<a href="javascript:;" className="cur__item" onClick={this.onOpenStep1.bind(this, 'eth')}>*/}
+                            {/*<span className="cur__icon">*/}
+                                {/*<img src="images/eth.png" alt=""/>*/}
+                            {/*</span>*/}
+                            {/*<span className="cur__name">eth</span>*/}
+                        {/*</a>*/}
                         <a href="javascript:;" className="cur__item" onClick={this.onOpenStep1.bind(this, 'xmr')}>
                             <span className="cur__icon">
                                 <img src="images/xmr.png" alt=""/>

@@ -5,26 +5,16 @@ export default class AdditionSection extends React.Component {
     render() {
         return (
             <div className="sec__advt">
-                <p><b>Dear All</b></p>
                 <p>
-                    Numerous parties have brought to our attention that the recent spike in Ethereum (>350%) has made the pricing tiers coded into our smart contract unrealistic. For this reason we are closing the current crowdfund, fixing the pricing structure, and will re-open on April 27, 2017 after a successful audit has been completed. If you have sent funds to the current contract, you will be receiving a personalized email. Otherwise please refrain from sending any funds to the contract.
+                    Disclaimer: By sending Ether or any form of cryptocurrency to the address(es) below, - I confirm to have carefully read and understood the Terms & Conditions (underlined and hyperlink to T&C page) of the MyBit Token Sale (the Terms) and I agree to be bound by such Terms; including: I represent and warrant that I am legally permitted to purchase MyB (in particular, that I am not subject to any of the limitations set forth on the front page and/or in section 1827 (Sales Restrictions) of the Terms); that I am of a sufficient age to legally purchase MyB or have received permission from a legal guardian who has reviewed and agreed to these Terms; warrant that I will take sole responsibility for any restrictions and risks associated with the purchase of MyB as set forth in the Terms; that I am not exchanging Ether (ETH) or other tokens or currencies for MyB for the purpose of speculative investment; that I am acquiring MyB for the use of decentralized application services or the purchase of tokens specific to forthcoming decentralized applications on the MyBit Platform, or to facilitate development, testing, deployment and operation of decentralized applications on the MyBit Platform; and that I have an understanding of the usage and intricacies of cryptographic tokens and blockchain-based software systems and the risks related to a purchase of such tokens (in particular those outlined in sections 5 and 18 of the Terms).
                 </p>
-                <div className="sec__advtListTitle">Here is the agenda leading up to re-launch:</div>
+                <div className="sec__advtListTitle"><b>Steps to Contribute in Ether</b></div>
                 <ul>
-                    <li>Re-configure pricing tiers and publicize an updated deal sheet</li>
-                    <li>Update smart contract code to reflect these changes in pricing structure</li>
-                    <li>Smart contract audit conducted </li>
-                    <li>Re-sync contract to ICO dashboard</li>
-                    <li>Run numerous security audits on the dashboard</li>
+                    <li>Obtain Ether and transfer it to an Erc20 compliant ethereum wallet (mist, parity, Jaxx, MEW, etc.) DO NOT SEND DIRECTLY FROM AN EXCHANGE OR WALLET YOU DO NOT CONTROL YOUR PRIVATE KEYS AT!</li>
+                    <li>Send Ether to the address listed below</li>
+                    <li>On your local wallet go to contracts -> watch token -> and add this address to watch $MyB</li>
+                    <li>That's it! Once Ether is received by the smart contract, $MyB will be minted and instantly transferred to your local wallet</li>
                 </ul>
-                <p>
-                    Pre-sale contracts with potential discounts will also be made available for anyone desiring to send a minimum of 25 ETH. Please contact
-                    <Link to="https://mybit.io#contact" className="sec__advtLink" target="_blank"> <b>info@mybit.io</b> </Link> 
-                    for additional details.
-                </p>
-                <p>Thank you for your understanding,</p>
-                <p>The MyBit Team</p>
-
             </div>
         );
     }
