@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Translate from 'react-translate-component';
 
 function mapStateToProps(state, ownProps) {
+    // console.log(state.affiliates.getState('referrer'));
+    // console.log(state.dashboard.get('referrer'));
     return {};
 }
 
@@ -14,10 +16,6 @@ class TableReferrer extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            count: 4,
-
-        }
     }
 
     onMore() {

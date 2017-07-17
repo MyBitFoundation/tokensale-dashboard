@@ -5,41 +5,34 @@ import Translate from 'react-translate-component';
 import InviteLink from './InviteLink';
 import TableReferrer from './TableReferrer';
 
-import AffiliatesActions from 'actions/AffiliatesActions';
+import { referrals } from 'actions/AffiliatesActions';
 
 function mapStateToProps(state, ownProps) {
-    return {};
+    console.log(state);
+    return {
+        referrer: state.affiliates.get('referrer'),
+    };
 }
 
 function mapDispatchToProps(dispatch){
     return {
-        referrals: (referrals) => dispatch(AffiliatesActions.referrals())
+        referrals: () => dispatch(referrals())
     };
 }
 
 class Affiliates extends React.Component {
 
-    constructor(props) {
+    constructor() {
         super();
-
-        console.log(props);
-
         this.state = {
             loading: true
-        };
-        this.bindData();
+        }
     }
 
-    componentWillMount() {}
-    componentDidMount() {}
-
-    bindData() {
-        //this.props.referrals();
-
-
-        // this.props.....then(() => {
-        //     this.setState({loading: true})
-        // })
+    componentWillMount() {
+        this.props.referrals().then(() => {
+            this.setState({loading: false});
+        })
     }
 
     render() {
@@ -51,7 +44,7 @@ class Affiliates extends React.Component {
 
                     <div className="main">
                         <InviteLink />
-                        {/*<TableReferrer />*/}
+                        <TableReferrer />
                     </div>
                 </div>
             </section>
