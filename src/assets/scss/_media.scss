@@ -144,6 +144,8 @@ only screen and (                min-resolution: 3dppx) {
 /*--------------------------------------------------------------------------------------------..._to_767--------------*/
 @media (max-width: 767px) {
 	html                                        {font-size: 82%;}
+	.visible-xs{display: block;}
+	.hidden-xs{display: none;}
 	/*body                                        {background: green;}*/
 }
 

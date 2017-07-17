@@ -13,6 +13,8 @@
 			color: #281f39;
 			@include MQ(L){
 				float: none;
+				line-height: 20px;
+				padding-bottom: 15px;
 			};
 		}
 	}
@@ -31,7 +33,9 @@
 		vertical-align: top;
 		margin-right: 5px;
 		height: 48px;
-		line-height: 46px;
+		font-size: 0;
+		line-height: 0;
+		//line-height: 46px;
 		background: #f5f5f6;
 		@include border-radius(7px);
 		border: 1px solid #d3d3d4;
@@ -47,13 +51,16 @@
 			width: 31%;
 			margin: 0 2px 5px;
 		};
+		.cur__icon{
+			line-height: 46px;
+		}
 	}
 	&__icon{
 		display: inline-block;
 		vertical-align: middle;
 		padding-right: 10px;
 		@include MQ(L){
-			padding-right: 3px;
+			padding-right: 6px;
 		};
 		img{
 			display: inline-block;
@@ -95,40 +102,58 @@
 		}
 		.td-date{
 			padding-left: 40px;
-			width: 25%;
+			width: 21%;
 			font-size: 0.9375rem;
 			@include MQ(S){
-				width: 34%;
+				width: 39%;
 				padding-left: 10px;
 				font-size: 0.8125rem;
 			};
 		}
 		.td-amount{
-			width: 18%;
+			width: 14%;
 			font-size: 1.125rem;
 			color: #281f39;
 			b{
 				font-weight: 700;
 			}
 			@include MQ(S){
-				width: 22%;
+				width: 26%;
 				font-size: 0.8125rem;
 			};
 		}
 		.td-rate{
-			width: 30%;
+			width: 26%;
 			font-size: 1.125rem;
 			color: #281f39;
 			@include MQ(S){
-				width: 44%;
+				display: none;
+				//width: 31%;
+				//font-size: 0.8125rem;
+			};
+		}
+		.td-purchased{
+			width: 16%;
+			font-size: 1.125rem;
+			color: #281f39;
+			padding-right: 0!important;
+			padding-left: 0!important;
+			@include MQ(L){
+				width: 20%;
+			};
+			@include MQ(S){
+				width: 35%;
 				font-size: 0.8125rem;
 			};
 		}
 		.td-address{
-			width: 27%;
+			width: 23%;
 			text-align: right;
 			font-size: 1.125rem;
 			padding-right: 35px;
+			@include MQ(L){
+				width: 19%;
+			};
 			@include MQ(S){
 				display: none;
 			};
@@ -154,10 +179,76 @@
 		}
 	}
 }
-.qr{
-	margin-top: 50px;
-	margin-bottom: 15px;
-	@include MQ(S){
-		margin: 15px 0;
+.address{
+	width: 100%;
+	margin-bottom: 30px;
+	font-size: 1rem;
+	height: 48px;
+	@include MQ(L){
+		margin-bottom: 20px;
 	};
+	@include MQ(S){
+		margin-bottom: 10px;
+	};
+	.cur__icon {
+		img{
+			@include MQ(S){
+				height: 16px;
+			};
+		}
+	}
+	&__title{
+		float: left;
+		background: #d7d7d8;
+		color: #281f39;
+		padding: 0 20px;
+		height: 48px;
+		@include border-radius(5px 0 0 5px);
+	}
+	.cur__text{
+		vertical-align: middle;
+		line-height: 48px;
+	}
+
+	&__btn{
+		float: right;
+		height: 48px;
+		width: 160px;
+		text-align: center;
+		@include border-radius(50px);
+		background: #fcca59;
+		font-size: 1rem;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: 700;
+		margin-left: 20px;
+		@include transition();
+		&:hover{opacity: .6;}
+		&.active{
+			background: #fc8c19;
+		}
+		.btnText{}
+		.btnIcon{
+			font-size: 10px;
+		}
+	}
+
+	&__fieldWrap{
+		overflow: hidden;
+	}
+	&__field{
+		border: 1px solid #d7d7d8;
+		background: #fff;
+		color: #989b9e;
+		padding: 0 17px;
+		height: 48px;
+		font-size: 1rem;
+		@include border-radius(0 5px 5px 0);
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 1350px){
+	.address {
+		width: 80%;
+	}
 }

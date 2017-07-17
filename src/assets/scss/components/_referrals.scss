@@ -1,0 +1,163 @@
+.content-referrals {
+	max-width: 1125px;
+}
+@media only screen and (min-width: 1350px){
+	.content-referrals{
+		.address {
+			width: 93%;
+		}
+	}
+}
+.ref{
+	background: #fff;
+	@include border-radius(5px);
+	@include box-shadow($shadow);
+	.title{
+		padding-left: 40px;
+		@include MQ(M){
+			padding-left: 10px;
+		};
+	}
+	&__table{
+		.tr{
+			color: #96949c;
+			overflow: hidden;
+			height: 45px;
+			@include transition();
+			&:hover{
+				//cursor: pointer;
+				background: #fef4de;
+				color: #686066;
+			}
+			&.inactive{
+				height: 0;
+			}
+
+		}
+		.td-email{
+			padding-right: 0;
+			padding-left: 40px;
+			width: 30%;
+			font-size: 0.9375rem;
+			@include MQ(M){
+				padding-left: 10px;
+				width: 33%;
+			};
+			@include MQ(S){
+				padding-left: 10px;
+				font-size: 0.8125rem;
+			};
+		}
+		.td-address{
+			padding-right: 0;
+			width: 40%;
+			font-size: 1.125rem;
+			@include MQ(M){
+				width: 37%;
+			};
+		}
+		.td-amount{
+			width: 30%;
+			text-align: right;
+			padding-right: 35px;
+			font-size: 1.125rem;
+			color: #281f39;
+			b{
+				font-weight: 700;
+			}
+			@include MQ(M){
+				padding-right: 10px;
+			};
+			@include MQ(S){
+				font-size: 0.8125rem;
+			};
+			.tdIn{
+				& > *{
+					vertical-align: middle;
+				}
+			}
+		}
+
+
+		&Head{
+			padding: 14px 0 16px;
+			@include MQ(S){
+				display: none;
+			};
+		}
+		&Body{
+			.td{}
+		}
+		&Btns{
+			text-align: center;
+			overflow: hidden;
+			height: 90px;
+			@include transition();
+			&.inactive{
+				height: 0;
+			}
+		}
+	}
+
+}
+
+@media (max-width: 767px) {
+	.content-referrals{
+		h1{
+			display: none;
+		}
+		.title {
+			padding: 8px 10px;
+			font-size: 12px;
+		}
+		.address{
+			margin: 10px 0;
+			height: auto;
+			&__btn{
+				float: none;
+				clear: both;
+				width: 100%;
+				margin: 10px 0;
+			}
+		}
+		.invite__text{
+			position: absolute;
+			top: -10px;
+			left: 0;
+		}
+		.invite{
+			width: 37px;
+			padding: 0;
+			text-align: center;
+			&__icon{
+				font-size: 14px;
+				padding: 0;
+			}
+		}
+	}
+	.ref__table{
+		&Body {
+			padding-top: 10px;
+		}
+		.tr{
+			height: auto;
+			padding: 0 10px;
+			margin: 5px 0 0;
+		}
+		.td{
+			padding: 0;
+			font-size: 12px;
+			//width: 100%;
+			.cur__icon{
+				display: none;
+			}
+		}
+	}
+}
+@media (max-width: 480px) {
+	.ref__table{
+		.td{
+			width: 100%;
+		}
+	}
+}

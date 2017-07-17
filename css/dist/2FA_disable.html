@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>2FA_disable</title>
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	
+	<!--styles-->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<!--libs-->
+	<script type="text/javascript" src="js/libs/jquery-11.js"></script>
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script type="text/javascript" src="js/libs/device.min.js"></script>
+	<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+	
+	<!--components-->
+	<!--modules-->
+	<script type="text/javascript" src="js/modules/menuS.js"></script>
+	
+	<!--general-->
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/components/dashboard.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper wrapper-with-footer">
+	<header class="header">
+		<button class="menuBtn js-menuTrigger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<a href="" class="logo">
+			<img src="images/logo@2x.png" alt=""/>
+		</a>
+		<div class="header__profile">
+			<div>
+				<a href="" class="header__profileName ">valik_prusskiy@gmail.com</a>
+				<a href="" class="header__login none" data-toggle="modal" data-target="#modalLogin">
+					<span class="">LOGIN</span>
+					<span class="header__loginIcon icon-door"></span>
+				</a>
+			</div>
+	
+			<div>
+				<a href="" class="header__sign">Sign Up</a>
+			</div>
+		</div>
+		<div class="header__menu">
+			<ul class="header__menuList">
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Back to website</a>
+				</li>
+				<li class="header__menuLi barParent active">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Dashboard</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">2FA</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Account Settings</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Terms and Conditions</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<div class="menuS ">
+		<a href="" class="menuS__logo">
+			<img src="images/logo@2x.png" alt="">
+		</a>
+		<a href="" class="menuS__close icon-cross"></a>
+		<div class="menuS__wrap">
+			<ul class="menuS__list">
+				<li class="menuS__li barVerParent active">
+					<div class="barVer"></div>
+					<a href="" class="menuS__item">Dashboard</a>
+				</li>
+				<li class="menuS__li barVerParent">
+					<div class="barVer"></div>
+					<a href="" class="menuS__item">2FA</a>
+				</li>
+				<li class="menuS__li barVerParent">
+					<div class="barVer"></div>
+					<a href="" class="menuS__item">Account Settings</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="menuS__backdrops"></div>
+	<section class="content content-2fa">
+		<div class="box">
+			<h1 class="h1 ">Two-Factor Authentication</h1>
+			<div class="descr ">FWe use Google Authenticator for 2FA.</div>
+			<div class="main">
+				<div class="main__col one">
+					<div class="title">
+						You have Two-Factor Authentication enebled
+					</div>
+					<div class="form__title">
+						Disable 2FA
+					</div>
+					<div class="row ">
+						<label for="key01" class="label text_l">6-Digit_Key</label>
+						<input class="field2" id="key01" type="text" placeholder="Enter code to disable" />
+					</div>
+					<div class="row ">
+						<div class="error__text">Error txt</div>
+						<label for="key02" class="label text_l">Password</label>
+						<input class="field2 error" id="key02" type="password" value="test"/>
+					</div>
+					<div class="attn">
+						<b class="mark5">Warning:</b>
+						<i class="">
+							Disabling 2FA will make your account less secure.
+						</i>
+					</div>
+					<div class="form__btns">
+						<button class="btn btn-formSbm">Disable 2FA</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<footer class="footer">
+	<div class="box">
+		<div class="copyright">
+			© 2017 My Bit.   All rights reserved.
+		</div>
+		<div class="footer__linkWrap">
+			<a href="" class="footer__link">Code</a>
+			<a href="" class="footer__link">Deal Sheet</a>
+			<a href="" class="footer__link">Contact Us</a>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

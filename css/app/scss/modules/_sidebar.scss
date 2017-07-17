@@ -3,6 +3,7 @@
 	@include border-radius(5px);
 	@include box-shadow($shadow);
 
+
 	float: left;
 	width: 340px;
 	@include MQ(L){

@@ -32,6 +32,7 @@ export default function AccountReducer(state = initialState, action) {
             state = state.set('endTime', action.payload.endTime);
             state = state.set('deadline', action.payload.deadline);
             state = state.set('presaleDeadline', action.payload.presaleDeadline);
+            state = state.set('referralKey', action.payload.referralKey);
             return state;
         case 'LOGOUT':
             state = initialState;

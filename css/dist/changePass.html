@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Change Pass</title>
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	
+	<!--styles-->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<!--libs-->
+	<script type="text/javascript" src="js/libs/jquery-11.js"></script>
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script type="text/javascript" src="js/libs/device.min.js"></script>
+	<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+	
+	<!--components-->
+	<!--modules-->
+	<script type="text/javascript" src="js/modules/menuS.js"></script>
+	
+	<!--general-->
+	<script type="text/javascript" src="js/modal.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/components/dashboard.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper wrapper-with-footer">
+	<header class="header">
+		<button class="menuBtn js-menuTrigger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<a href="" class="logo">
+			<img src="images/logo@2x.png" alt=""/>
+		</a>
+		<div class="header__profile">
+			<div>
+				<a href="" class="header__profileName ">valik_prusskiy@gmail.com</a>
+				<a href="" class="header__login none" data-toggle="modal" data-target="#modalLogin">
+					<span class="">LOGIN</span>
+					<span class="header__loginIcon icon-door"></span>
+				</a>
+			</div>
+	
+			<div>
+				<a href="" class="header__sign">Sign Up</a>
+			</div>
+		</div>
+		<div class="header__menu">
+			<ul class="header__menuList">
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Back to website</a>
+				</li>
+				<li class="header__menuLi barParent active">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Dashboard</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">2FA</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Account Settings</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Terms and Conditions</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<div class="menuS ">
+		<a href="" class="menuS__logo">
+			<img src="images/logo@2x.png" alt="">
+		</a>
+		<a href="" class="menuS__close icon-cross"></a>
+		<div class="menuS__wrap">
+			<ul class="menuS__list">
+				<li class="menuS__li barVerParent active">
+					<div class="barVer"></div>
+					<a href="" class="menuS__item">Dashboard</a>
+				</li>
+				<li class="menuS__li barVerParent">
+					<div class="barVer"></div>
+					<a href="" class="menuS__item">2FA</a>
+				</li>
+				<li class="menuS__li barVerParent">
+					<div class="barVer"></div>
+					<a href="" class="menuS__item">Account Settings</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="menuS__backdrops"></div>
+	<section class="content content-pass">
+		<div class="box">
+			<h1 class="h1 ">Change Password</h1>
+			<div class="main">
+				<div class="main__col one">
+					<div class="row ">
+						<label for="key01" class="label text_l">Old Password</label>
+						<input class="field2" id="key01" type="password" placeholder="Old Password" />
+					</div>
+					<div class="row ">
+						<label for="key02" class="label text_l">New Password</label>
+						<input class="field2 " id="key02" type="password" placeholder="New Password"/>
+					</div>
+					<div class="row ">
+						<label for="key03" class="label text_l">New Password Confirmation</label>
+						<input class="field2 " id="key03" type="password" placeholder="Repeat New Password"/>
+					</div>
+					<div class="form__btns text_c">
+						<button class="btn btn-formSbm">Change</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<footer class="footer">
+	<div class="box">
+		<div class="copyright">
+			© 2017 My Bit.   All rights reserved.
+		</div>
+		<div class="footer__linkWrap">
+			<a href="" class="footer__link">Code</a>
+			<a href="" class="footer__link">Deal Sheet</a>
+			<a href="" class="footer__link">Contact Us</a>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

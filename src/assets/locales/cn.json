@@ -66,6 +66,11 @@
         "change_wallet_address": "更换钱包地址",
         "change": "变化"
     },
+    "affiliates": {
+        "invite_link": "Invite Link",
+        "copied": "复制",
+        "copy_link": "Copy link"
+    },
     "modal": {
         "settings_changed": "Settings has been changed",
         "ok": "Ok",
@@ -88,7 +93,8 @@
         "dashboard": "控制面板",
         "tfa": "2FA",
         "account_settings": "账户设置",
-        "tac": "条约条款"
+        "tac": "条约条款",
+        "affiliates": "Affiliates"
     },
     "footer": {
         "rights": "版权所有",

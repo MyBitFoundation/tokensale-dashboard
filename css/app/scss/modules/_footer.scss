@@ -8,12 +8,28 @@
 	margin-top: -60px;
 	background: #262627;
 	padding: 20px 0;
-	&__contact{
-		float: right;
+	&__link{
+		&Wrap{
+			float: right;
+			overflow: hidden;
+			&:first-child{
+				padding-left: 0;
+			}
+			&:last-child{
+				padding-right: 0;
+			}
+		}
+		float: left;
+		padding: 0 7px;
 		font-size: 0.875rem;
 		color: $brand-color;
 		@include transition();
 		&:hover{opacity: .6;}
+		@include MQ(S){
+			font-size: 0.8125rem;
+			line-height: 17px;
+		};
+
 	}
 
 }
