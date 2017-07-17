@@ -1,6 +1,9 @@
 @import "variables";
 @import "mixins";
 
+.out{
+	height: 100%;
+}
 html{height: 100%; font-size: 100%;}
 body{
 	height: 100%;
@@ -31,6 +34,9 @@ b{
 	height: auto !important;
 	padding-bottom: 150px;
 	@include clearfix();
+	@include MQ(S){
+		padding-bottom: 100px;
+	};
 }
 .box{
 	padding: 0 $defXPad;
@@ -42,29 +48,6 @@ b{
 }
 .content{
 	margin: 0 auto;
-	&-2fa{
-		.h1{
-			text-align: center;
-			padding-bottom: 5px;
-		}
-		.descr{
-			text-align: center;
-		}
-		.main{
-			@include clearfix;
-		}
-		.title{
-			font-size: 1.75rem;
-			font-weight: 600;
-			margin-bottom: 10px;
-			padding: 0;
-			border: none;
-		}
-		p{
-			font-size: 1rem;
-			margin-bottom: 10px;
-		}
-	}
 }
 .h1{
 	color: #281f39;
@@ -75,6 +58,12 @@ b{
 		padding: 20px 0 10px;
 	};
 }
+.default{
+	cursor: default!important;
+}
+.visible-xs{
+	display: none;
+}
 
 
 .main{
@@ -83,24 +72,57 @@ b{
 		overflow: hidden;
 		@include MQ(L){
 			margin-left: 315px;
+			margin-top: 0!important;
 		};
 		@include MQ(M){
 			margin-left: 0;
 		};
 	}
-	&__col{
-		float: left;
-		width: 50%;
-		&.left{
-			padding-right: 55px;
-		}
+	&.margin1{
+		margin-top: -40px;
 	}
 }
+.main__col{
+	float: left;
+	width: 47%;
+	max-width: 480px;
+	&.left{}
+	&.right{
+		background: #fff;
+		@include border-radius(5px);
+		@include box-shadow($shadow);
+		@include border-radius(8px);
+		float: right;
+		margin-top: 14px;
+		padding: 25px 40px 40px;
+	}
+	&.one{
+		background: #fff;
+		@include border-radius(5px);
+		@include box-shadow($shadow);
+		@include border-radius(8px);
+		float: none;
+		margin: auto;
+		padding: 40px;
+		.title{
+			text-align: center;
+			margin-bottom: 31px;
+		}
+	}
+	@include MQ(S){
+		width: 100%;
+		float: none!important;
+		margin: 0 0 10px!important;
+		padding: 10px 10px 20px!important;
+	};
+}
+
 
 .mark1{color: #8f9296;}
 .mark2{color: #fc8b19;}
 .mark3{color: #ffb66b;}
 .mark4{color: #34b3d1;}
+.mark5{color: #ef5172;font-style: normal;}
 .title{
 	font-size: 16px;
 	font-weight: 600;
@@ -112,6 +134,9 @@ b{
 	color: #aaaeb3;
 	font-size: 1rem;
 	font-weight: 600;
+	@include MQ(S){
+		font-size: 0.8125rem;
+	};
 	&:hover{
 		color: #686471;
 		.sortIcon{
@@ -150,4 +175,123 @@ b{
 
 .descr{
 	margin-bottom: 10px;
+	letter-spacing: -.2px;
+}
+.qr{
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	@include MQ(S){
+		margin: 15px 0;
+	};
+	&__text{
+		font-size: 1rem;
+		font-weight: 600;
+		text-align: center;
+	}
+}
+.attn{
+	font-size: 0.8125rem;
+	margin-bottom: 18px;
+	margin-top: 14px;
+	line-height: 1.6;
+}
+.text{
+	h2{
+		font-size: 1.1rem;
+		text-decoration: underline;
+		margin-bottom: 15px;
+		margin-top: 50px;
+	}
+	p{
+		margin-bottom: 15px;
+	}
+	ol{
+		list-style-type: decimal;
+		list-style-position: inside;
+		line-height: 1.3;
+		li{
+			margin-bottom: 15px;
+			font-size: 0.9375rem;
+			font-weight: 600;
+			.heading{
+				display: inline-block;
+				margin-bottom: 15px;
+			}
+			.info{
+				font-size: 0.875rem;
+				font-weight: 400;
+			}
+		}
+		&.sub{
+			margin: 15px 15px;
+			list-style-type: lower-latin;
+			list-style-position: outside;
+			.info{
+				font-size: 0.8125rem;
+				line-height: 1.2;
+			}
+		}
+		&.sub-sub{
+			margin: 15px;
+			list-style-type: lower-roman;
+			list-style-position: outside;
+			.info{
+				font-size: 0.75rem;
+				line-height: 1.2;
+			}
+		}
+
+	}
+	ul{
+		list-style-type: disc;
+		list-style-position: inside;
+		margin: 15px;
+		li{
+			margin-bottom: 15px;
+			font-weight: 400;
+			font-size: 0.8125rem;
+		}
+	}
+
+	table{
+		width: 100%;
+		margin: 15px 0;
+		tr{
+			&:nth-child(even){
+				background: #dddddd;
+			}
+		}
+		td, th{
+			border: 1px solid #a2a2a2;
+			padding: 5px;
+			text-align: right;
+			height: 30px;
+		}
+	}
+}
+
+.invite{
+	width: 165px;
+	float: left;
+	background: #d7d7d8;
+	color: #281f39;
+	padding: 0 20px;
+	height: 48px;
+	@include border-radius(5px 0 0 5px);
+	&__icon{
+		display: inline-block;
+		vertical-align: middle;
+		padding-right: 4px;
+		color: #281f39;
+		font-size: 18px;
+		line-height: 48px;
+	}
+	&__text{
+		font-size: 1rem;
+		font-weight: 600;
+		color: #281f39;
+		vertical-align: middle;
+		line-height: 48px;
+	}
 }

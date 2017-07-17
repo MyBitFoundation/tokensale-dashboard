@@ -113,6 +113,11 @@
 		margin-bottom: 15px;
 	};
 }
+.modal__sum{
+	font-size: 18px;
+	color: #281f39;
+	margin: -10px 0 30px;
+}
 .modal__note{
 	font-size: 1.125rem;
 	color: #281f39;
@@ -120,4 +125,7 @@
 	@include MQ(S){
 		margin-bottom: 15px;
 	};
+}
+.modal__btns{
+	margin-top: 30px;
 }

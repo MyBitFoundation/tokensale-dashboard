@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Referrals</title>
+	//= template/head.html
+</head>
+
+<body>
+
+
+<div class="wrapper wrapper-with-footer">
+	<!--//= template/header.html-->
+	<header class="header">
+		<button class="menuBtn js-menuTrigger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<a href="" class="logo">
+			<img src="images/logo@2x.png" alt=""/>
+		</a>
+		<div class="header__profile">
+			<div>
+				<a href="" class="header__profileName ">valik_prusskiy@gmail.com</a>
+				<a href="" class="header__login none" data-toggle="modal" data-target="#modalLogin">
+					<span class="">LOGIN</span>
+					<span class="header__loginIcon icon-door"></span>
+				</a>
+			</div>
+
+			<div>
+				<a href="" class="header__sign">Sign Up</a>
+			</div>
+		</div>
+		<div class="header__menu">
+			<ul class="header__menuList">
+				<li class="header__menuLi barParent active">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Dashboard</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">2FA</a>
+				</li>
+				<li class="header__menuLi barParent">
+					<div class="bar"></div>
+					<a href="" class="header__menuItem">Account Settings</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	//= template/menuS.html
+	<section class="content content-referrals">
+		<div class="box">
+
+			<h1 class="h1">Affileates</h1>
+
+			<div class="main">
+				<div class="address">
+					<div class="invite">
+						<span class="invite__icon icon-attach"></span>
+						<span class="invite__text">Invite Link:</span>
+					</div>
+					<!-- дуюлирование инпута для адаптива-->
+					<div class="address__fieldWrap visible-xs">
+						<input type="text" readonly class="address__field" value="https://dashboard.mybit.io/0x6e0eC952e49212F2e2E2f94FEdaa84f5C044acef" />
+					</div>
+					<button class="address__btn">
+						<span class="btnText">Copy Link</span>
+					</button>
+					<div class="address__fieldWrap hidden-xs">
+						<input type="text" readonly class="address__field" value="https://dashboard.mybit.io/0x6e0eC952e49212F2e2E2f94FEdaa84f5C044acef" />
+					</div>
+				</div>
+
+				<div class="ref">
+					<div class="title">Affileates</div>
+					<div class="ref__table">
+						<div class="ref__tableHead">
+							<div class="tr">
+								<div class="td td-email">
+									<a href="" class="sort">
+										Email <span class="sortIcon icon-arrow_dropdown"></span>
+									</a>
+								</div>
+								<div class="td td-address">
+									<a href="" class="sort">
+										ETH Address <span class="sortIcon icon-arrow_dropdown"></span>
+									</a>
+								</div>
+								<div class="td td-amount">
+									<a href="" class="sort">
+										Amount In ETH Contributed <span class="sortIcon icon-arrow_dropdown"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="ref__tableBody">
+							<div class="tr">
+								<div class="td td-email">
+									<div class="tdIn">valentinecook_087@gmail.com</div>
+								</div>
+								<div class="td td-address">
+									<div class="tdIn">0x6e0eC952e49212F2e2E2f94FEdaa84f5C044acef</div>
+								</div>
+								<div class="td td-amount">
+									<div class="tdIn">
+										<b>0.156007</b>
+										<span>ETH</span>
+										<span class="cur__icon">
+											<img src="images/cur_sm/eth.png" alt="">
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td td-email">
+									<div class="tdIn">valentinecook_087@gmail.com</div>
+								</div>
+								<div class="td td-address">
+									<div class="tdIn">0x6e0eC952e49212F2e2E2f94FEdaa84f5C044acef</div>
+								</div>
+								<div class="td td-amount">
+									<div class="tdIn">
+										<b>0.006789167</b>
+										<span>ETH</span>
+										<span class="cur__icon">
+											<img src="images/cur_sm/eth.png" alt="">
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="tr">
+								<div class="td td-email">
+									<div class="tdIn">valentinecook_087@gmail.com</div>
+								</div>
+								<div class="td td-address">
+									<div class="tdIn">0x6e0eC952e49212F2e2E2f94FEdaa84f5C044acef</div>
+								</div>
+								<div class="td td-amount">
+									<div class="tdIn">
+										<b>2.6</b>
+										<span>ETH</span>
+										<span class="cur__icon">
+											<img src="images/cur_sm/eth.png" alt="">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="ref__tableBtns">
+							<button class="btn btn-more ">
+								<span class="btnText">More</span>
+								<span class="btnIcon icon-arrow"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+//= template/footer.html
+</body>
+</html>

@@ -6,7 +6,7 @@
 	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
 	
 	<!--fonts-->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 	
 	<!--styles-->
@@ -26,6 +26,11 @@
 	<script type="text/javascript" src="js/modal.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/components/dashboard.js"></script>
+	<script>
+		$(function() {
+//			$('#modalPassChanged').modal('show');
+		});
+	</script>
 </head>
 
 <body>
@@ -43,7 +48,10 @@
 						<h2 class="modal__title">Pay with BTC</h2>
 						<div class="modal__note">Please Generate Wallet Address</div>
 						<div class="modal__btns">
-							<button class="btn btn-sbm js-btnGenerate" data-dismiss="modal" data-toggle="modal" data-target="#modalPayBTCStep2">Generate</button>
+							<button class="btn btn-sbm js-btnGenerate" data-dismiss="modal" data-toggle="modal" data-target="#modalPayBTCStep2">
+								<span class="loader"></span>
+								<span class="btnText">Generate</span>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -63,6 +71,9 @@
 							<img src="images/cur_lg/btc.png" alt=""/>
 						</div>
 						<h2 class="modal__title">Pay with BTC</h2>
+						<div class="modal__sum">
+							<i>Minimum payment: <b>0,0005 BTC</b></i>
+						</div>
 						<div class="modal__note">
 							Scan QR-code on your phone <br/>
 							in order to make a payment.
@@ -122,6 +133,28 @@
 	</div>
 </div>
 
+<div class="modal fade" id="modalPassChanged">
+	<div class="modal-dialog">
+		<div class="modal-dialogAlignOut">
+			<div class="modal-dialogAlignIn">
+				<div class="modal-dialogContent">
+					<span class="modal__close icon-cross" data-dismiss="modal"></span>
+
+					<div class="modal__body text_c">
+						<h2 class="modal__title">Password was changed</h2>
+						<div class="modal__btns">
+							<button class="btn btn-sbm">
+								<span class="loader none"></span>
+								<span class="btnText">Ok</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 	<div class="wrapper wrapper-with-footer">
 		<header class="header">
@@ -148,6 +181,10 @@
 			</div>
 			<div class="header__menu">
 				<ul class="header__menuList">
+					<li class="header__menuLi barParent">
+						<div class="bar"></div>
+						<a href="" class="header__menuItem">Back to website</a>
+					</li>
 					<li class="header__menuLi barParent active">
 						<div class="bar"></div>
 						<a href="" class="header__menuItem">Dashboard</a>
@@ -159,6 +196,10 @@
 					<li class="header__menuLi barParent">
 						<div class="bar"></div>
 						<a href="" class="header__menuItem">Account Settings</a>
+					</li>
+					<li class="header__menuLi barParent">
+						<div class="bar"></div>
+						<a href="" class="header__menuItem">Terms and Conditions</a>
 					</li>
 				</ul>
 			</div>
@@ -188,7 +229,101 @@
 		<div class="menuS__backdrops"></div>
 		<section class="content">
 			<div class="box">
+				<div class="sec__advt">
+					<p><b>Dear All</b></p>
+					<p>
+						Numerous parties have brought to our attention that the recent spike in Ethereum (>350%) has made the pricing tiers coded into our smart contract unrealistic. For this reason we are closing the current crowdfund, fixing the pricing structure, and will re-open on April 27, 2017 after a successful audit has been completed. If you have sent funds to the current contract, you will be receiving a personalized email. Otherwise please refrain from sending any funds to the contract.
+					</p>
+					<div class="sec__advtListTitle">Here is the agenda leading up to re-launch:</div>
+					<ul>
+						<li>Re-configure pricing tiers and publicize an updated deal sheet</li>
+						<li>Update smart contract code to reflect these changes in pricing structure</li>
+						<li>Smart contract audit conducted </li>
+						<li>Re-sync contract to ICO dashboard</li>
+						<li>Run numerous security audits on the dashboard</li>
+					</ul>
+					<p>
+						Pre-sale contracts with potential discounts will also be made available for anyone desiring to send a minimum of 25 ETH. Please contact
+						<a href="mailto:info@mybit.io" class="sec__advtLink"><b>info@mybit.io</b></a>
+						for additional details.
+					</p>
+					<p>Thank you for your understanding,</p>
+					<p>The MyBit Team</p>
+
+				</div>
 				<h1 class="h1">Dashboard</h1>
+				<div class="card__list">
+					<div class="card">
+						<div class="cardIn">
+							<div class="card__total">
+								<div class="card__totalTitle">Total Amount Raised</div>
+								<div class="card__totalRow">
+									<b class="card__totalNum">45,000</b>
+									<span class="card__totalCur">ETH</span>
+								</div>
+								<div class="card__totalRow">
+									<b class="card__totalNum">159,875</b>
+									<span class="card__totalCur">EUR</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="cardIn">
+							<div class="card__pic bg1">
+								<img src="images/arrows@2x.png" alt="" height="26"/>
+							</div>
+							<div class="card__info">
+								<div class="card__infoData">
+									<div class="colspan">
+										<b class="mark1">1</b>
+										<span>ETH</span>
+									</div>
+									<span class="equal">=</span>
+									<div class="colspan">
+										<b class="mark1">0.0085</b>
+										<span>Token</span>
+									</div>
+								</div>
+								<div class="card__infoLabel">Crowdsale Price</div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="cardIn">
+							<div class="card__pic bg2">
+								<img src="images/clock@2x.png" alt="" height="32"/>
+							</div>
+							<div class="card__info">
+								<div class="card__infoData">
+									<div class="colspan">
+										<b class="mark2">23</b>
+										<span class="pr-10">Days</span>
+									</div>
+									<div class="colspan">
+										<b class="mark3">7</b>
+										<span>Hours</span>
+									</div>
+								</div>
+								<div class="card__infoLabel">Time Left</div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="cardIn">
+							<div class="card__pic">
+								<img src="images/logo@2x.png" alt="" height="62"/>
+							</div>
+							<div class="card__info">
+								<div class="card__infoData">
+									<b class="mark4">0.0000081</b>
+								</div>
+								<div class="card__infoLabel">BITS Balance</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="sidebar">
 					<div class="title">Exchange Rates</div>
 					<div class="sidebar__tumbler">
@@ -236,54 +371,54 @@
 					<div class="sidebar__body">
 						<div class="sidebar__row">
 							<div class="sidebar__cur">
-								<span class="cur__icon">
-									<img src="images/cur_sm/btc.png" alt="">
-								</span>
+							<span class="cur__icon">
+								<img src="images/cur_sm/btc.png" alt="">
+							</span>
 								<span class="cur__name">btc</span>
 							</div>
 							<div class="sidebar__num">1.00000</div>
 						</div>
 						<div class="sidebar__row">
 							<div class="sidebar__cur">
-								<span class="cur__icon">
-									<img src="images/cur_sm/etc.png" alt="" >
-								</span>
+							<span class="cur__icon">
+								<img src="images/cur_sm/etc.png" alt="" >
+							</span>
 								<span class="cur__name">etc</span>
 							</div>
 							<div class="sidebar__num">803.0516</div>
 						</div>
 						<div class="sidebar__row">
 							<div class="sidebar__cur">
-								<span class="cur__icon">
-									<img src="images/cur_sm/eth.png" alt="">
-								</span>
+							<span class="cur__icon">
+								<img src="images/cur_sm/eth.png" alt="">
+							</span>
 								<span class="cur__name">eth</span>
 							</div>
 							<div class="sidebar__num">78.97709</div>
 						</div>
 						<div class="sidebar__row">
 							<div class="sidebar__cur">
-								<span class="cur__icon">
-									<img src="images/cur_sm/xmr.png" alt="" >
-								</span>
+							<span class="cur__icon">
+								<img src="images/cur_sm/xmr.png" alt="" >
+							</span>
 								<span class="cur__name">xmr</span>
 							</div>
 							<div class="sidebar__num">1.00000</div>
 						</div>
 						<div class="sidebar__row">
 							<div class="sidebar__cur">
-								<span class="cur__icon">
-									<img src="images/cur_sm/dash.png" alt="" >
-								</span>
+							<span class="cur__icon">
+								<img src="images/cur_sm/dash.png" alt="" >
+							</span>
 								<span class="cur__name">dash</span>
 							</div>
 							<div class="sidebar__num">1.00000</div>
 						</div>
 						<div class="sidebar__row">
 							<div class="sidebar__cur">
-								<span class="cur__icon">
-									<img src="images/cur_sm/rep.png" alt="">
-								</span>
+							<span class="cur__icon">
+								<img src="images/cur_sm/rep.png" alt="">
+							</span>
 								<span class="cur__name">rep</span>
 							</div>
 							<div class="sidebar__num">146 842.87812</div>
@@ -291,62 +426,6 @@
 					</div>
 				</div>
 				<div class="main">
-					<div class="card__list">
-						<div class="card">
-							<div class="cardIn">
-								<div class="card__pic bg1">
-									<img src="images/arrows@2x.png" alt="" height="26"/>
-								</div>
-								<div class="card__info">
-									<div class="card__infoData">
-										<div class="colspan">
-											<b class="mark1">1</b>
-											<span>ETH</span>
-										</div>
-										<span class="equal">=</span>
-										<div class="colspan">
-											<b class="mark1">100</b>
-											<span>Token</span>
-										</div>
-									</div>
-									<div class="card__infoLabel">Crowdsale Price</div>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="cardIn">
-								<div class="card__pic bg2">
-									<img src="images/clock@2x.png" alt="" height="32"/>
-								</div>
-								<div class="card__info">
-									<div class="card__infoData">
-										<div class="colspan">
-											<b class="mark2">23</b>
-											<span class="pr-10">Days</span>
-										</div>
-										<div class="colspan">
-											<b class="mark3">7</b>
-											<span>Hours</span>
-										</div>
-									</div>
-									<div class="card__infoLabel">Time Left</div>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="cardIn">
-								<div class="card__pic">
-									<img src="images/logo@2x.png" alt="" height="62"/>
-								</div>
-								<div class="card__info">
-									<div class="card__infoData">
-										<b class="mark4">0.0000081</b>
-									</div>
-									<div class="card__infoLabel">BITS Balance</div>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="cur__box">
 						<div class="cur__boxTitle">Pay with:</div>
 						<div class="cur__listWrap">
@@ -410,6 +489,11 @@
 											Exchange Rate <span class="sortIcon icon-arrow_dropdown"></span>
 										</a>
 									</div>
+									<div class="td td-purchased">
+										<a href="" class="sort">
+											MyB Purchased <span class="sortIcon icon-arrow_dropdown"></span>
+										</a>
+									</div>
 									<div class="td td-address">
 										<a href="" class="sort">
 											Address <span class="sortIcon icon-arrow_dropdown"></span>
@@ -430,6 +514,9 @@
 									<div class="td td-rate">
 										<div class="tdIn">1 USD = 1 BITS</div>
 									</div>
+									<div class="td td-purchased">
+										<div class="tdIn">000000.0000</div>
+									</div>
 									<div class="td td-address">
 										<div class="tdIn">1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs</div>
 									</div>
@@ -443,6 +530,9 @@
 									</div>
 									<div class="td td-rate">
 										<div class="tdIn">1 BTC = 500 Tokens</div>
+									</div>
+									<div class="td td-purchased">
+										<div class="tdIn">123456.1234</div>
 									</div>
 									<div class="td td-address">
 										<div class="tdIn">agjsgo1jakskfhLsdgljasjgklasdagjsgo1jakskfhLsdgljasjgklasd</div>
@@ -458,6 +548,9 @@
 									<div class="td td-rate">
 										<div class="tdIn">1 ETH = 12 Tokens</div>
 									</div>
+									<div class="td td-purchased">
+										<div class="tdIn">123456.1234</div>
+									</div>
 									<div class="td td-address">
 										<div class="tdIn">1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs</div>
 									</div>
@@ -471,6 +564,9 @@
 									</div>
 									<div class="td td-rate">
 										<div class="tdIn">1 USD = 1 BITS</div>
+									</div>
+									<div class="td td-purchased">
+										<div class="tdIn">123456.1234</div>
 									</div>
 									<div class="td td-address">
 										<div class="tdIn">1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs</div>
@@ -486,6 +582,9 @@
 									<div class="td td-rate">
 										<div class="tdIn">1 ETH = 12 Tokens</div>
 									</div>
+									<div class="td td-purchased">
+										<div class="tdIn">123456.1234</div>
+									</div>
 									<div class="td td-address">
 										<div class="tdIn">1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs</div>
 									</div>
@@ -499,6 +598,9 @@
 									</div>
 									<div class="td td-rate">
 										<div class="tdIn">1 USD = 1 BITS</div>
+									</div>
+									<div class="td td-purchased">
+										<div class="tdIn">10</div>
 									</div>
 									<div class="td td-address">
 										<div class="tdIn">1HEc7sdhhshZ9LwuPaEeHTgs1HEc7sdhhshZ9LwuPaEeHTgs</div>
@@ -522,8 +624,10 @@
 			<div class="copyright">
 				© 2017 My Bit.   All rights reserved.
 			</div>
-			<div class="">
-				<a href="" class="footer__contact">Contact Us</a>
+			<div class="footer__linkWrap">
+				<a href="" class="footer__link">Code</a>
+				<a href="" class="footer__link">Deal Sheet</a>
+				<a href="" class="footer__link">Contact Us</a>
 			</div>
 		</div>
 	</footer>

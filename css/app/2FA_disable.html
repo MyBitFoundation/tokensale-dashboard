@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>2FA_disable</title>
+	//= template/head.html
+	<script type="text/javascript" src="js/components/dashboard.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper wrapper-with-footer">
+	//= template/header.html
+	//= template/menuS.html
+	<section class="content content-2fa">
+		<div class="box">
+			<h1 class="h1 ">Two-Factor Authentication</h1>
+			<div class="descr ">FWe use Google Authenticator for 2FA.</div>
+			<div class="main">
+				<div class="main__col one">
+					<div class="title">
+						You have Two-Factor Authentication enebled
+					</div>
+					<div class="form__title">
+						Disable 2FA
+					</div>
+					<div class="row ">
+						<label for="key01" class="label text_l">6-Digit_Key</label>
+						<input class="field2" id="key01" type="text" placeholder="Enter code to disable" />
+					</div>
+					<div class="row ">
+						<div class="error__text">Error txt</div>
+						<label for="key02" class="label text_l">Password</label>
+						<input class="field2 error" id="key02" type="password" value="test"/>
+					</div>
+					<div class="attn">
+						<b class="mark5">Warning:</b>
+						<i class="">
+							Disabling 2FA will make your account less secure.
+						</i>
+					</div>
+					<div class="form__btns">
+						<button class="btn btn-formSbm">Disable 2FA</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+//= template/footer.html
+</body>
+</html>

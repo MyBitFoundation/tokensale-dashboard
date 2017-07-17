@@ -222,7 +222,10 @@
 
 
 @mixin MQ($canvas) {
-	@if $canvas == S {
+	@if $canvas == XS {
+		@media only screen and (max-width: $XS) { @content; }
+	}
+    @else if $canvas == S {
 		@media only screen and (max-width: $S) { @content; }
 	}
 	@else if $canvas == M {

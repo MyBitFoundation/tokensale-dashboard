@@ -101,7 +101,7 @@ class History extends React.Component {
 								href="javascript:;"
 								className={`sort ${sort === 'date' && sortLTH ? 'active' : ''}`}
 								onClick={this.onSort.bind(this, 'date')}>
-								<Translate content="dashboard.main.history.date"/> <span className="sortIcon icon-arrow_dropdown"/>
+								<Translate o content="dashboard.main.history.date"/> <span className="sortIcon icon-arrow_dropdown"/>
 							</a>
 						</div>
 						<div className="td td-amount">

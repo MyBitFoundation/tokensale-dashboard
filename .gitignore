@@ -9,6 +9,6 @@ nginx.access.log
 nginx.error.log
 node_modules
 config.js
-#dist
+dist
 coding
 *.log

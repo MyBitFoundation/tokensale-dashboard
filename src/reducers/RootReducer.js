@@ -7,6 +7,7 @@ import modalsReducer from './ModalsReducer';
 import accountReducer from './AccountReducer';
 import dashboardReducer from './DashboardReducer';
 import tfaReducer from './TFAReducer';
+import affiliatesReducer from './AffiliatesReducer';
 
 export function configureStore(history, initialState) {
     const reducers = combineReducers({
@@ -14,7 +15,8 @@ export function configureStore(history, initialState) {
         modals: modalsReducer,
         account: accountReducer,
         dashboard: dashboardReducer,
-        tfa: tfaReducer
+        tfa: tfaReducer,
+        affiliates: affiliatesReducer
     });
 
     const store = createStore(

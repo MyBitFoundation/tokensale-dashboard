@@ -22,14 +22,16 @@ only screen and (                min-resolution: 3dppx) {
 }
 /*-------------... 1500 ---------------*/
 @media (max-width:1500px) {
-	.card__infoData b{font-size: 1.5rem; line-height: 27px;}
 	.cardIn{padding-left: 20px;}
-	.card__info{margin-left: 75px;}
 }
 /*------------... 1380 ---------------*/
 @media (max-width:1380px) {
 	.card{
-		&:nth-child(3){
+		&In{
+			height: 105px;
+			padding-top: 27px;
+		}
+		&:nth-child(4){
 			img{
 				height: 30px;
 			}
@@ -38,15 +40,92 @@ only screen and (                min-resolution: 3dppx) {
 	.card__pic {
 		height: 40px;line-height: 40px;width: 40px;
 		img{
-			height: 25px;
+			height: 22px;
 		}
 	}
-	.card__info{margin-left: 55px;}
+	.card__info{margin-left: 50px;}
+	.card__infoData {font-size: .8125rem;}
+	.card__total{
+		padding-right: 20px;
+	}
+	.card__totalTitle{
+		font-size: 0.9375rem;
+		line-height: 22px;
+	}
 }
-/*--------------------------------------------------------------------------------------------1280 ... ---------------*/
+
+/*-------... 1280--------*/
 @media (max-width:1280px) {
 	.cardIn{padding-left: 10px;}
+	.card__total{padding-right: 10px;}
 }
+
+@media (max-width:1130px) {
+	.card{
+		&In {
+			height: 85px;
+			padding-top: 22px;
+		}
+		&:nth-child(4){
+			img{
+				height: 20px;
+			}
+		}
+	}
+	.card__pic {
+		height: 25px;line-height: 25px;width: 25px;
+		img{
+			height: 15px;
+		}
+	}
+	.card__infoData{
+		margin-bottom: 0;
+	}
+	.card__info{margin-left: 35px;}
+	.card__infoData b{font-size: 1rem;line-height: 25px;}
+	.card__infoData .equal{line-height: 25px;}
+	.card__totalRow{font-size: 1rem;}
+	.history{
+		.title{
+			padding-left: 20px;
+		}
+		&__table{
+			.td{
+				font-size: 1rem;
+			}
+			.td-date{
+				padding-left: 20px;
+				font-size: 0.9375rem;
+			}
+			.td-address{
+				padding-right: 20px;
+			}
+		}
+	}
+
+}
+/*------------... 1024 ---------------*/
+@media (max-width:1024px) {
+	.card__pic {
+		height: 30px;line-height: 30px;width: 30px;
+		img{
+			height: 20px;
+		}
+	}
+	.card__info{margin-left: 40px;}
+	.card__infoData b{font-size: 1.1rem;}
+	.card__totalTitle,
+	.card__infoLabel{
+		font-size: 0.8125rem;
+	}
+	.card__totalRow{font-size: 1.1rem;}
+}
+/*------------... 950 ---------------*/
+@media (max-width:950px) {
+	.card__pic{display: none;}
+	.card__info{margin-left: 0;}
+}
+
 
 /*--------------------------------------------------------------------------------------------1024 to 1280 -----------*/
 @media (min-width:1024px) and (max-width: 1280px) {
@@ -65,6 +144,8 @@ only screen and (                min-resolution: 3dppx) {
 /*--------------------------------------------------------------------------------------------..._to_767--------------*/
 @media (max-width: 767px) {
 	html                                        {font-size: 82%;}
+	.visible-xs{display: block;}
+	.hidden-xs{display: none;}
 	/*body                                        {background: green;}*/
 }
 
