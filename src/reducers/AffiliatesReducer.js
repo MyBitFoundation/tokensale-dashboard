@@ -10,6 +10,9 @@ export default function AffiliatesReducer(state = initialState,action) {
         case 'AFFILIATES_REFERRALS':
             state = state.set('referrer',action.payload)
             return state;
+        case 'AFFILIATES_SORT':
+            state = state.set('sort',action.payload)
+            return state;
         default:
             return state;
     }

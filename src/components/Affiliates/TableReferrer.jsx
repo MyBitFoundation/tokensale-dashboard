@@ -2,36 +2,50 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Translate from 'react-translate-component';
 
+import { sortBy } from 'actions/AffiliatesActions';
+
 function mapStateToProps(state, ownProps) {
     return {
         referrer: state.affiliates.get('referrer'),
-        count: 4
+        sort: state.affiliates.get('sort')
     };
 }
 
 function mapDispatchToProps(dispatch) {
-    return {};
+    return {
+        sortBy: (criterion) => dispatch(sortBy(criterion))
+    };
 }
 
 class TableReferrer extends React.Component {
 
     constructor() {
         super();
+        this.state = {
+            sortLTH: false
+        }
     }
 
-    onMore() {
-        let count = this.state.count + 4;
-        this.setState({count});
-    }
-
-    onSort() {
-
+    onSort(type) {
+        this.props.sortBy(type);
+        let sortLTH = !this.state.sortLTH;
+        this.setState({sortLTH});
     }
 
     getReferrerTable() {
-        let {referrer} = this.props;
+        let {referrer, sort} = this.props;
+        let {sortLTH} = this.state;
 
-        let table = referrer.map((item, index) => {
+        let table = referrer.sort((a, b) => {
+            switch (sort) {
+                case 'email':
+                    return a.email < b.email ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
+                case 'amount':
+                    return a.contributeEthAmount < b.contributeEthAmount ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
+                default:
+                    return a.email < b.email ? (sortLTH ? 1 : -1) : (sortLTH ? -1 : 1);
+            }
+        }).map((item, index) => {
             return (
                 <div key={index} className="tr">
                     <div className="td td-email">
@@ -54,31 +68,30 @@ class TableReferrer extends React.Component {
                  <div className="ref__tableHead">
                      <div className="tr">
                          <div className="td td-email">
-                             <span className="sort">
-                                 Email
-                             </span>
+                             <a href="javascript:;"
+                                className={`sort ${sort === 'email' && sortLTH ? 'active' : ''}`}
+                                onClick={this.onSort.bind(this,'email')}>
+                                 <Translate content="affiliates.email"/> <span className="sortIcon icon-arrow_dropdown"></span>
+                             </a>
                          </div>
                          <div className="td td-address">
                               <span className="sort">
-                                 ETH Address
-                                </span>
+                                <Translate content="affiliates.eth_address"/>
+                              </span>
                          </div>
                          <div className="td td-amount">
-                            <span className="sort">
-                                 Amount In ETH Contributed
-                            </span>
+                            <a href="javascript:;"
+                               className={`sort ${sort == 'amount' && sortLTH ? 'active' : ''}`}
+                               onClick={this.onSort.bind(this,'amount')}>
+                                <Translate content="affiliates.amount_in_eth_contributed"/> <span className="sortIcon icon-arrow_dropdown"></span>
+                            </a>
                          </div>
                      </div>
                  </div>
                  <div className="ref__tableBody">
                      {table}
                  </div>
-                 <div className="ref__tableBtns">
-                     {/*<button className="btn btn-more ">*/}
-                         {/*<span className="btnText">More</span>*/}
-                         {/*<span className="btnIcon icon-arrow"></span>*/}
-                     {/*</button>*/}
-                 </div>
+                 <div className="ref__tableBtns"></div>
              </div>
          );
     }
@@ -89,7 +102,7 @@ class TableReferrer extends React.Component {
 
         return (
             <div className="ref">
-                <div className="title">Affileates</div>
+                <div className="title"><Translate content="header.affiliates"/></div>
                 {referrer.length ? this.getReferrerTable() : null}
             </div>
         );

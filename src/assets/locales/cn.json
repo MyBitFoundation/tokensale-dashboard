@@ -69,7 +69,10 @@
     "affiliates": {
         "invite_link": "Invite Link",
         "copied": "复制",
-        "copy_link": "Copy link"
+        "copy_link": "Copy link",
+        "email": "Email",
+        "eth_address": "ETH Address",
+        "amount_in_eth_contributed": "Amount In ETH Contributed"
     },
     "modal": {
         "settings_changed": "Settings has been changed",

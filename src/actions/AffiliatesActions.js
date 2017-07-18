@@ -19,3 +19,12 @@ export function referrals() {
     }
 
 }
+
+export function sortBy(criterion) {
+    return (dispacth, getState) => {
+        dispacth({
+            type: 'AFFILIATES_SORT',
+            payload: criterion
+        })
+    }
+}
