@@ -6,8 +6,9 @@ export default class TermsAndConditions extends React.Component {
         return (
             <section className="content">
         		<div className="box">
-        			<h1 className="h1">Terms and Conditions</h1>
+        			<h1 className="h1">Terms and Conditions MyBit Token Sale</h1>
         			<div className="main text">
+
         				<p>
         					The following Terms and Conditions (“Terms”) govern the sale of cryptographic tokens -- MyB Tokens (“MyB”) -- that is required to transact on the MyBit open source software platform (“MyBit Platform”) to purchasers of MyB (“Purchasers” collectively, and “Purchaser” individually).
         				</p>
