@@ -6,7 +6,7 @@ export default class TermsAndConditions extends React.Component {
         return (
             <section className="content">
         		<div className="box">
-        			<h1 className="h1">Terms and Conditions MyBit Token Sale</h1>
+        			<h1 className="h1">Terms and Condition</h1>
         			<div className="main text">
 
         				<p>

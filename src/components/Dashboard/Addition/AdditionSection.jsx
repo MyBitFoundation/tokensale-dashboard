@@ -12,7 +12,7 @@ export default class AdditionSection extends React.Component {
                 <ul>
                     <li>Obtain Ether and transfer it to an Erc20 compliant ethereum wallet (mist, parity, Jaxx, MEW, etc.) DO NOT SEND DIRECTLY FROM AN EXCHANGE OR WALLET YOU DO NOT CONTROL YOUR PRIVATE KEYS AT!</li>
                     <li>Send Ether to the address listed below</li>
-                    <li>On your local wallet go to contracts -> watch token -></li>
+                    <li>On your local wallet go to contracts -> watch token -> and add the address below to watch $MyB</li>
                     <li>That's it! Once Ether is received by the smart contract, $MyB will be minted and instantly transferred to your local wallet</li>
                 </ul>
             </div>
