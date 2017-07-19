@@ -33,19 +33,23 @@ let createConfig = (options) => {
 		filename: "bundle.js"
 	};
 
-	webpackConfig.devtool = production ? "cheap-eval-source-map" : "inline-source-map";
+	webpackConfig.devtool = production ? "source-map" : "inline-source-map";
 	webpackConfig.plugins = [
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify(production ? 'production' : 'development'),
+			},
+			__API_URL__: JSON.stringify(config.apiURL),
+			__REDIRECT_URL__: JSON.stringify(config.redirectURL)
+		}),
 		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin(),
 		new webpack.ProgressPlugin(function(percentage, msg) {
 			process.stdout.clearLine();
 			process.stdout.cursorTo(0);
 			process.stdout.write(`${(percentage * 100).toFixed(2)}% ${msg}`);
 		}),
-		new webpack.DefinePlugin({
-			__API_URL__: JSON.stringify(config.apiURL),
-			__REDIRECT_URL__: JSON.stringify(config.redirectURL)
-		}),
-		new ExtractTextPlugin("style.css")
+		new ExtractTextPlugin("style.css"),
 	];
 	if(production) {
 		webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({

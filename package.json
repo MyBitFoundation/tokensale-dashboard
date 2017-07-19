@@ -17,9 +17,7 @@
     "classnames": "^2.2.5",
     "copy-to-clipboard": "^3.0.5",
     "counterpart": "^0.17.6",
-    "es6-promise": "^4.1.0",
     "immutable": "^3.8.1",
-    "isomorphic-fetch": "^2.2.1",
     "load-script": "^1.0.0",
     "moment": "^2.18.1",
     "node-2fa": "^1.1.2",
@@ -33,10 +31,8 @@
     "react-router-redux": "^4.0.7",
     "react-translate-component": "^0.14.0",
     "redux": "^3.6.0",
-    "redux-modules": "^1.0.1",
     "redux-thunk": "^2.2.0",
-    "sass-loader": "^6.0.6",
-    "speakeasy": "^2.0.0"
+    "sass-loader": "^6.0.6"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
