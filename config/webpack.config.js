@@ -43,7 +43,7 @@ let createConfig = (options) => {
 			__REDIRECT_URL__: JSON.stringify(config.redirectURL)
 		}),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin(),
+		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.ProgressPlugin(function(percentage, msg) {
 			process.stdout.clearLine();
 			process.stdout.cursorTo(0);
