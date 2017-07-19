@@ -25,7 +25,7 @@ class Box extends React.Component {
             <div className="cur__box">
                 <div className="cur__boxTitle">Pay with:</div>
                 <div className="cur__listWrap">
-                    <div className="cur__list">
+                    <div className="cur__list cur__list-5">
                         <a href="javascript:;" className="cur__item" onClick={this.onOpenStep1.bind(this, 'btc')}>
                             <span className="cur__icon">
                                 <img src="images/btc.png" alt=""/>

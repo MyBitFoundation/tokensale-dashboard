@@ -27,6 +27,26 @@
 		&Wrap{
 			overflow: hidden;
 		}
+		&-6{
+			.cur__item{
+				width: 15%;
+			}
+		}
+		&-5{
+			.cur__item{
+				width: 19%;
+			}
+		}
+		&-4{
+			.cur__item{
+				width: 25%;
+			}
+		}
+		&-3{
+			.cur__item{
+				width: 33%;
+			}
+		}
 	}
 	&__item{
 		display: inline-block;
@@ -48,7 +68,7 @@
 			background: #fff;
 		}
 		@include MQ(S){
-			width: 31%;
+			width: 31%!important;
 			margin: 0 2px 5px;
 		};
 		.cur__icon{
