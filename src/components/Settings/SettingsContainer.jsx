@@ -4,6 +4,7 @@ import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 
 import {changePassword} from 'actions/SettingsActions';
+import {initialize} from 'actions/GlobalActions';
 
 function validate(password) {
 	if(!password.value || password.value.length < 6) {
