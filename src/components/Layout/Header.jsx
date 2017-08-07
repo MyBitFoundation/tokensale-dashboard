@@ -122,6 +122,10 @@ class Header extends React.Component {
 								<div className="barVer"></div>
 								<a href="/terms&conditions" className="menuS__item"><Translate content="header.tac"/></a>
 							</li>
+							<li className={`menuS__li barVerParent ${location === "/affiliates" ? 'active' : ''}`}>
+								<div className="barVer"></div>
+								<a href="/affiliates" className="menuS__item"><Translate content="header.affiliates"/></a>
+							</li>
 						</ul>
 					</div>
 				</div>
