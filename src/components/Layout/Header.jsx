@@ -100,31 +100,31 @@ class Header extends React.Component {
 					</div>
 				</header>
 				<div className={`menuS ${open ? 'menu-open' : ''}`}>
-					<a href="/" className="menuS__logo">
+					<Link to="/" onClick={this.onClose.bind(this)} className="menuS__logo">
 						<img src="images/logo@2x.png" alt=""/>
-					</a>
+					</Link>
 					<a href="javascript:;" className="menuS__close icon-cross" onClick={this.onClose.bind(this)}></a>
 					<div className="menuS__wrap">
 						<ul className="menuS__list">
 							<li className={`menuS__li barVerParent ${location === "/" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/" className="menuS__item"><Translate content="header.dashboard"/></a>
+								<Link to="/" onClick={this.onClose.bind(this)} className="menuS__item"><Translate content="header.dashboard"/></Link>
 							</li>
 							<li className={`menuS__li barVerParent ${location === "/tfa" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/tfa" className="menuS__item"><Translate content="header.tfa"/></a>
+								<Link to="/tfa" onClick={this.onClose.bind(this)} className="menuS__item"><Translate content="header.tfa"/></Link>
 							</li>
 							<li className={`menuS__li barVerParent ${location === "/settings" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/settings" className="menuS__item"><Translate content="header.account_settings"/></a>
+								<Link to="/settings" onClick={this.onClose.bind(this)} className="menuS__item"><Translate content="header.account_settings"/></Link>
 							</li>
 							<li className={`menuS__li barVerParent ${location === "/terms&conditions" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/terms&conditions" className="menuS__item"><Translate content="header.tac"/></a>
+								<Link to="/terms&conditions" onClick={this.onClose.bind(this)} className="menuS__item"><Translate content="header.tac"/></Link>
 							</li>
 							<li className={`menuS__li barVerParent ${location === "/affiliates" ? 'active' : ''}`}>
 								<div className="barVer"></div>
-								<a href="/affiliates" className="menuS__item"><Translate content="header.affiliates"/></a>
+								<Link to="/affiliates" onClick={this.onClose.bind(this)} className="menuS__item"><Translate content="header.affiliates"/></Link>
 							</li>
 						</ul>
 					</div>

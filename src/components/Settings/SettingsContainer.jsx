@@ -5,6 +5,7 @@ import counterpart from 'counterpart';
 
 import {changePassword} from 'actions/SettingsActions';
 import {initialize} from 'actions/GlobalActions';
+import {load} from 'actions/DashboardActions';
 
 function validate(password) {
 	if(!password.value || password.value.length < 6) {
@@ -23,7 +24,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
 	return {
-		changePassword: (params) => dispatch(changePassword(params))
+		changePassword: (params) => dispatch(changePassword(params)),
+		loadData: () => dispatch(load())
 	};
 }
 
@@ -73,6 +75,8 @@ class Settings extends React.Component {
 				address: {value: '', error: false},
 				error: ''
 			})
+
+			this.props.loadData();
 		}).catch(err => {
 			const error = err.response.message;
 			if(/new password/i.test(error)) {
