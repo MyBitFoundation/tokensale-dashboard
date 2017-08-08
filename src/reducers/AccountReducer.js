@@ -19,9 +19,6 @@ const initialState = Map({
 export default function AccountReducer(state = initialState, action) {
     switch(action.type) {
         case 'INIT_ACCOUNT':
-
-            console.log(action);
-
             state = state.set('email', action.payload.email);
             state = state.set('amountRaised', action.payload.amountRaised);
             state = state.set('amountRaisedEUR', action.payload.amountRaisedEUR);
