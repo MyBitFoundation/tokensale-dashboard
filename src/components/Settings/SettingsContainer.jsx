@@ -25,7 +25,8 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
 	return {
 		changePassword: (params) => dispatch(changePassword(params)),
-		loadData: () => dispatch(load())
+        initialize: () => dispatch(initialize()),
+		loadData: () => dispatch(load()),
 	};
 }
 
@@ -76,6 +77,7 @@ class Settings extends React.Component {
 				error: ''
 			})
 
+			this.props.initialize();
 			this.props.loadData();
 		}).catch(err => {
 			const error = err.response.message;
