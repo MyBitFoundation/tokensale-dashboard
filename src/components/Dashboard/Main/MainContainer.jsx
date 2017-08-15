@@ -42,8 +42,8 @@ export default class Main extends React.Component {
 		            </div>*/}
 	            </div>
 	            <CardList />
-                <PresaleAddress />
-                <Box />
+                {/*<PresaleAddress />*/}
+                {/*<Box />*/}
                 <History />
             </div>
         );
