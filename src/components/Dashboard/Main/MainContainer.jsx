@@ -4,6 +4,7 @@ import CardList from '../Cards/CardList';
 import Box from './Box';
 import PresaleAddress from './PresaleAddress';
 import History from './History';
+import Withdraw from './Withdraw';
 import Translate from 'react-translate-component';
 
 export default class Main extends React.Component {
@@ -42,6 +43,7 @@ export default class Main extends React.Component {
 		            </div>*/}
 	            </div>
 	            <CardList />
+	            <Withdraw/>
                 {/*<PresaleAddress />*/}
                 {/*<Box />*/}
                 <History />

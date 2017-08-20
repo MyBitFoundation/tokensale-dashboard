@@ -5,6 +5,7 @@ const initialState = Map({
     amountRaised: 0,
 	contractAddress: '',
     amountRaisedEUR: 0,
+    balanceForWithdraw: 0,
     balance: 0,
     tokenPrice: 0,
     lastLoginDate: null,
@@ -23,6 +24,7 @@ export default function AccountReducer(state = initialState, action) {
             state = state.set('amountRaised', action.payload.amountRaised);
             state = state.set('amountRaisedEUR', action.payload.amountRaisedEUR);
             state = state.set('balance', action.payload.balance);
+            state = state.set('balanceForWithdraw', action.payload.balanceForWithdraw);
             state = state.set('lastLoginDate', action.payload.lastLoginDate);
             state = state.set('address', action.payload.address);
             state = state.set('tfa', action.payload.tfa);

@@ -9,6 +9,13 @@ class ModalsActions {
             });
         }
     }
+    static openSuccessfullyWithdraw() {
+        return (dispatch, getState) => {
+            dispatch({
+                type: 'OPEN_SUCCESSFULLY_WITHDRAW'
+            });
+        }
+    }
     static closeModal(modal) {
         return (dispatch, getState) => {
             dispatch({
@@ -38,7 +45,7 @@ class ModalsActions {
                     dispatch({
                         type: 'MODAL_GENERATION_FAIL'
                     });
-                }, 1000)
+                }, 1000);
                 if(error.code === 403) {
                     window.location.href = __REDIRECT_URL__
                 }

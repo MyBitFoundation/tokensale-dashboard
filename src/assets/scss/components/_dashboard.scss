@@ -199,6 +199,34 @@
 		}
 	}
 }
+.withdrawal{
+    margin-bottom: 30px;
+    background: #fff;
+    @include border-radius(5px);
+    @include box-shadow($shadow);
+    .title{
+        padding-left: 40px;
+    }
+    &__body{
+        padding: 25px 40px 40px;
+    }
+    &__col{
+        display: inline-block;
+        vertical-align: top;
+        width: 400px;
+        margin-right: 30px;
+        max-width: calc(49% - 30px);
+        @media only screen and (max-width: 767px) {
+
+        }
+    }
+    &__footer{
+        margin-top: 10px;
+        & .btn-formSbm{
+            margin-top: 32px;
+        }
+    }
+}
 .address{
 	width: 100%;
 	margin-bottom: 30px;

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Step1 from './Modals/Step1';
 import Step2 from './Modals/Step2';
+import SuccessfullyWithdraw from './Modals/SuccessfullyWithdraw';
 import PasswordChanged from './Modals/PasswordChanged';
 import TFAChanged from './Modals/TFAChanged';
 
@@ -32,6 +33,7 @@ class App extends React.Component {
             <div className="out">
                 <Step1 />
                 <Step2 />
+                <SuccessfullyWithdraw />
                 <PasswordChanged />
                 <TFAChanged />
                 <div className="wrapper wrapper-with-footer">
@@ -39,7 +41,7 @@ class App extends React.Component {
                     {children}
             	</div>
                 <Footer />
-                {this.props.openModal ? <div className="modal-backdrop fade in"></div> : null}
+                {this.props.openModal ? <div className="modal-backdrop fade in" /> : null}
             </div>
         );
     }

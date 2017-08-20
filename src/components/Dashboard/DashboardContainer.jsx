@@ -11,7 +11,7 @@ export default class Dashboard extends React.Component {
         return (
             <section className="content">
                 <div className="box">
-                    <AdditonSection />
+                    {/*<AdditonSection />*/}
                     <h1 className="h1"><Translate content="dashboard.header"/></h1>
 
 	                <Side />

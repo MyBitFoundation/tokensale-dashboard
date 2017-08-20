@@ -7,7 +7,7 @@ const initialState =  Map({
     loading: false,
     keys: {},
     error: false
-})
+});
 
 export default function ModalsReducer(state = initialState, action) {
     switch(action.type) {
@@ -15,6 +15,10 @@ export default function ModalsReducer(state = initialState, action) {
             state = state.set('modal', 'step1');
             state = state.set('open', true);
             state = state.set('currency', action.payload);
+            return state;
+        case 'OPEN_SUCCESSFULLY_WITHDRAW':
+            state = state.set('modal', 'successfully_withdraw');
+            state = state.set('open', true);
             return state;
         case 'MODAL_LOADING':
             state = state.set('loading', true);

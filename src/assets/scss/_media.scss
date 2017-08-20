@@ -102,6 +102,14 @@ only screen and (                min-resolution: 3dppx) {
 			}
 		}
 	}
+	.withdrawal{
+		.title{
+			padding-left: 20px;
+		}
+		&__body{
+			padding: 20px 20px 30px;
+		}
+	}
 
 }
 /*------------... 1024 ---------------*/
@@ -147,6 +155,21 @@ only screen and (                min-resolution: 3dppx) {
 	.visible-xs{display: block;}
 	.hidden-xs{display: none;}
 	/*body                                        {background: green;}*/
+	.withdrawal{
+		&__body{
+			padding-top: 10px;
+		}
+		&__col{
+			width: 100%;
+			max-width: 100%;
+			margin-top: 10px;
+		}
+		&__footer{
+			& .btn-formSbm{
+				margin-top: 18px;
+			}
+		}
+	}
 }
 
 

@@ -88,7 +88,8 @@
         "payment_id": "Payment ID",
         "copy_address": "Copy Address",
         "copy_payment_id": "Copy Payment Id",
-        "tfa": "Two-Factor Authentication has been %(status)s"
+        "tfa": "Two-Factor Authentication has been %(status)s",
+				"successfully_withdraw": "The withdraw transaction was successfully created"
     },
     "header": {
         "sign_out": "Sign Out",
@@ -104,5 +105,11 @@
         "deel": "Deal Sheet",
         "contact": "Contact Us",
         "code": "Code"
-    }
+    },
+		"withdraw": {
+				"title": "Withdraw",
+				"you_address": "Your ETH Address",
+				"password": "Password",
+				"tfa_code": "2FA code"
+		}
 }
